@@ -22,3 +22,31 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* */
+.centeredMainTitleTop, .centeredMainTitleBot {
+    text-justify:distribute-all-lines;
+    text-align:justify;
+    width:40%;
+    margin:auto;
+    color:darkblue;
+    font-variant:small-caps;
+}
+.centeredMainTitleTop {
+    padding-top:3em;
+
+}
+.centeredMainTitleBot {
+    padding-bottom:3em;
+
+}
+.titlebr {
+    border-style:solid;
+    border-color:black;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.appTitle {
+
+}
