@@ -1,4 +1,16 @@
-﻿body {
+﻿
+
+@font-face {
+	font-family: 'Sans-Copperplate Gothic';
+	src: url('../fonts/sans-copperplategothic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body, h1, h2, h3, h4, h5, h6, p{
+    	font-family: 'Sans-Copperplate Gothic', sans-serif;
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -24,39 +36,16 @@ textarea {
     max-width: 280px;
 }
 
-.navbar-nav > li > a, .navbar-brand {
-    color:darkblue;
-    font-size:20px;
-}
-.navbar {
-    background-color: transparent;
-}
-
-.navbar-right{
-    border-style:solid;
-    border-color:purple;
-
-}
-
-@media all and (min-width:768px) {
-    .navbar > .container .navbar-brand {
-        /*
-        border-style:solid;
-        border-color:orange;
-        */
-    }
-}
-
-.navbar-brand {
+.DCTechBrand {
     background-image:url('../Images/DC LOGO B&W.png');
     background-repeat: no-repeat;
     background-size: 100%;
     background-clip:border-box;
     margin:auto;
-    height:154px;    
-    width:200px;
+    height:230px;    
+    width:300px;
     float:none;
-    /*
+    /*;
     border-style:solid;
     border-color:orange;
     */
@@ -70,9 +59,6 @@ textarea {
     margin:auto;
     color:darkblue;
     font-variant:small-caps;
-}
-.mainTitleTop {
-    padding-top:3em;
 }
 
 .mainTitleBot,
@@ -92,6 +78,9 @@ textarea {
 
 }
 
+.Services > li {
+    color:red;
+}
 .GalleryBox {
     /*border-style:solid;
     border-color:red;*/

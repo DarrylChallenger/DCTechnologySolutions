@@ -25,6 +25,7 @@ namespace DCTechnologySolutions
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Font/sans-copperplategothic.ttf",
                       "~/Content/site.css"));
         }
     }
