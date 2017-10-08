@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top:78px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -23,28 +24,98 @@ textarea {
     max-width: 280px;
 }
 
+.navbar-nav > li > a, .navbar-brand {
+    color:darkblue;
+    font-size:20px;
+}
+.navbar {
+    background-color: transparent;
+}
+
+.navbar-right{
+    border-style:solid;
+    border-color:purple;
+
+}
+
+@media all and (min-width:768px) {
+    .navbar > .container .navbar-brand {
+        /*
+        border-style:solid;
+        border-color:orange;
+        */
+    }
+}
+
+.navbar-brand {
+    background-image:url('../Images/DC LOGO B&W.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-clip:border-box;
+    margin:auto;
+    height:154px;    
+    width:200px;
+    float:none;
+    /*
+    border-style:solid;
+    border-color:orange;
+    */
+}
+
 /* */
-.centeredMainTitleTop, .centeredMainTitleBot {
+.mainTitleTop, .mainTitleBot {
     text-justify:distribute-all-lines;
     text-align:justify;
-    width:40%;
+    width:75%;
     margin:auto;
     color:darkblue;
     font-variant:small-caps;
 }
-.centeredMainTitleTop {
+.mainTitleTop {
     padding-top:3em;
-
 }
-.centeredMainTitleBot {
-    padding-bottom:3em;
 
+.mainTitleBot,
+.appTitle{
+    font-size:400%;
+}
+
+.subTitle {
+    padding-bottom:3em;   
+    font-variant:small-caps;
 }
 .titlebr {
     border-style:solid;
     border-color:black;
     margin-top:0;
     margin-bottom:0;
+
 }
 
+.GalleryBox {
+    /*border-style:solid;
+    border-color:red;*/
+    height:320px;
+    white-space: nowrap;}
 
+.GalleryImage {
+    width:100%;
+    border-style:solid;
+    border-color:black;
+    border-width:2px;
+    vertical-align:middle;
+}
+
+.GalleryHieghtBox {
+    height:90%;
+    display:inline-block;
+    vertical-align:middle;
+    /*
+    border-style:solid;
+    border-color:green;
+    */
+
+}
+.GalleryText {
+    display:none;
+}

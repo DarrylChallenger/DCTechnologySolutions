@@ -1,24 +1,86 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
-}
+    ViewBag.Title = "Welcome";
+    Page.jd = "";
 
-<div class="centeredMainTitleTop">
-    <h1 class="appTitle">
-        Challenger Technology
-    </h1>
-    <hr class="titlebr"/>
-        <!--
-            <svg viewBox="0,0, 500, 10">
-            <line x1="5" y1="5" x2="95" y2="5" style="stroke:rgb(0,0,200);stroke-width:2"></line>
-            </svg>
-        -->
-    <h1 class="centeredMainTitleBot">
-        Solutions
-    </h1>
+}
+<div>
+    <div class="mainTitleTop">
+        <h1 class="appTitle">
+            Challenger Technology
+        </h1>
+        <hr class="titlebr" />
+        
+            @*
+                <svg viewBox="width=100% height=10">
+                    <line x1="5" y1="5" x2=100% y2="5" style="stroke:rgb(100,0,200);stroke-width:2"></line>
+                </svg>
+            *@
+        
+        <h1 class="mainTitleBot">
+            Solutions
+        </h1>
+    </div>
+    <p class="subTitle"><em>Taking the challenge out of technology</em></p>
+    @*<p class="subTitle"><em>Builing software to make us better</em></p>*@
 </div>
-<div class="whoAmI"></div>
-<div class="services"></div>
-<div class="howIwork"></div>
-<div class="gallery"></div>
+
+    @*
+        <div class="whoAmI"></div>
+        <div class="services"></div>
+    *@
+<div class="Services">
+    <h2>Services</h2>
+    <ul>
+        <li>Websites and Social Media for small businesses</li>
+        <li>Application Development and Systems Integration</li>
+        <li>Development Team Leadership (needs more)</li>
+        <li>Software Development and Leadership Consulting</li>
+        <li>Kinect Gesture Detection</li>
+        <li>Data Conversions</li>
+    </ul>
+</div>
+<div class="Audience">
+    <h2>Audience</h2>
+    <ul>
+        <li>Small Businesses</li>
+        <li>Charities</li>
+        <li>Startups</li>
+        @*<li>Corporations</li>*@
+    </ul>
+</div>
+@*
+    <div class="howIwork"></div>
+     Main focus is the customer. I'll work with you to give you exactly what you need. If you are new to this, don't worry - I will be your partner
+*@
+<div class="Gallery">
+    <h2>Gallery<sub>(links)</sub></h2>
+    <div class="row">
+        <div class="col-sm-4 GalleryBox">
+            <div class="row">
+                <p class="GalleryText">Chess Across Borders</p>
+            </div>
+            <span class="GalleryHieghtBox"></span>
+            <img class="GalleryImage" src="~/Images/CAB_V500.png" />
+        </div>
+        <div class="col-sm-4 GalleryBox">
+            <div class="row">
+                <p class="GalleryText">Equity Facebook Page</p>
+            </div>
+            <span class="GalleryHieghtBox"></span>
+            <img class="GalleryImage" src="~/Images/EQUITYBlueOnWhiteQ148-168.png" />
+            @*<img src="~/Images/FB-f-Logo__blue_29.png" />*@
+        </div>
+        <div class="col-sm-4 GalleryBox">
+            <div class="row">
+                <p class="GalleryText">Equity Web Site (under development)</p>
+            </div>
+            <span class="GalleryHieghtBox"></span>
+            <img class="GalleryImage" src="~/Images/equity_V3-03blue.png" />
+        </div>
+    </div>
+</div>
+<div class="ContactDCTech">
+    <h2>Contact me button <sub>(centered)</sub></h2>
+</div>
 <div class="Testimonials"></div>
 

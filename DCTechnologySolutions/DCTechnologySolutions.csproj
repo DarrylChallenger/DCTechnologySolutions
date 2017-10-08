@@ -215,6 +215,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\CAB_V500.png" />
+    <Content Include="Images\DAMN Map.jpg" />
+    <Content Include="Images\DC LOGO B&amp;W.png" />
+    <Content Include="Images\DC LOGO B&amp;W100.png" />
+    <Content Include="Images\EQUITYBlueOnWhiteQ148-168.png" />
+    <Content Include="Images\equity_V3-03blue.png" />
+    <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -271,6 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
