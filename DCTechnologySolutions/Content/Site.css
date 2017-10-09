@@ -15,6 +15,9 @@ body {
     padding-bottom: 20px;
 }
 
+h2 {
+    color:darkblue;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -78,8 +81,8 @@ textarea {
 
 }
 
-.Services > li {
-    color:red;
+.Services li {
+    font-size:16px;
 }
 .GalleryBox {
     /*border-style:solid;
