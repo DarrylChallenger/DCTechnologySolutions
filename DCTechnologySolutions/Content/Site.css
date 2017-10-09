@@ -111,3 +111,33 @@ textarea {
 .GalleryText {
     display:none;
 }
+
+.CTA {
+    
+}
+
+.ContactDCTech {
+
+}
+
+.ContactBtn {
+    border-style:solid;
+    border-color:darkblue;
+    color:darkblue;
+    background-color:lightblue;
+    padding: 0.2em 1em;
+    font-size:2em;
+    border-radius:1em;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    width:250px;
+    display:block;
+}
+
+.ContactBtn:hover, .ContactBtn:focus{
+    text-decoration:none;
+    color:darkred;
+    border-color:darkred;
+    background-color:lightcoral;
+}

@@ -31,10 +31,11 @@
 <div class="Services">
     <h2>Services</h2>
     <ul>
-        <li>Websites and Social Media for small businesses</li>
+        <li>Websites and Social Media for small businesses and charities</li>
         <li>Application Development and Systems Integration</li>
         <li>Development Team Leadership (needs more)</li>
-        <li>Software Development and Leadership Consulting</li>
+        <li>Software Development and Leadership</li>
+        <li>Consulting</li>
         <li>Kinect Gesture Detection</li>
         <li>Data Conversions</li>
     </ul>
@@ -55,14 +56,14 @@
      Main focus is the customer. I'll work with you to give you exactly what you need. If you are new to this, don't worry - I will be your partner
 *@
 <div class="Gallery">
-    <h2>Gallery<sub>(links)</sub></h2>
+    <h2>Gallery</h2>
     <div class="row">
         <div class="col-sm-4 GalleryBox">
             <div class="row">
                 <p class="GalleryText">Chess Across Borders</p>
             </div>
             <span class="GalleryHieghtBox"></span>
-            <img class="GalleryImage" src="~/Images/CAB_V500.png" />
+            <img class="GalleryImage" src="~/Images/CAB_V500.png" title="" alt=""/>
         </div>
         <div class="col-sm-4 GalleryBox">
             <div class="row">
@@ -82,7 +83,7 @@
     </div>
 </div>
 <div class="ContactDCTech">
-    <h2>Contact me button <sub>(centered)</sub></h2>
+    @Html.ActionLink("Contact Me", "Contact", "Home", routeValues: null, htmlAttributes: new {@class = "ContactBtn" })
 </div>
 <div class="Testimonials"></div>
 
