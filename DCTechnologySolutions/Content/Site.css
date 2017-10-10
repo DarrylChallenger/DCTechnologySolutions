@@ -1,4 +1,7 @@
-﻿
+﻿.boxed {
+    border-style:solid;
+    border-color:black;
+}
 
 @font-face {
 	font-family: 'Sans-Copperplate Gothic';
@@ -15,6 +18,9 @@ body {
     padding-bottom: 20px;
 }
 
+a:hover, a:focus {
+        color:lightcoral;
+}
 h2 {
     color:darkblue;
 }
@@ -40,18 +46,23 @@ textarea {
 }
 
 .DCTechBrand {
-    background-image:url('../Images/DC LOGO B&W.png');
+    background-image:url('../Images/DC LOGO B&Wtx.png');
     background-repeat: no-repeat;
     background-size: 100%;
     background-clip:border-box;
+    background-color:lightblue;
     margin:auto;
-    height:230px;    
+    height:227px;    
     width:300px;
     float:none;
     /*;
     border-style:solid;
     border-color:orange;
     */
+}
+
+.DCTechBrand:hover, .DCTechBrand:focus {
+    background-color:lightcoral;
 }
 
 /* */
@@ -105,6 +116,10 @@ textarea {
     vertical-align:middle;
 }
 
+.GalleryImage:hover  {
+    border-color:darkred;
+}
+
 .GalleryHieghtBox {
     height:90%;
     display:inline-block;
@@ -118,10 +133,6 @@ textarea {
 
 .GalleryText {
     display:none;
-}
-
-.CTA {
-    
 }
 
 .ContactDCTech {
