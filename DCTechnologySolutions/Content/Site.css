@@ -84,11 +84,18 @@ textarea {
 .Services li {
     font-size:16px;
 }
+
 .GalleryBox {
     /*border-style:solid;
     border-color:red;*/
     height:320px;
-    white-space: nowrap;}
+    white-space: nowrap;
+
+}
+
+.GalleryBox:hover {
+    opacity:.4;
+}
 
 .GalleryImage {
     width:100%;
@@ -108,6 +115,7 @@ textarea {
     */
 
 }
+
 .GalleryText {
     display:none;
 }
@@ -117,7 +125,8 @@ textarea {
 }
 
 .ContactDCTech {
-
+    padding-top:2em;
+    padding-bottom:2em;
 }
 
 .ContactBtn {
@@ -140,4 +149,20 @@ textarea {
     color:darkred;
     border-color:darkred;
     background-color:lightcoral;
+}
+
+.rightFoot {
+    width:100%;
+    float:right;
+    text-align:right;
+}
+
+.copy {
+    font-family:sans-serif;
+}
+.leftFoot {
+    width:100%;
+    float:left;
+    text-align:left;
+
 }

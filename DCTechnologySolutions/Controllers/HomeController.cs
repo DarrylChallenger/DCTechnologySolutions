@@ -29,5 +29,19 @@ namespace DCTechnologySolutions.Controllers
 
             return View();
         }
+
+        public ActionResult Equity()
+        {
+            ViewBag.Message = "Your Equity page.";
+
+            return View();
+        }
+
+        public ActionResult CAB()
+        {
+            ViewBag.Message = "Your CAB page.";
+
+            return View();
+        }
     }
 }
