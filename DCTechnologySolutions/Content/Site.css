@@ -65,6 +65,10 @@ textarea {
     background-color:lightcoral;
 }
 
+.noOutline {
+        outline:none;
+}
+
 /* */
 .mainTitleTop, .mainTitleBot {
     text-justify:distribute-all-lines;
