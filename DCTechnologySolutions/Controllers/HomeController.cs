@@ -41,5 +41,13 @@ namespace DCTechnologySolutions.Controllers
 
             return View();
         }
+        
+        public ActionResult DevResources()
+        {
+            ViewBag.Message = "Your DevResources page.";
+
+            return View();
+        }
+
     }
 }

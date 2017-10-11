@@ -231,6 +231,7 @@
     <Content Include="fonts\sans-copperplategothic.ttf" />
     <None Include="Properties\PublishProfiles\DCTechnologySolutions.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Dimensions.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -279,6 +280,7 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Home\CAB.cshtml" />
     <Content Include="Views\Home\Equity.cshtml" />
+    <Content Include="Views\Home\DevResources.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
