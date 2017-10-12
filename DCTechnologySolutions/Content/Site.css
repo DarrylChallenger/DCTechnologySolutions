@@ -10,9 +10,10 @@
 	font-style: normal;
 }
 
-body, h1, h2, h3, h4, h5, h6, p{
+body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     	font-family: 'Sans-Copperplate Gothic', sans-serif;
 }
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -69,31 +70,59 @@ textarea {
         outline:none;
 }
 
-/* */
-.mainTitleTop, .mainTitleBot {
-    text-justify:distribute-all-lines;
-    text-align:justify;
+/* min width of 570, title gets normal (small below) */
+.mainTitleTop {
     width:75%;
     margin:auto;
-    color:darkblue;
-    font-variant:small-caps;
 }
-
 .mainTitleBot,
-.appTitle{
-    font-size:400%;
-}
-
-.subTitle {
-    padding-bottom:3em;   
+.appTitle {
+    text-justify:distribute-all-lines;
+    text-align:justify;
+    width:90%;
+    margin:auto;
+    font-size:150%;
+    color:orange;
     font-variant:small-caps;
 }
-.titlebr {
+
+.titlebr { /* Not used */
     border-style:solid;
     border-color:black;
     margin-top:0;
     margin-bottom:0;
 
+}
+
+@media only screen and (min-width:320) {
+    .mainTitleBot,
+    .appTitle {
+        font-size: 150%;
+        width:85%;
+        color:red;
+    }
+}
+
+@media only screen and (min-width:570) {
+    .mainTitleBot,
+    .appTitle {
+        font-size: 175%;
+        color: green;
+        width:80%;
+    }
+}
+
+@media only screen and (min-width:768) {
+     .mainTitleBot,
+    .appTitle {
+         font-size:200%;
+         width:75%;
+    }
+}
+
+.subTitle {
+    padding-bottom:3em;   
+    font-variant:small-caps;
 }
 
 .Services li {
@@ -108,6 +137,7 @@ textarea {
 
 }
 
+/* min witdh of 768, Gallery boxes should be stacked. Above, they should be columns*/
 .GalleryBox:hover {
     opacity:.4;
 }
@@ -166,18 +196,31 @@ textarea {
     background-color:lightcoral;
 }
 
-.rightFoot {
-    width:100%;
-    float:right;
-    text-align:right;
-}
-
 .copy {
     font-family:sans-serif;
 }
-.leftFoot {
-    width:100%;
-    float:left;
-    text-align:left;
 
+/* min width of x, footer should be one line. Below, two lines and both left justified */
+.rightFoot {
+    float:left;
 }
+.leftFoot{
+    font-size:100%;
+}
+
+@media only screen and (min-width:768) {
+    .rightFoot {
+        float: right;
+    }
+    .leftFoot {
+     font-size:85%;
+    }
+    
+}
+
+@media only screen and (min-width:992) {
+    .leftFoot {
+    font-size:100%;
+    }
+}
+
