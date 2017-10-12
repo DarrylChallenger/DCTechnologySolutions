@@ -57,11 +57,16 @@
         <footer>
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                    <a class="leftFoot" href="@Url.Action("Index", "Home")"><span class="copy">&copy;</span> Darryl Challenger Technology Solutions, Inc.</a>
+                    <address>
+                        <a class="leftFoot" href="@Url.Action("Index", "Home")"><span class="copy">&copy;</span> Darryl Challenger Technology Solutions, Inc.</a>
+                    </address>
                 </div>
                 @*<h2>Contact@dctechnologysolutions.com</p>*@
                 <div class="col-xs-12 col-sm-6">
-                    <a class="rightFoot" href="mailto:Darryl.Challenger@Outlook.com">Darryl.Challenger@Outlook.com</a>
+                    <address>
+                        @*<a class="rightFoot" href="mailto:Darryl.Challenger@Outlook.com">Darryl.Challenger@Outlook.com</a>*@
+                        <a class="rightFoot" href="@Url.Action("Contact", "Home")">Darryl.Challenger@Outlook.com</a>
+                    </address>
                 </div>
             </div>
         </footer>
