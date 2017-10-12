@@ -20,7 +20,7 @@ body {
 }
 
 a:hover, a:focus {
-        color:lightcoral;
+        color:darkred;
 }
 h2 {
     color:darkblue;
@@ -82,8 +82,8 @@ textarea {
     width:90%;
     margin:auto;
     font-size:150%;
-    color:orange;
     font-variant:small-caps;
+    color:darkblue;
 }
 
 .titlebr { /* Not used */
@@ -99,7 +99,6 @@ textarea {
     .appTitle {
         font-size: 150%;
         width:85%;
-        color:red;
     }
 }
 
@@ -107,7 +106,6 @@ textarea {
     .mainTitleBot,
     .appTitle {
         font-size: 175%;
-        color: green;
         width:80%;
     }
 }
@@ -129,6 +127,7 @@ textarea {
     font-size:16px;
 }
 
+/* Below min witdh of 768, Gallery boxes should be stacked. Above, they should be columns*/
 .GalleryBox {
     /*border-style:solid;
     border-color:red;*/
@@ -137,7 +136,6 @@ textarea {
 
 }
 
-/* min witdh of 768, Gallery boxes should be stacked. Above, they should be columns*/
 .GalleryBox:hover {
     opacity:.4;
 }
@@ -171,7 +169,7 @@ textarea {
 
 .ContactDCTech {
     padding-top:2em;
-    padding-bottom:2em;
+    padding-bottom:4em;
 }
 
 .ContactBtn {
@@ -196,7 +194,7 @@ textarea {
     background-color:lightcoral;
 }
 
-.copy {
+.copy { /* Copyright in footer */
     font-family:sans-serif;
 }
 
