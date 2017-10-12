@@ -1,6 +1,6 @@
 ﻿.boxed {
     border-style:solid;
-    border-color:black;
+    border-color:blue;
 }
 
 @font-face {
@@ -18,7 +18,8 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
-
+a {
+}
 a:hover, a:focus {
         color:darkred;
 }
@@ -129,11 +130,10 @@ textarea {
 
 /* Below min witdh of 768, Gallery boxes should be stacked. Above, they should be columns*/
 .GalleryBox {
-    /*border-style:solid;
-    border-color:red;*/
-    height:320px;
-    white-space: nowrap;
-
+    max-width:75%;
+    margin:auto;
+    padding-top:.5em;
+    padding-bottom:.5em;
 }
 
 .GalleryBox:hover {
@@ -142,29 +142,37 @@ textarea {
 
 .GalleryImage {
     width:100%;
+    vertical-align:middle;
     border-style:solid;
     border-color:black;
     border-width:2px;
-    vertical-align:middle;
 }
 
-.GalleryImage:hover  {
+.GalleryImage:hover {
     border-color:darkred;
+    border-width:2px;
 }
 
-.GalleryHieghtBox {
-    height:90%;
-    display:inline-block;
-    vertical-align:middle;
-    /*
-    border-style:solid;
-    border-color:green;
-    */
+@media only screen and (min-width:768) {
 
-}
+    .GalleryBox {
+        height:320px;
+        white-space:nowrap;
+        padding-top:initial;
+    }
+    .GalleryHeightBox {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
 
-.GalleryText {
-    display:none;
+    .GalleryImage {
+        width: 100%;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        vertical-align: middle;
+    }
 }
 
 .ContactDCTech {
@@ -180,7 +188,6 @@ textarea {
     padding: 0.2em 1em;
     font-size:2em;
     border-radius:1em;
-    text-align:center;
     margin-left:auto;
     margin-right:auto;
     width:250px;
@@ -194,6 +201,14 @@ textarea {
     background-color:lightcoral;
 }
 
+
+.leftArrow {
+    float:left;
+}
+
+.rightArrow {
+    float:right;
+}
 .copy { /* Copyright in footer */
     font-family:sans-serif;
 }
@@ -222,3 +237,31 @@ textarea {
     }
 }
 
+/* CAB Page*/
+.CABBox {
+    height:320px;
+    white-space:nowrap;
+    padding-top:initial;
+}
+
+.CABImage {
+    height:90%;
+}
+
+
+@media only screen and (min-width:768) {
+
+    .CABHeightBox {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .CABAlign {
+        vertical-align: middle;
+    }
+    .CABImage {
+    float:left;
+}
+
+}

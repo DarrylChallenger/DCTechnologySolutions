@@ -31,7 +31,7 @@
 <div class="Services">
     <h2>Services</h2>
     <ul>
-        <li>Create Internet Profile for Businesses and Charities</li>
+        <li>Create Online Profile for Businesses and Charities</li>
         <li>Application Development and Systems Integration</li>
         <li>Software Development and Development Team Leadership</li>
         <li>Consulting</li>
@@ -56,24 +56,26 @@
 *@
 
 <div class="Gallery">
+    <p>Screen Size:<span id="WWW"></span><span id="HHH"></span></p>
+
     <h2>Gallery</h2>
     <div class="row">
         <div class="col-sm-4 col-xs-12 GalleryBox">
-            <span class="GalleryHieghtBox"></span>
+            <span class="GalleryHeightBox"></span>
             <a href="@Url.Action("CAB", "Home", new { title="Chess Across Borders Web Site" })">
-                <img alt="CAB Web Site" class="GalleryImage" src="@Url.Content("~/Images/CAB_V500.png")">
+                <img alt="Chess Across Borders Web Site" title="Chess Across Borders Web Site" class="GalleryImage" src="@Url.Content("~/Images/CAB_V500.png")">
             </a>
-        </div>
+       </div>
         <div class="col-sm-4 col-xs-12 GalleryBox">
-            <span class="GalleryHieghtBox"></span>
+            <span class="GalleryHeightBox"></span>
             <a href="@Url.Action("Equity", "Home", new { title="Equity Project For All Facebook Page" })" >
-                <img alt="Equity Facebook Page" class="GalleryImage" src="@Url.Content("~/Images/EQUITYBlueOnWhiteQ148-168.png")">
+                <img alt="Equity Facebook Page" title="Equity on Facebook" class="GalleryImage" src="@Url.Content("~/Images/EQUITYBlueOnWhiteQ148-168.png")">
             </a>
         </div>
         <div class="col-sm-4 col-xs-12 GalleryBox">
-            <span class="GalleryHieghtBox"></span>
+            <span class="GalleryHeightBox"></span>
             <a href="@Url.Action("Equity", "Home", new { title="Equity Project For All Web Site" })" >
-                <img alt="Equity Web Site" class="GalleryImage" src="@Url.Content("~/Images/equity_V3-03blue.png")">
+                <img alt="Equity Web Site" title="Equity Web Site" class="GalleryImage" src="@Url.Content("~/Images/equity_V3-03blue.png")">
             </a>
         </div>
     </div>
@@ -83,7 +85,7 @@
     <p>Our main focus is you and your clients. We'll work with you to get you exactly what you need. 
     If you are new to this, don't worry - you have a partner with us.<br /></p>
 
-    @Html.ActionLink("Contact Me", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "ContactBtn" })
+    @Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "ContactBtn" })
 </div>
 <div class="Testimonials"></div>
 <div class="usefulResources">
