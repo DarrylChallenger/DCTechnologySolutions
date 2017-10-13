@@ -268,3 +268,26 @@ textarea {
 }
 
 }
+
+/* Contact page */
+
+.form-control:focus {
+    border-color: darkred;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6);
+}
+
+
+.btnSubmit {
+    color:darkblue;
+    background-color:lightblue;
+    border-color:darkblue;
+    max-width:75%;
+}
+
+.btnSubmit:hover, .btnSubmit:focus {
+    color:darkred;
+    background-color:lightcoral;
+    border-color:darkred;
+}
