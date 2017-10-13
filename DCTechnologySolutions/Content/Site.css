@@ -18,10 +18,8 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
-a {
-}
 a:hover, a:focus {
-        color:darkred;
+    color:darkred;
 }
 h2 {
     color:darkblue;
@@ -63,28 +61,34 @@ textarea {
     */
 }
 
+.inherhitWidth {
+    width:inherit;
+}
 .DCTechBrand:hover, .DCTechBrand:focus {
     background-color:lightcoral;
 }
 
 .noOutline {
-        outline:none;
+    outline:none;
 }
 
 /* min width of 570, title gets normal (small below) */
+.titleContainer {
+    width:65%;
+    min-width:240px;
+    margin:auto;
+}
+
 .mainTitleTop {
-    width:75%;
+    width:100%;
     margin:auto;
 }
 .mainTitleBot,
 .appTitle {
-    text-justify:distribute-all-lines;
-    text-align:justify;
-    width:90%;
     margin:auto;
-    font-size:150%;
     font-variant:small-caps;
     color:darkblue;
+    text-align:center;
 }
 
 .titlebr { /* Not used */
@@ -98,24 +102,19 @@ textarea {
 @media only screen and (min-width:320) {
     .mainTitleBot,
     .appTitle {
-        font-size: 150%;
-        width:85%;
     }
 }
 
 @media only screen and (min-width:570) {
     .mainTitleBot,
     .appTitle {
-        font-size: 175%;
-        width:80%;
     }
 }
 
 @media only screen and (min-width:768) {
      .mainTitleBot,
     .appTitle {
-         font-size:200%;
-         width:75%;
+         width:100%;
     }
 }
 

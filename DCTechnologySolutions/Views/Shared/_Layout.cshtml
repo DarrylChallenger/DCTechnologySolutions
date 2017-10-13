@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title - Challenger Technology Solutions</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -20,7 +20,7 @@
         appInsights.trackPageView();
     </script>
 </head>
-<body onresize="myFunction()">
+<body onresize="ShowScreenDimensions()">
     <!--
     <div class="navbar">
     @*    <div class="container">
@@ -50,7 +50,7 @@
 
     <a class="noOutline" href="@Url.Action("Index", "Home")"><div class="DCTechBrand"></div></a>
  
-    <!--<div class="DCTechBrand" ></div> <! --Brand icon goes here-->
+    <!--<div class="DCTechBrand" ></div> - Brand icon goes here-->
     <div class="container body-content">
         @RenderBody()
         <hr />
