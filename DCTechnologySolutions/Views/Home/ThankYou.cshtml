@@ -1,8 +1,45 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "ThankYou";
+
+    var emaddr = Request["exampleInputEmail1"];
+    var name = Request["exampleInputName"];
+    var msg = Request["exampleInputtext1"];
+    var errorMessage = "";
+
+    //var ems = new EmailService();
+    //ems.SendAsync(tstMessage);
+
+    try
+    {
+        // Initialize WebMail helper
+        WebMail.SmtpUseDefaultCredentials = false;
+        WebMail.SmtpServer = "imap-mail.outlook.com";
+        WebMail.SmtpPort = 25;
+        WebMail.UserName = "Contact@DCTechnologySolution.com";
+        WebMail.Password = "";
+        WebMail.From = emaddr;
+
+        // Send email
+        WebMail.Send(to: "Contact@DCTechnologySolutions.com",
+            subject: "Help request from - " + name,
+            body: msg
+        );
+    }
+    catch (Exception ex)
+    {
+        errorMessage = ex.Message;
+    }
 }
+
 
 <h2>ThankYou!</h2>
 
-<h3>Thanks for helping me out, I really appreciate it.<br />Good Luck <strong>Darryl Challenger Technology Solutions</strong>!</h3>
+<h3>Thanks for helping me out @name, I really appreciate it.<br />Good Luck <strong>Darryl Challenger Technology Solutions</strong>!</h3>
+<br />
+@if (errorMessage == "")
+{
+    <h4>Message: [@msg]</h4>
+} else {
+    <h4 style="color:red">[@errorMessage]<br />emial[@emaddr], name[@name], message[@msg]</h4>
+} 
+
