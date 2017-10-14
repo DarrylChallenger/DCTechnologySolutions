@@ -281,6 +281,7 @@
     <Content Include="Views\Home\CAB.cshtml" />
     <Content Include="Views\Home\Equity.cshtml" />
     <Content Include="Views\Home\DevResources.cshtml" />
+    <Content Include="Views\Home\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

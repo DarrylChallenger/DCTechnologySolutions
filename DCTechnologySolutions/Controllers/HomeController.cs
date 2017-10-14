@@ -49,5 +49,12 @@ namespace DCTechnologySolutions.Controllers
             return View();
         }
 
+        public ActionResult ThankYou()
+        {
+            ViewBag.Message = "Your Thank You page.";
+
+            return View();
+        }
+
     }
 }
