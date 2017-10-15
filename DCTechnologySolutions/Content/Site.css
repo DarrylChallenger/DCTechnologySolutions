@@ -1,6 +1,7 @@
 ﻿.boxed {
     border-style:solid;
     border-color:blue;
+    border-width:2px;
 }
 
 @font-face {
@@ -45,16 +46,43 @@ textarea {
     max-width: 280px;
 }
 
-.DCTechBrand {
-    background-image:url('../Images/DC LOGO B&Wtx.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-clip:border-box;
-    background-color:lightblue;
+.valign {
+    text-align:center;
+    width:100%;
     margin:auto;
+}
+
+.DCTechBrandBk {
+  /  background-color:lightblue;
+    background: linear-gradient(lightblue, white);
+    height: 300px;
+    width: 100%;
+    opacity:1;
+ /   background-image:url("../Images/DCTSBG4_10_10.png");
+    position:absolute;
+    z-index:-10;
+                    
+}
+
+.DCTechBrand {/*
+    background-color:lightblue;
     height:227px;    
-    width:300px;
+    width:299px;
+    margin:auto;*/
+
+/ *;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image:url('../Images/DC LOGO B&W2ALightBlue.png');
+    height:227px;    
+    width:299px;
+/    margin:auto;
+    margin:auto;
+    background-clip:border-box;
     float:none;
+    text-align:center;
+    display:block;
+*/
     /*;
     border-style:solid;
     border-color:orange;
@@ -65,7 +93,9 @@ textarea {
     width:inherit;
 }
 .DCTechBrand:hover, .DCTechBrand:focus {
-    background-color:lightcoral;
+/    background-color:lightcoral;
+    background-image:url('../Images/DC LOGO B&W2ALightCoral.png');
+
 }
 
 .noOutline {
