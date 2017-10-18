@@ -61,26 +61,26 @@
         <div class="col-sm-4 col-xs-12 GalleryBox">
             <span class="GalleryHeightBox"></span>
             <a href="@Url.Action("CAB", "Home", new { title="Chess Across Borders Web Site" })">
-                <img alt="Chess Across Borders Web Site" title="Chess Across Borders Web Site" class="GalleryImage" src="@Url.Content("~/Images/CAB_V500.png")">
+                <img alt="Chess Across Borders Web Site" title="Chess Across Borders Web Site" class="GalleryImage" src="@Url.Content("~/Images/CABBrand_414_320.png")"/>
             </a>
        </div>
         <div class="col-sm-4 col-xs-12 GalleryBox">
             <span class="GalleryHeightBox"></span>
             <a href="@Url.Action("Equity", "Home", new { title="Equity Project For All Facebook Page" })" >
-                <img alt="Equity Facebook Page" title="Equity on Facebook" class="GalleryImage" src="@Url.Content("~/Images/EQUITYBlueOnWhiteQ148-168.png")">
+                <img alt="Equity Facebook Page" title="Equity on Facebook" class="GalleryImage" src="@Url.Content("~/Images/EquityQ300_170.png")"/>
             </a>
         </div>
         <div class="col-sm-4 col-xs-12 GalleryBox">
             <span class="GalleryHeightBox"></span>
             <a href="@Url.Action("Equity", "Home", new { title="Equity Project For All Web Site" })" >
-                <img alt="Equity Web Site" title="Equity Web Site" class="GalleryImage" src="@Url.Content("~/Images/equity_V3-03blue.png")">
+                <img alt="Equity Web Site" title="Equity Web Site" class="GalleryImage" src="@Url.Content("~/Images/equity_V3-03blue.png")"/>
             </a>
         </div>
     </div>
 </div>
 <div class="ContactDCTech">
     <h2>Our Commitment</h2>
-    <p>Our main focus is you and your clients. We'll work with you to get you exactly what you need. 
+    <p>Our focus is you and your clients. We'll work with you to get you exactly what you need. 
     If you are new to this, don't worry - you have a partner with us.<br /></p>
 
     @Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "ContactBtn" })
@@ -88,8 +88,17 @@
 <div class="Testimonials"></div>
 <div class="usefulResources">
     <hr />
-    @Html.ActionLink("Developer Resources", "DevResources", "Home", routeValues: null, htmlAttributes: new { @class = "h2" })<span> - Tools and Resources I've found helpful in the devleopment process.</span>
+    @Html.ActionLink("Developer Resources", "DevResources", "Home", routeValues: null, htmlAttributes: new { @class = "h2" })<span class="usefulResourcesText"> - Tools and Resources I've found helpful in the devleopment process.</span>
 </div>
 
-
+@*
+<h2>Fonts</h2>
+<h3 class="Baloo"> font-family: 'Baloo', cursive;</h3>
+<h3 class="Courgette"> font-family: 'Courgette', cursive;</h3>
+<h3 class="Montserrat"> font-family: 'Montserrat', sans-serif;</h3>
+<h3 class="Pattaya"> font-family: 'Pattaya', sans-serif;</h3>
+<h3 class="Paytone"> font-family: 'Paytone One', sans-serif;</h3>
+<h3 class="Poppins"> font-family: 'Poppins', sans-serif;</h3>
+<h3 class="Russo"> font-family: 'Russo One', sans-serif;</h3>
+*@
 

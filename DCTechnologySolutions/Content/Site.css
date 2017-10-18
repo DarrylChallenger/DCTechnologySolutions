@@ -1,4 +1,22 @@
-﻿.boxed {
+﻿/*
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Courgette|Montserrat:700|Pattaya|Paytone+One|Poppins:700|Russo+One" rel="stylesheet"> 
+    font-family: 'Baloo', cursive;
+    font-family: 'Courgette', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Pattaya', sans-serif;
+    font-family: 'Paytone One', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Russo One', sans-serif;
+*/
+
+.Courgette {
+    font-family: 'Courgette', cursive;
+}
+.Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.boxed {
     border-style:solid;
     border-color:blue;
     border-width:2px;
@@ -13,17 +31,19 @@
 
 body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     	font-family: 'Sans-Copperplate Gothic', sans-serif;
+        color:darkblue;
 }
 
 body {
-    padding-top: 50px;
+    padding-top: 1px;
     padding-bottom: 20px;
+    background-color:floralwhite;
 }
 a:hover, a:focus {
-    color:darkred;
 }
 h2 {
     color:darkblue;
+
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -53,49 +73,33 @@ textarea {
 }
 
 .DCTechBrandBk {
-  /  background-color:lightblue;
-    background: linear-gradient(lightblue, white);
+    background: linear-gradient(lightblue, floralwhite);
     height: 300px;
     width: 100%;
     opacity:1;
- /   background-image:url("../Images/DCTSBG4_10_10.png");
     position:absolute;
     z-index:-10;
-                    
 }
 
-.DCTechBrand {/*
-    background-color:lightblue;
-    height:227px;    
-    width:299px;
-    margin:auto;*/
+.DCTechBrand {
 
-/ *;
     background-size: 100%;
     background-repeat: no-repeat;
     background-image:url('../Images/DC LOGO B&W2ALightBlue.png');
     height:227px;    
     width:299px;
-/    margin:auto;
-    margin:auto;
+    margin: 50px auto;
     background-clip:border-box;
     float:none;
     text-align:center;
     display:block;
-*/
-    /*;
-    border-style:solid;
-    border-color:orange;
-    */
 }
 
 .inherhitWidth {
     width:inherit;
 }
 .DCTechBrand:hover, .DCTechBrand:focus {
-/    background-color:lightcoral;
-    background-image:url('../Images/DC LOGO B&W2ALightCoral.png');
-
+    opacity:.41;
 }
 
 .noOutline {
@@ -129,6 +133,7 @@ textarea {
 
 }
 
+/*
 @media only screen and (min-width:320) {
     .mainTitleBot,
     .appTitle {
@@ -140,6 +145,7 @@ textarea {
     .appTitle {
     }
 }
+*/
 
 @media only screen and (min-width:768) {
      .mainTitleBot,
@@ -151,14 +157,59 @@ textarea {
 .subTitle {
     padding-bottom:3em;   
     font-variant:small-caps;
+    font-size:large;
+}
+.Services h2, .Gallery h2, .ContactDCTech h2 {
+    text-align:center;
 }
 
-.Services li {
-    font-size:16px;
+.Services li, .project p {
+    font-family: 'Montserrat', sans-serif;
+    font-size:20px;
 }
 
+.usefulResourcesText {
+    font-size:20px;
+}
 .Services ul {
     list-style-type: circle;
+}
+@media only screen and (min-width:768) {
+    .subTitle {
+        padding-bottom:3em;   
+        font-variant:small-caps;
+        font-size:medium;
+    }
+
+    .Services h2, .Gallery h2, .ContactDCTech h2, .project h2 {
+        text-align:left;
+        font-size:36px;
+    }
+    .project h3 {
+        font-size:30px;
+    }
+    .Services li {
+        font-size: 24px;
+        font-weight:400;
+        letter-spacing:1px;
+    }
+
+    .Services ul {
+        list-style-type: circle;
+    }
+
+    .Services li, .project p {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .project a {
+        font-size:24px;
+    }
+    .resources p {
+        font-size:20px;
+    }
+    .ContactDCTech p {
+        font-size:24px;
+    }
 }
 
 /* Below min witdh of 768, Gallery boxes should be stacked. Above, they should be columns*/
@@ -177,13 +228,12 @@ textarea {
     width:100%;
     vertical-align:middle;
     border-style:solid;
-    border-color:black;
+    border-color:darkblue;
     border-width:2px;
 }
 
 .GalleryImage:hover {
-    border-color:darkred;
-    border-width:2px;
+    background-color:linen;
 }
 
 @media only screen and (min-width:768) {
@@ -200,17 +250,34 @@ textarea {
     }
 
     .GalleryImage {
-        width: 100%;
-        border-style: solid;
-        border-color: black;
-        border-width: 2px;
-        vertical-align: middle;
+        width: 95%;
     }
 }
 
+.container .body-content> .ContactDCTech {
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+    padding-right:0;
+    max-width:100%;
+}
 .ContactDCTech {
     padding-top:2em;
     padding-bottom:4em;
+    border-color:darkblue;;
+    border-width:6px;
+    border-style:double;
+/    background-color:darkblue;
+    color:darkblue;
+    padding:1em 2em 3em 4em;
+}
+.ContactDCTech h2 {
+/    color:linen;
+}
+.ContactDCTech p {
+    font-family: 'Courgette', cursive;
+    font-size:24px;
+    padding:20px 20px, 30px 20px;
 }
 
 .ContactBtn {
@@ -229,11 +296,27 @@ textarea {
 
 .ContactBtn:hover, .ContactBtn:focus{
     text-decoration:none;
-    color:darkred;
-    border-color:darkred;
-    background-color:lightcoral;
+    color:darkblue;
+    background-color:floralwhite;
 }
 
+h4 {
+    line-height:110%;
+    letter-spacing:1.3px;
+}
+
+.projectlink {
+    font-family: 'Sans-Copperplate Gothic', sans-serif;
+}
+
+@media only screen  and (min-width:768) {
+    .projectlink {
+        font-size: 18px;
+    }
+    .projectlink a {
+        font-size: 24px;
+    }
+}
 
 .leftArrow {
     float:left;
@@ -250,23 +333,26 @@ textarea {
 .rightFoot {
     float:left;
 }
-.leftFoot{
-    font-size:100%;
+.leftFoot {
+    float:left;
 }
 
+.leftFoot, .rightFoot {
+    color:darkblue;
+}
 @media only screen and (min-width:768) {
     .rightFoot {
         float: right;
     }
-    .leftFoot {
-     font-size:85%;
+    .leftFoot, .rightFoot {
+        font-size:14px;
+
     }
     
 }
 
 @media only screen and (min-width:992) {
     .leftFoot {
-    font-size:100%;
     }
 }
 
@@ -281,6 +367,16 @@ textarea {
     height:90%;
 }
 
+.CABLogoContainer {
+    width:100%;
+    margin:auto;
+}
+.CABLogo {
+    display:block;
+    width:50px;
+    margin:auto;
+
+}
 
 @media only screen and (min-width:768) {
 
@@ -297,4 +393,11 @@ textarea {
     float:left;
 }
 
+}
+
+img.EquityQFB  {
+    width:180px;
+}
+img.EquityFBFB {
+    width:60px;
 }
