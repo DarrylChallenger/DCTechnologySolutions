@@ -215,13 +215,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\CABBrand_414_320.png" />
+    <Content Include="Images\CAB_Logo100.png" />
     <Content Include="Images\CAB_V500.png" />
     <Content Include="Images\DAMN Map.jpg" />
-    <Content Include="Images\DC LOGO B&amp;W.png" />
-    <Content Include="Images\DC LOGO B&amp;W100.png" />
-    <Content Include="Images\DC LOGO B&amp;Wtx.png" />
-    <Content Include="Images\DCTSBG1.png" />
-    <Content Include="Images\EQUITYBlueOnWhiteQ148-168.png" />
+    <Content Include="Images\DC LOGO B&amp;W2ALightBlue.png" />
+    <Content Include="Images\EQUITYBlueOnWhiteQ148-168tx.png" />
+    <Content Include="Images\EquityQ150_170.png" />
+    <Content Include="Images\EquityQ300_170.png" />
     <Content Include="Images\equity_V3-03blue.png" />
     <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -282,7 +283,6 @@
     <Content Include="Views\Home\CAB.cshtml" />
     <Content Include="Views\Home\Equity.cshtml" />
     <Content Include="Views\Home\DevResources.cshtml" />
-    <Content Include="Views\Home\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

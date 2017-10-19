@@ -1,6 +1,25 @@
-﻿.boxed {
+﻿/*
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Courgette|Montserrat:700|Pattaya|Paytone+One|Poppins:700|Russo+One" rel="stylesheet"> 
+    font-family: 'Baloo', cursive;
+    font-family: 'Courgette', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Pattaya', sans-serif;
+    font-family: 'Paytone One', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Russo One', sans-serif;
+*/
+
+.Courgette {
+    font-family: 'Courgette', cursive;
+}
+.Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.boxed {
     border-style:solid;
     border-color:blue;
+    border-width:2px;
 }
 
 @font-face {
@@ -12,17 +31,19 @@
 
 body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     	font-family: 'Sans-Copperplate Gothic', sans-serif;
+        color:darkblue;
 }
 
 body {
-    padding-top: 50px;
+    padding-top: 1px;
     padding-bottom: 20px;
+    background-color:floralwhite;
 }
 a:hover, a:focus {
-    color:darkred;
 }
 h2 {
     color:darkblue;
+
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -45,27 +66,40 @@ textarea {
     max-width: 280px;
 }
 
-.DCTechBrand {
-    background-image:url('../Images/DC LOGO B&Wtx.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-clip:border-box;
-    background-color:lightblue;
+.valign {
+    text-align:center;
+    width:100%;
     margin:auto;
+}
+
+.DCTechBrandBk {
+    background: linear-gradient(lightblue, floralwhite);
+    height: 300px;
+    width: 100%;
+    opacity:1;
+    position:absolute;
+    z-index:-10;
+}
+
+.DCTechBrand {
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image:url('../Images/DC LOGO B&W2ALightBlue.png');
     height:227px;    
-    width:300px;
+    width:299px;
+    margin: 50px auto;
+    background-clip:border-box;
     float:none;
-    /*;
-    border-style:solid;
-    border-color:orange;
-    */
+    text-align:center;
+    display:block;
 }
 
 .inherhitWidth {
     width:inherit;
 }
 .DCTechBrand:hover, .DCTechBrand:focus {
-    background-color:lightcoral;
+    opacity:.41;
 }
 
 .noOutline {
@@ -98,6 +132,7 @@ textarea {
     margin-bottom:0;
 
 }
+
 /*
 @media only screen and (min-width:320) {
     .mainTitleBot,
@@ -110,24 +145,78 @@ textarea {
     .appTitle {
     }
 }
+*/
 
 @media only screen and (min-width:768) {
      .mainTitleBot,
     .appTitle {
+         width:100%;
     }
 }
-*/
+
 .subTitle {
     padding-bottom:3em;   
     font-variant:small-caps;
+    font-size:large;
+}
+.Services h2, .Gallery h2, .ContactDCTech h2 {
+    text-align:center;
+}
+
+.Services li, .project p {
+    font-family: 'Montserrat', sans-serif;
+    font-size:20px;
 }
 
 .Services li {
-    font-size:16px;
+    padding-bottom:.5em;
 }
 
+.ServiceDesc {
+    font-size:smaller;
+}
+.usefulResourcesText {
+    font-size:20px;
+}
 .Services ul {
     list-style-type: circle;
+}
+@media only screen and (min-width:768) {
+    .subTitle {
+        padding-bottom:3em;   
+        font-variant:small-caps;
+        font-size:medium;
+    }
+
+    .Services h2, .Gallery h2, .ContactDCTech h2, .project h2 {
+        text-align:left;
+        font-size:36px;
+    }
+    .project h3 {
+        font-size:30px;
+    }
+    .Services li {
+        font-size: 20px;
+        font-weight:400;
+        letter-spacing:1px;
+    }
+
+    .Services ul {
+        list-style-type: circle;
+    }
+
+    .Services li, .project p {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .project a {
+        font-size:24px;
+    }
+    .resources p {
+        font-size:20px;
+    }
+    .ContactDCTech p {
+        font-size:24px;
+    }
 }
 
 /* Below min witdh of 768, Gallery boxes should be stacked. Above, they should be columns*/
@@ -146,13 +235,12 @@ textarea {
     width:100%;
     vertical-align:middle;
     border-style:solid;
-    border-color:black;
+    border-color:darkblue;
     border-width:2px;
 }
 
 .GalleryImage:hover {
-    border-color:darkred;
-    border-width:2px;
+    background-color:linen;
 }
 
 @media only screen and (min-width:768) {
@@ -169,17 +257,34 @@ textarea {
     }
 
     .GalleryImage {
-        width: 100%;
-        border-style: solid;
-        border-color: black;
-        border-width: 2px;
-        vertical-align: middle;
+        width: 95%;
     }
 }
 
+.container .body-content> .ContactDCTech {
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+    padding-right:0;
+    max-width:100%;
+}
 .ContactDCTech {
     padding-top:2em;
     padding-bottom:4em;
+    border-color:darkblue;;
+    border-width:6px;
+    border-style:double;
+/    background-color:darkblue;
+    color:darkblue;
+    padding:1em 2em 3em 4em;
+}
+.ContactDCTech h2 {
+/    color:linen;
+}
+.ContactDCTech p {
+    font-family: 'Courgette', cursive;
+    font-size:24px;
+    padding:20px 20px, 30px 20px;
 }
 
 .ContactBtn {
@@ -198,11 +303,27 @@ textarea {
 
 .ContactBtn:hover, .ContactBtn:focus{
     text-decoration:none;
-    color:darkred;
-    border-color:darkred;
-    background-color:lightcoral;
+    color:darkblue;
+    background-color:floralwhite;
 }
 
+h4 {
+    line-height:110%;
+    letter-spacing:1.3px;
+}
+
+.projectlink {
+    font-family: 'Sans-Copperplate Gothic', sans-serif;
+}
+
+@media only screen  and (min-width:768) {
+    .projectlink {
+        font-size: 18px;
+    }
+    .projectlink a {
+        font-size: 24px;
+    }
+}
 
 .leftArrow {
     float:left;
@@ -219,23 +340,26 @@ textarea {
 .rightFoot {
     float:left;
 }
-.leftFoot{
-    font-size:100%;
+.leftFoot {
+    float:left;
 }
 
+.leftFoot, .rightFoot {
+    color:darkblue;
+}
 @media only screen and (min-width:768) {
     .rightFoot {
         float: right;
     }
-    .leftFoot {
-     font-size:85%;
+    .leftFoot, .rightFoot {
+        font-size:14px;
+
     }
     
 }
 
 @media only screen and (min-width:992) {
     .leftFoot {
-    font-size:100%;
     }
 }
 
@@ -250,6 +374,16 @@ textarea {
     height:90%;
 }
 
+.CABLogoContainer {
+    width:100%;
+    margin:auto;
+}
+.CABLogo {
+    display:block;
+    width:50px;
+    margin:auto;
+
+}
 
 @media only screen and (min-width:768) {
 
@@ -268,26 +402,9 @@ textarea {
 
 }
 
-/* Contact page */
-
-.form-control:focus {
-    border-color: darkred;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6);
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6);
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6);
+img.EquityQFB  {
+    width:180px;
 }
-
-
-.btnSubmit {
-    color:darkblue;
-    background-color:lightblue;
-    border-color:darkblue;
-    max-width:75%;
-}
-
-.btnSubmit:hover, .btnSubmit:focus {
-    color:darkred;
-    background-color:lightcoral;
-    border-color:darkred;
+img.EquityFBFB {
+    width:60px;
 }
