@@ -24,7 +24,9 @@
 
 @font-face {
 	font-family: 'Sans-Copperplate Gothic';
-	src: url('../fonts/sans-copperplategothic.ttf') format('truetype');
+	src: url('../fonts/sans-copperplategothic.ttf') format('truetype'),
+     url('../fonts/Sans-Copperplate-Gothic.eot'),
+     url('../fonts/Sans-Copperplate-Gothic.eot?#iefix') format('embedded-opentype'); /*IE8 and lower */
 	font-weight: normal;
 	font-style: normal;
 }
