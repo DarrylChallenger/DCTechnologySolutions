@@ -203,10 +203,6 @@ textarea {
         line-height:150%;
     }
 
-    .Services ul {
-        list-style-type: circle;
-    }
-
     .Services li, .project p {
         font-family: 'Montserrat', sans-serif;
     }
@@ -221,6 +217,12 @@ textarea {
     }
     .ContactDCTech p {
         font-size:24px;
+    }
+}
+@media only screen and (min-width:992) {
+    .Services ul {
+        padding-left: 4em;
+        padding-right: 18em;
     }
 }
 
