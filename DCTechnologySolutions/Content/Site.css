@@ -169,7 +169,7 @@ textarea {
 }
 
 .Services li {
-    padding-bottom:.5em;
+    padding-bottom:1em;
 }
 
 .ServiceDesc {
@@ -191,6 +191,7 @@ textarea {
     .Services h2, .Gallery h2, .ContactDCTech h2, .project h2 {
         text-align:left;
         font-size:36px;
+        padding-top:1em;
     }
     .project h3 {
         font-size:30px;
@@ -199,6 +200,7 @@ textarea {
         font-size: 20px;
         font-weight:400;
         letter-spacing:1px;
+        line-height:150%;
     }
 
     .Services ul {
@@ -207,6 +209,9 @@ textarea {
 
     .Services li, .project p {
         font-family: 'Montserrat', sans-serif;
+    }
+    .Gallery {
+        padding-bottom:3em;
     }
     .project a {
         font-size:24px;
