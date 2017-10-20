@@ -134,20 +134,20 @@ textarea {
 }
 
 /*
-@media only screen and (min-width:320) {
+@media only screen and (min-width:320px) {
     .mainTitleBot,
     .appTitle {
     }
 }
 
-@media only screen and (min-width:570) {
+@media only screen and (min-width:570px) {
     .mainTitleBot,
     .appTitle {
     }
 }
 */
 
-@media only screen and (min-width:768) {
+@media only screen and (min-width:768px) {
      .mainTitleBot,
     .appTitle {
          width:100%;
@@ -181,7 +181,7 @@ textarea {
 .Services ul {
     list-style-type: circle;
 }
-@media only screen and (min-width:768) {
+@media only screen and (min-width:768px) {
     .subTitle {
         padding-bottom:3em;   
         font-variant:small-caps;
@@ -219,7 +219,7 @@ textarea {
         font-size:24px;
     }
 }
-@media only screen and (min-width:992) {
+@media only screen and (min-width:992px) {
     .Services ul {
         padding-left: 4em;
         padding-right: 18em;
@@ -250,7 +250,7 @@ textarea {
     background-color:linen;
 }
 
-@media only screen and (min-width:768) {
+@media only screen and (min-width:768px) {
 
     .GalleryBox {
         height:320px;
@@ -322,7 +322,7 @@ h4 {
     font-family: 'Sans-Copperplate Gothic', sans-serif;
 }
 
-@media only screen  and (min-width:768) {
+@media only screen  and (min-width:768px) {
     .projectlink {
         font-size: 18px;
     }
@@ -353,7 +353,7 @@ h4 {
 .leftFoot, .rightFoot {
     color:darkblue;
 }
-@media only screen and (min-width:768) {
+@media only screen and (min-width:768px) {
     .rightFoot {
         float: right;
     }
@@ -364,7 +364,7 @@ h4 {
     
 }
 
-@media only screen and (min-width:992) {
+@media only screen and (min-width:992px) {
     .leftFoot {
     }
 }
@@ -391,7 +391,7 @@ h4 {
 
 }
 
-@media only screen and (min-width:768) {
+@media only screen and (min-width:768px) {
 
     .CABHeightBox {
         height: 100%;
