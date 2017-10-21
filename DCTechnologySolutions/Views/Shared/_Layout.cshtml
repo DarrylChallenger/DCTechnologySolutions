@@ -12,14 +12,7 @@
       gtag('config', 'UA-108403246-1');
     </script>
     @{
-        if (!String.IsNullOrEmpty(ViewBag.MetaDesc))
-        {
-        <meta name="description" content="@ViewBag.MetaDesc" />
-        }
-        if (!String.IsNullOrEmpty(ViewBag.MetaKeyWords))
-        {
-        <meta name="keywords" content="@ViewBag.MetaKeyWords" />
-        }
+        @RenderSection("SEOMeta", false);
     }
     <link href="https://fonts.googleapis.com/css?family=Baloo|Courgette|Montserrat:700|Pattaya|Paytone+One|Poppins:700|Russo+One" rel="stylesheet"> 
     <title>@ViewBag.Title - Challenger Technology Solutions</title>
