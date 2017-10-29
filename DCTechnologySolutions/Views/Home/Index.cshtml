@@ -29,20 +29,12 @@
 <div class="Services">
     <h2>Services</h2>
     <ul class="bullet">
-        <li>Create Online Profile for Businesses and Charities
-            <span class="ServiceDesc"> - It's essential for organizations to have an Internet presence. 
-            We can get you up and running, then help you grow.</span></li>
-        <li>Application Development and Systems Integration<span class="ServiceDesc"> - Do you require specialized processes that don't fit the mold? 
-            We'll get you going with pre-built or custom components that meet <em>your</em> needs.</span></li>
-        <li>Software Development and Development Team Leadership
-            <span class="ServiceDesc"> - Do you need an experienced leader to help or get your development team on track?
-            You can leverage my over 15 years of corporate experience to advise you or lead your team to meet goals 
-            within time, scope, and cost.</span></li>
-        @*<li>Consulting</li>*@
-        <li>Data Conversions and Migrations<span class="ServiceDesc"> - Stuck on a platform that does not meet your needs?
-            Let's talk about how you <em>really</em> want to run your business and what it will take to get you there.</span></li>
-        <li>Kinect Gesture Detection<span class="ServiceDesc"> - Interactive systems will be the wave of the future. 
-            Give your presentations a boost and a <em>wow factor</em> today!</span></li>
+        <li>@Html.ActionLink("Create Online Profile for Businesses and Charities", "OnlineProfile")</li>
+        <li>@Html.ActionLink("Application Development and Systems Integration", "AppDev")</li>
+        <li>@Html.ActionLink("Software Development and Development Team Leadership","Leadership")</li>
+        <li>@Html.ActionLink("Consulting", "Consulting")</li>
+        <!--<li>@Html.ActionLink("Data Conversions and Migrations", "Conversions")</li>-->
+        <li>@Html.ActionLink("Kinect Gesture Detection", "Kinect")</li>
     </ul>
 </div>
 

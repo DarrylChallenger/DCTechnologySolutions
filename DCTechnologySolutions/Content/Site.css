@@ -87,7 +87,7 @@ textarea {
 
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image:url('../Images/DC LOGO B&W2ALightBlue.png');
+    background-image:url('../Images/DC LOGO B&W2AFloralwhite.png');
     height:227px;    
     width:299px;
     margin: 50px auto;
@@ -166,7 +166,7 @@ textarea {
 }
 
 .Services li, .project p {
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
     font-size:20px;
 }
 
@@ -206,7 +206,6 @@ textarea {
     }
 
     .Services li, .project p {
-        font-family: 'Montserrat', sans-serif;
     }
     .Gallery {
         padding-bottom:3em;

@@ -49,6 +49,48 @@ namespace DCTechnologySolutions.Controllers
             return View();
         }
 
+        public ActionResult OnlineProfile()
+        {
+            ViewBag.Message = "Online Profile page.";
+
+            return View();
+        }
+
+        public ActionResult AppDev()
+        {
+            ViewBag.Message = "Application Development page.";
+
+            return View();
+        }
+
+        public ActionResult Leadership()
+        {
+            ViewBag.Message = "Leadership page.";
+
+            return View();
+        }
+
+        public ActionResult Consulting()
+        {
+            ViewBag.Message = "YConsulting page.";
+
+            return View();
+        }
+
+        public ActionResult Conversions()
+        {
+            ViewBag.Message = "Conversions page.";
+
+            return View();
+        }
+
+        public ActionResult Kinect()
+        {
+            ViewBag.Message = "Kinect page.";
+
+            return View();
+        }
+
         public ActionResult ThankYou()
         {
             ViewBag.Message = "Your Thank You page.";

@@ -219,6 +219,7 @@
     <Content Include="Images\CAB_Logo100.png" />
     <Content Include="Images\CAB_V500.png" />
     <Content Include="Images\DAMN Map.jpg" />
+    <Content Include="Images\DC LOGO B&amp;W2AFloralwhite.png" />
     <Content Include="Images\DC LOGO B&amp;W2ALightBlue.png" />
     <Content Include="Images\EQUITYBlueOnWhiteQ148-168tx.png" />
     <Content Include="Images\EquityQ150_170.png" />
@@ -284,6 +285,12 @@
     <Content Include="Views\Home\CAB.cshtml" />
     <Content Include="Views\Home\Equity.cshtml" />
     <Content Include="Views\Home\DevResources.cshtml" />
+    <Content Include="Views\Home\OnlineProfile.cshtml" />
+    <Content Include="Views\Home\AppDev.cshtml" />
+    <Content Include="Views\Home\Leadership.cshtml" />
+    <Content Include="Views\Home\Consulting.cshtml" />
+    <Content Include="Views\Home\Conversions.cshtml" />
+    <Content Include="Views\Home\Kinect.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
