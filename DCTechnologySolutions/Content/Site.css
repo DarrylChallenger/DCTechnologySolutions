@@ -299,15 +299,17 @@ textarea {
     border-color:darkblue;
     color:darkblue;
     background-color:lightblue;
-    padding: 0.2em 1em;
-    font-size:2em;
+    /padding: 0.2em ;
+    font-size:1.5em;
     border-radius:1em;
     margin-top:1.5em;
     margin-left:auto;
     margin-right:auto;
-    width:250px;
+    width:200px;
     display:block;
+    text-align:center;
 }
+
 
 .ContactBtn:hover, .ContactBtn:focus{
     text-decoration:none;
@@ -315,6 +317,12 @@ textarea {
     background-color:floralwhite;
 }
 
+@media only screen and (min-width:768px) {
+    .ContactBtn {
+        font-size: 2em;
+        width: 250px;
+    }
+}
 h4 {
     line-height:110%;
     letter-spacing:1.3px;
