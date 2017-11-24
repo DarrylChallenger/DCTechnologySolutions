@@ -18,7 +18,7 @@
 
 .boxed {
     border-style:solid;
-    border-color:blue;
+    border-color:red;
     border-width:2px;
 }
 
@@ -33,26 +33,34 @@
 
 body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     	font-family: 'Sans-Copperplate Gothic', sans-serif;
-        color:darkblue;
 }
 
-body {
-    padding-top: 1px;
-    padding-bottom: 20px;
-    background-color:floralwhite;
+.container {
+    max-width:100%;
 }
-a:hover, a:focus {
-}
-h2 {
-    color:darkblue;
 
-}
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left:0;
+    padding-right:0;
     margin-top:78px;
 }
+
+.body-content {
+    margin-top:0;
+}
+
+.Services h2, .Gallery h2, .ContactDCTech h2 {
+    font-family:'Russo One', sans-serif;
+    text-align:center;
+}
+
+
+body {
+    padding-bottom: 20px;
+    background-color:pink;
+}
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -66,6 +74,10 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.mainLogoImage {
+    padding-bottom:7em;
 }
 
 .valign {
@@ -97,9 +109,6 @@ textarea {
     display:block;
 }
 
-.inherhitWidth {
-    width:inherit;
-}
 .DCTechBrand:hover, .DCTechBrand:focus {
     opacity:.41;
 }
@@ -110,9 +119,12 @@ textarea {
 
 /* min width of 570, title gets normal (small below) */
 .titleContainer {
-    width:65%;
     min-width:240px;
     margin:auto;
+    background-image:url("../Images/PaperBG2.png");
+    text-align:center;
+    padding-top:10em;
+    padding-bottom:12em;    
 }
 
 .mainTitleTop {
@@ -123,7 +135,7 @@ textarea {
 .appTitle {
     margin:auto;
     font-variant:small-caps;
-    color:darkblue;
+    color:white;
     text-align:center;
 }
 
@@ -160,34 +172,115 @@ textarea {
     padding-bottom:3em;   
     font-variant:small-caps;
     font-size:large;
+    color:white;
 }
-.Services h2, .Gallery h2, .ContactDCTech h2 {
+
+.mainContactBtn {
+    border-style:solid;
+    background-position-x:50%;
+    background-position-y:50%;
+    color:black;
+    background-color:lightgrey;
+    font-family:'Sans-Copperplate Gothic', sans-serif;
+    font-family:'Russo One', sans-serif;
+    padding: 0.2em;
+    font-size:1.5em;
+    font-weight:700;
+    border-radius:1em;
+    border-width:4px;
+    margin-top:1em;
+    margin-left:auto;
+    margin-right:auto;
+    width:200px;
+    display:block;
     text-align:center;
 }
 
-.Services li, .project p {
-    /*font-family: 'Montserrat', sans-serif;*/
-    font-size:20px;
+@media only screen and (min-width:768px) {
+    .mainContactBtn, .ContactBtn {
+        font-size:2em;
+        border-radius:1em;
+        margin-top:1.5em;
+        width:250px;
+    }
+}
+
+.mainContactBtn:focus, .mainContactBtn:hover {
+    text-decoration:none;
+    color:white;
+    border-color:black;
+    background-color:grey;
+}
+
+.Services {
+    background-color:white;
+    padding-bottom:3em;
+}
+.Services h2  {
+    color:black;
+    margin-bottom:1em;
+    margin-top:0;
+    padding-left:10%
+}
+
+.Services ul {
+    list-style-type:none;
+    padding-left:10px;
+    padding-right:10px;
 }
 
 .Services li {
     padding-bottom:1em;
 }
 
+.Services li a, .project p  {
+    font-family:'Russo One', sans-serif;
+    font-weight:500;
+    font-size:1.7em;
+    color:black;
+    color:white;
+}
+
+.Service {
+    background-color:darkred;
+    height:10em;
+    margin-bottom: 1em;
+    padding:1.5em 1.5em 1.5em 1.5em;
+    border-color:black;
+    border-style:solid;
+}
+
+.ServiceImg {
+    height:7em;
+    border-color:black;
+    border-color:white;
+    border-style:solid;
+    border-width:6px;
+    border-radius:8px;
+    float:left;
+    margin-right:2em;
+    padding:4px;
+    background-color:lightgrey;
+}
+
+/*
 .ServiceDesc {
     font-size:smaller;
+}*/
+
+.usefulResources {
+    display:none;
 }
+
 .usefulResourcesText {
     font-size:20px;
 }
-.Services ul {
-    list-style-type: circle;
-}
+
 @media only screen and (min-width:768px) {
     .subTitle {
         padding-bottom:3em;   
         font-variant:small-caps;
-        font-size:medium;
+        font-size:large;
     }
 
     .Services h2, .Gallery h2, .ContactDCTech h2, .project h2 {
@@ -205,7 +298,7 @@ textarea {
         line-height:150%;
     }
 
-    .Services li, .project p {
+    .project p {
     }
     .Gallery {
         padding-bottom:3em;
@@ -222,46 +315,91 @@ textarea {
 }
 @media only screen and (min-width:992px) {
     .Services ul {
-        padding-left: 4em;
-        padding-right: 18em;
+        padding-left: 10em;
+        padding-right: 10em;
     }
 }
 
 /* Below min witdh of 768, Gallery boxes should be stacked. Above, they should be columns*/
+
+
+.Gallery {
+    background-color:#19535F;
+    background-color:#E0FBFC;
+    background-color:#9DB4C0;
+    background-color:#7C7287;
+    background-color:#EEE0CB;
+    padding: 5em 0 5em 0;
+
+}
+
+.Gallery h2 {
+    padding-left:10%;
+    margin-bottom:1em;
+    color:black;
+}
+/*
+.GalleryRow {
+    margin:auto;
+    display:flex;
+}
+    */
+@media only screen and (min-width:768px) {
+
+    .GalleryRow {
+        max-width: 95%;
+        margin:auto;
+    }
+}
+
+   .GalleryLink {
+    height:100%;
+    width:100%;
+    position:absolute;
+    background-color:black;
+    border-style:solid;
+    border-color:#19535F;
+    border-color:#E0FBFC;
+    border-color:#9DB4C0;
+    border-color:#7C7287;
+    border-color:#EEE0CB;
+    border-width:6px;
+
+}
 .GalleryBox {
     max-width:75%;
     margin:auto;
     padding-top:.5em;
     padding-bottom:.5em;
+    height:320px;
 }
 
-.GalleryBox:hover {
-    opacity:.4;
+.GalleryLink:hover {
+    opacity:.6;
+    border-color:black;
 }
 
 .GalleryImage {
-    width:100%;
-    vertical-align:middle;
-    border-style:solid;
-    border-color:darkblue;
-    border-width:2px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
+    max-width:100%;
 }
 
-.GalleryImage:hover {
-    background-color:linen;
-}
+
 
 @media only screen and (min-width:768px) {
+    .Gallery {
+        padding: 5em 0 12em 0;
+    }
 
     .GalleryBox {
         height:320px;
         white-space:nowrap;
         padding-top:initial;
-    }
-    .GalleryHeightBox {
-        height: 100%;
-        display: inline-block;
-        vertical-align: middle;
     }
 
     .GalleryImage {
@@ -269,50 +407,67 @@ textarea {
     }
 }
 
-.container .body-content> .ContactDCTech {
-    margin-left:0;
-    margin-right:0;
+.container .ContactDCTech {
+
+    margin: 10em auto;
     padding-left:0;
     padding-right:0;
-    max-width:100%;
+    max-width:75%;
 }
 .ContactDCTech {
     padding:1em 4em 4em;
-    border-color:darkblue;
+    border-color:white;
     border-width:6px;
     border-style:double;
-/    background-color:darkblue;
-    color:darkblue;
+    background-color:darkred;
 }
+
+.ContactDCTech h2, .ContactDCTech p {
+    color:white;
+}
+
 .ContactDCTech h2 {
-/    color:linen;
+    text-align:center;
 }
+
 .ContactDCTech p {
     font-family: 'Courgette', cursive;
     font-size:24px;
-    padding:20px 20px, 30px 20px;
+    padding:2em 4em 2em 4em;
 }
 
 .ContactBtn {
     border-style:solid;
-    border-color:darkblue;
-    color:darkblue;
-    background-color:lightblue;
-    padding: 0.2em 1em;
-    font-size:2em;
+    border-color:black;
+    color:black;
+    background-color:lightgrey;
+    font-family:'Russo One', sans-serif;
+    padding: 0.2em;
+    font-size:1.5em;
     border-radius:1em;
-    margin-top:1.5em;
+    margin-top:1em;
     margin-left:auto;
     margin-right:auto;
-    width:250px;
+    width:200px;
     display:block;
+    text-align:center;
+}
+@media only screen and (min-width:768px) {
+    .mainContactBtn, .ContactBtn {
+        font-size:2em;
+        border-radius:1em;
+        margin-top:1.5em;
+        width:250px;
+    }
 }
 
 .ContactBtn:hover, .ContactBtn:focus{
     text-decoration:none;
-    color:darkblue;
-    background-color:floralwhite;
+    color:black;
+    background-color:lightgrey;
+    opacity:.6;
 }
+
 
 h4 {
     line-height:110%;
@@ -344,6 +499,7 @@ h4 {
 }
 
 /* min width of x, footer should be one line. Below, two lines and both left justified */
+
 .rightFoot {
     float:left;
 }
@@ -360,9 +516,11 @@ h4 {
     }
     .leftFoot, .rightFoot {
         font-size:14px;
-
     }
-    
+    footer {
+        max-width:75%;
+        margin:auto;
+    }    
 }
 
 @media only screen and (min-width:992px) {
@@ -409,9 +567,9 @@ h4 {
 
 }
 
-img.EquityQFB  {
+.EquityQFB  {
     width:180px;
 }
-img.EquityFBFB {
+.EquityFBFB {
     width:60px;
 }

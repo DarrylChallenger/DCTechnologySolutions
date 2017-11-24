@@ -33,9 +33,12 @@
     </script>
 </head>
 <body onresize="ShowScreenDimensions()">
-    <!--
+    <!-- No menu on home page -->
+    @if (ViewBag.OnHome != "Y")
+    {
+
     <div class="navbar">
-    @*    <div class="container">
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -46,24 +49,24 @@
                 <h1 class="navbar-brand" href=""></h1> <!--Brand icon goes here-->
             </div>
             <div class="navbar-collapse collapse">
-                @* <ul class="nav navbar-nav">
-                        @*<li>@Html.ActionLink("Home", "Index", "Home")</li>* @
-                        @*<li>@Html.ActionLink("About", "About", "Home")</li>* @
-                        @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>* @
+                 <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>
 
                     <!--@Html.Partial("_LoginPartial")-->
                 
             </div>
         </div>
-        *@
     </div>
-        -->
+        @*
         <div class="DCTechBrandBk"></div>
         <a class="valign noOutline" href="@Url.Action("Index", "Home")">
             <div class="DCTechBrand"></div>
         </a>
- 
+        *@
+    }
     <!--<div class="DCTechBrand" ></div> - Brand icon goes here-->
     <div class="container body-content">
         @RenderBody()
@@ -83,9 +86,9 @@
                     </address>
                 </div>
             </div>
+
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

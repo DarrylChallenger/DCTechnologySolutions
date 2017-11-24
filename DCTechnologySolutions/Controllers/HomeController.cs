@@ -13,6 +13,7 @@ namespace DCTechnologySolutions.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.OnHome = "Y";
             return View();
         }
 

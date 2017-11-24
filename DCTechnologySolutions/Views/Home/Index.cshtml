@@ -3,22 +3,26 @@
 }
 <div class="titleContainer">
     <div class="mainTitleTop">
+        <img class="mainLogoImage" src="~/Images/DC LOGO Metal Field.png" />
         <h1 class="appTitle">
             Challenger Technology
         </h1>
         <!--  <hr class="titlebr" /> -->
 
 
-        <svg class="inherhitWidth" width=100% height=10>
-            <line x1="0%" y1="5" x2=100% y2="5" style="stroke:black;stroke-width:2"></line>
+        <svg class="inherhitWidth" width=50% height=10>
+            <line x1="0" y1="5" x2="100%" y2="5" style="display:block;margin:auto;stroke:black;stroke-width:2"></line>
         </svg>
 
 
-        <h1 class="mainTitleBot">
+        <p class="mainTitleBot h1">
             Solutions
-        </h1>
+        </p>
     </div>
     <p class="subTitle"><em>Taking the challenge out of technology</em></p>
+    <p></p>
+    @Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "mainContactBtn" })
+
     @*<p class="subTitle"><em>Builing software to make us better</em></p>*@
 </div>
 
@@ -28,13 +32,22 @@
     *@
 <div class="Services">
     <h2>Services</h2>
-    <ul class="bullet">
-        <li>@Html.ActionLink("Create Online Profile for Businesses and Charities", "OnlineProfile")</li>
-        <li>@Html.ActionLink("Application Development and Systems Integration", "AppDev")</li>
-        <li>@Html.ActionLink("Software Development and Development Team Leadership","Leadership")</li>
-        <li>@Html.ActionLink("Consulting", "Consulting")</li>
-        <!--<li>@Html.ActionLink("Data Conversions and Migrations", "Conversions")</li>-->
-        <li>@Html.ActionLink("Kinect Gesture Detection", "Kinect")</li>
+    <ul class="">
+        <li><div class="Service"><img class="ServiceImg" src="~/Images/001-graphic.png" />
+            <span> @Html.ActionLink("Online Profile creation for your Business or Charity", "OnlineProfile", null, new { @class = "ServiceLink" })</span></div>
+        </li>
+        <li><div class="Service"><img class="ServiceImg" src="~/Images/settings-gears.png" />
+            <span> @Html.ActionLink("Application Development and Systems Integration", "AppDev")</span></div>
+        </li>
+        <li><div class="Service"><img class="ServiceImg" src="~/Images/business-people-meeting.png" />
+            <span> @Html.ActionLink("Software Development and Development Team Leadership", "Leadership")</span></div>
+        </li>
+        <li><div class="Service"><img class="ServiceImg" src="~/Images/003-arrows.png" /><span> @Html.ActionLink("Consulting", "Consulting")</span></div>
+        </li>
+        <!--<li><div class="Service"><img class="ServiceImg" src="" /><span> @Html.ActionLink("Data Conversions and Migrations", "Conversions")</span></div></li>-->
+        <li><div class="Service"><img class="ServiceImg" src="~/Images/Kinect.png" />
+            <span> @Html.ActionLink("Kinect Gesture Detection", "Kinect")</span></div>
+        </li>
     </ul>
 </div>
 
@@ -55,23 +68,23 @@
 
 <div class="Gallery">
     <h2>Gallery</h2>
-    <div class="row">
+    <div class="row GalleryRow">
         <div class="col-sm-4 col-xs-12 GalleryBox">
-            <span class="GalleryHeightBox"></span>
-            <a href="@Url.Action("CAB", "Home", new { title="Chess Across Borders Web Site" })">
-                <img alt="Chess Across Borders Web Site" title="Chess Across Borders Web Site" class="GalleryImage" src="@Url.Content("~/Images/CABBrand_414_320.png")"/>
+            <a class="GalleryLink" href="@Url.Action("CAB", "Home", new { title="Chess Across Borders Web Site" })">
+                <img alt="Chess Across Borders Web Site" title="Chess Across Borders Web Site" class="GalleryImage" 
+                     src="@Url.Content("~/Images/CAB_V6-WonTx550_425.png")"/>
             </a>
        </div>
         <div class="col-sm-4 col-xs-12 GalleryBox">
-            <span class="GalleryHeightBox"></span>
-            <a href="@Url.Action("Equity", "Home", new { title="Equity Project For All Facebook Page" })" >
-                <img alt="Equity Facebook Page" title="Equity on Facebook" class="GalleryImage" src="@Url.Content("~/Images/EquityQ300_170.png")"/>
+            <a class="GalleryLink" href="@Url.Action("Equity", "Home", new { title="Equity Project For All Facebook Page", })" >
+                <img alt="Equity Facebook Page" title="Equity on Facebook" class="GalleryImage" 
+                     src="@Url.Content("~/Images/equityQFB_V3WOnTx.png")"/>
             </a>
         </div>
         <div class="col-sm-4 col-xs-12 GalleryBox">
-            <span class="GalleryHeightBox"></span>
-            <a href="@Url.Action("Equity", "Home", new { title="Equity Project For All Web Site" })" >
-                <img alt="Equity Web Site" title="Equity Web Site" class="GalleryImage" src="@Url.Content("~/Images/equity_V3-03blue.png")"/>
+            <a class="GalleryLink" href="@Url.Action("Equity", "Home", new { title="Equity Project For All Web Site" })" >
+                <img alt="Equity Web Site" title="Equity Web Site" class="GalleryImage" 
+                     src="@Url.Content("~/Images/equity_V3-03blue.png")"/>
             </a>
         </div>
     </div>
@@ -88,7 +101,10 @@
     <hr />
     @Html.ActionLink("Developer Resources", "DevResources", "Home", routeValues: null, htmlAttributes: new { @class = "h2" })<span class="usefulResourcesText"> - Tools and Resources I've found helpful in the devleopment process.</span>
 </div>
-
+@*
+    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+*@
 @*
 <h2>Fonts</h2>
 <h3 class="Baloo"> font-family: 'Baloo', cursive;</h3>

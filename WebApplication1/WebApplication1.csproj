@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{34224878-CC8F-424F-8BE3-B21B742F570E}</ProjectGuid>
+    <ProjectGuid>{A17F118A-1BA8-4FB6-B9F8-42B806BC69EB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DCTechnologySolutions</RootNamespace>
-    <AssemblyName>DCTechnologySolutions</AssemblyName>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -25,7 +25,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <ApplicationInsightsResourceId>/subscriptions/c692f42e-8eda-44c7-82a9-c7c4e94c4ad4/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/DCTechnologySolutions</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -215,33 +214,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\001-graphic.png" />
-    <Content Include="Images\003-arrows.png" />
-    <Content Include="Images\business-people-meeting.png" />
-    <Content Include="Images\CABBrand_414_320.png" />
-    <Content Include="Images\CAB_Logo100.png" />
-    <Content Include="Images\CAB_V500.png" />
-    <Content Include="Images\DAMN Map.jpg" />
-    <Content Include="Images\DC LOGO B&amp;W2AFloralwhite.png" />
-    <Content Include="Images\DC LOGO B&amp;W2ALightBlue.png" />
-    <Content Include="Images\EQUITYBlueOnWhiteQ148-168tx.png" />
-    <Content Include="Images\EquityQ150_170.png" />
-    <Content Include="Images\EquityQ300_170.png" />
-    <Content Include="Images\equity_V3-03blue.png" />
-    <Content Include="Images\FB-f-Logo__blue_29.png" />
-    <Content Include="Images\Kinect.png" />
-    <Content Include="Images\PaperBG2.png" />
-    <Content Include="Images\settings-gears.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\sans-copperplategothic.ttf" />
-    <Content Include="fonts\Sans-Copperplate-Gothic.eot" />
-    <None Include="Properties\PublishProfiles\DCTechnologySolutions.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\Dimensions.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -287,20 +265,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Home\CAB.cshtml" />
-    <Content Include="Views\Home\Equity.cshtml" />
-    <Content Include="Views\Home\DevResources.cshtml" />
-    <Content Include="Views\Home\OnlineProfile.cshtml" />
-    <Content Include="Views\Home\AppDev.cshtml" />
-    <Content Include="Views\Home\Leadership.cshtml" />
-    <Content Include="Views\Home\Consulting.cshtml" />
-    <Content Include="Views\Home\Conversions.cshtml" />
-    <Content Include="Views\Home\Kinect.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -309,9 +276,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -329,9 +293,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55865</DevelopmentServerPort>
+          <DevelopmentServerPort>56538</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55865/</IISUrl>
+          <IISUrl>http://localhost:56538/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
