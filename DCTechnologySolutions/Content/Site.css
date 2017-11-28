@@ -32,7 +32,8 @@
 }
 
 body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
-    	font-family: 'Sans-Copperplate Gothic', sans-serif;
+    /*font-family: 'Sans-Copperplate Gothic', sans-serif;*/
+    font-family: 'Russo One', sans-serif;
 }
 
 .container {
@@ -50,6 +51,48 @@ body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-top:0;
 }
 
+a {
+    color:black;
+}
+
+a:focus, a:hover {
+    color:darkred;
+}
+
+.navbar-toggle .icon-bar {
+    background-color:black;
+}
+.navbar-brand {
+    padding:3px .5em;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width:768px) {
+
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px; /* 50% of your logo width */
+        display: block;
+    }
+
+}
+
+.navbar-brand:focus, .navbar-brand:hover {
+    background-color:rgb(238, 238,238);
+}
+
+@media (min-width: 768px) {
+  .navbar > .container .navbar-brand {
+    margin-left: 1em;
+    margin-right:0;
+  }
+}
+
+.navImg {
+    height:44px;
+}
+
 .Services h2, .Gallery h2, .ContactDCTech h2 {
     font-family:'Russo One', sans-serif;
     text-align:center;
@@ -58,7 +101,6 @@ body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 body {
     padding-bottom: 20px;
-    background-color:pink;
 }
 
 
@@ -78,6 +120,12 @@ textarea {
 
 .mainLogoImage {
     padding-bottom:7em;
+}
+
+.centered {
+    display:block;
+    text-align:center;
+
 }
 
 .valign {
@@ -214,7 +262,8 @@ textarea {
 
 .Services {
     background-color:white;
-    padding-bottom:3em;
+    padding-top:2em;
+    padding-bottom:0;
 }
 .Services h2  {
     color:black;
@@ -233,7 +282,7 @@ textarea {
     padding-bottom:1em;
 }
 
-.Services li a, .project p  {
+.Services li a {
     font-family:'Russo One', sans-serif;
     font-weight:500;
     font-size:1.7em;
@@ -243,7 +292,7 @@ textarea {
 
 .Service {
     background-color:darkred;
-    height:10em;
+    min-height:10em;
     margin-bottom: 1em;
     padding:1.5em 1.5em 1.5em 1.5em;
     border-color:black;
@@ -291,15 +340,13 @@ textarea {
     .project h3 {
         font-size:30px;
     }
-    .Services li {
+    .Services li, .project p {
         font-size: 20px;
         font-weight:400;
         letter-spacing:1px;
         line-height:150%;
     }
 
-    .project p {
-    }
     .Gallery {
         padding-bottom:3em;
     }
@@ -319,6 +366,8 @@ textarea {
         padding-right: 10em;
     }
 }
+
+
 
 /* Below min witdh of 768, Gallery boxes should be stacked. Above, they should be columns*/
 
@@ -389,8 +438,6 @@ textarea {
     max-width:100%;
 }
 
-
-
 @media only screen and (min-width:768px) {
     .Gallery {
         padding: 5em 0 12em 0;
@@ -408,8 +455,7 @@ textarea {
 }
 
 .container .ContactDCTech {
-
-    margin: 10em auto;
+    margin: 4em auto;
     padding-left:0;
     padding-right:0;
     max-width:75%;
@@ -453,6 +499,9 @@ textarea {
     text-align:center;
 }
 @media only screen and (min-width:768px) {
+    .container .ContactDCTech {
+        margin: 10em auto;
+    }
     .mainContactBtn, .ContactBtn {
         font-size:2em;
         border-radius:1em;
@@ -475,7 +524,7 @@ h4 {
 }
 
 .projectlink {
-    font-family: 'Sans-Copperplate Gothic', sans-serif;
+    font-family: 'Russo One', sans-serif;
 }
 
 @media only screen  and (min-width:768px) {
@@ -499,7 +548,14 @@ h4 {
 }
 
 /* min width of x, footer should be one line. Below, two lines and both left justified */
+footer {
+    max-width:75%;
+    margin:auto;
+}
 
+footer a:hover, footer a:focus  {
+    color:darkred;
+}
 .rightFoot {
     float:left;
 }
@@ -508,25 +564,93 @@ h4 {
 }
 
 .leftFoot, .rightFoot {
-    color:darkblue;
+    color:black;
 }
+
 @media only screen and (min-width:768px) {
     .rightFoot {
         float: right;
     }
     .leftFoot, .rightFoot {
-        font-size:14px;
+        font-size:15.5px;
     }
     footer {
-        max-width:75%;
         margin:auto;
     }    
 }
-
-@media only screen and (min-width:992px) {
-    .leftFoot {
-    }
+/* Pages */
+.project {
+    max-width:75%;
+    margin:auto;
 }
+
+/* Services */
+.ServiceBox {
+    background-color:darkred;
+    min-height:10em;
+    margin-bottom: 1em;
+    padding:1.5em 1.5em 1.5em 1.5em;
+    border-color:black;
+    border-style:solid;
+    color:white;
+}
+
+/* Appdev page */
+.AppDev li {
+    font-size:1.6em;
+    padding: .25em 0;
+}
+
+.AppDev ul {
+    list-style-type:none;
+}
+.AppDevImage {
+    height:2.5em;
+    background-color:lightgrey;
+    border-style:solid;
+    border-width:2px;
+    border-color:white;
+    border-radius:3px;
+}
+
+.project h2, .project h3 {
+    padding-bottom:1em;
+}
+
+.ProjectBox {
+    background-color:darkred;
+    margin-bottom: 2em;
+    padding:1.5em 1.5em 1.5em 1.5em;
+    border-color:black;
+    border-style:solid;
+}
+
+.project p {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    line-height: 150%;
+    color:white;
+    padding-bottom:1em;
+}
+
+.project a {
+    color:black;
+    text-decoration:underline;
+}
+
+.project a:focus, .project a:hover {
+    color:darkred;
+}
+
+.ProjectBox a {
+    color:white;
+
+}
+
+.ProjectBox a:focus, .ProjectBox a:hover {
+    color:lightgrey;
+}
+
 
 /* CAB Page*/
 .CABBox {
@@ -572,4 +696,12 @@ h4 {
 }
 .EquityFBFB {
     width:60px;
+}
+
+.ConsultingImageCol {
+    text-wrap:avoid;
+}
+
+.ConsultingLinksCol {
+    float:left;
 }

@@ -197,8 +197,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,17 +218,28 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\001-graphic.png" />
+    <Content Include="Images\001-wedding.png" />
+    <Content Include="Images\002-network.png" />
     <Content Include="Images\003-arrows.png" />
+    <Content Include="Images\003-good-worker.png" />
+    <Content Include="Images\004-two-businessmen-holding-a-flag.png" />
+    <Content Include="Images\006-idea.png" />
     <Content Include="Images\business-people-meeting.png" />
     <Content Include="Images\CABBrand_414_320.png" />
     <Content Include="Images\CAB_Logo100.png" />
+    <Content Include="Images\CAB_Logo100W.png" />
     <Content Include="Images\CAB_V500.png" />
     <Content Include="Images\DAMN Map.jpg" />
     <Content Include="Images\DC LOGO B&amp;W2AFloralwhite.png" />
     <Content Include="Images\DC LOGO B&amp;W2ALightBlue.png" />
+    <Content Include="Images\DC LOGO Metal Field.png" />
+    <Content Include="Images\DC LOGO Small Grey BG tx.png" />
+    <Content Include="Images\DC LOGO Small tx.png" />
     <Content Include="Images\EQUITYBlueOnWhiteQ148-168tx.png" />
     <Content Include="Images\EquityQ150_170.png" />
     <Content Include="Images\EquityQ300_170.png" />
+    <Content Include="Images\equityQFB_V3BlueOnTx.png" />
+    <Content Include="Images\equityQFB_V3WonTx.png" />
     <Content Include="Images\equity_V3-03blue.png" />
     <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Images\Kinect.png" />
@@ -288,15 +301,17 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Home\CAB.cshtml" />
-    <Content Include="Views\Home\Equity.cshtml" />
+    <Content Include="Views\Gallery\CAB.cshtml" />
+    <Content Include="Views\Gallery\Equity.cshtml" />
     <Content Include="Views\Home\DevResources.cshtml" />
-    <Content Include="Views\Home\OnlineProfile.cshtml" />
-    <Content Include="Views\Home\AppDev.cshtml" />
-    <Content Include="Views\Home\Leadership.cshtml" />
-    <Content Include="Views\Home\Consulting.cshtml" />
-    <Content Include="Views\Home\Conversions.cshtml" />
-    <Content Include="Views\Home\Kinect.cshtml" />
+    <Content Include="Views\Services\OnlineProfile.cshtml" />
+    <Content Include="Views\Services\AppDev.cshtml" />
+    <Content Include="Views\Services\Leadership.cshtml" />
+    <Content Include="Views\Services\Consulting.cshtml" />
+    <Content Include="Views\Services\Conversions.cshtml" />
+    <Content Include="Views\Services\Kinect.cshtml" />
+    <Content Include="Views\Services\_ServicesLayout.cshtml" />
+    <Content Include="Views\Gallery\_GalleryLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

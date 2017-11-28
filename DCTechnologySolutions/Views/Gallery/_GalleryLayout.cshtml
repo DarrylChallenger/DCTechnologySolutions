@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -14,12 +15,12 @@
     @{
         @RenderSection("SEOMeta", false);
     }
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Courgette|Montserrat:700|Pattaya|Paytone+One|Poppins:700|Russo+One" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Courgette|Montserrat:700|Pattaya|Paytone+One|Poppins:700|Russo+One" rel="stylesheet">
     <title>@ViewBag.Title - Challenger Technology Solutions</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <script type = 'text/javascript' >
+    <script type='text/javascript'>
         var appInsights=window.appInsights||function(config)
         {
             function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
@@ -27,16 +28,12 @@
         }({
             instrumentationKey:'5d0f1729-46c5-4bca-8f6c-b3c93ae5b223'
         });
-        
+
         window.appInsights=appInsights;
         appInsights.trackPageView();
     </script>
 </head>
-<body onresize="ShowScreenDimensions()">
-    <!-- No menu on home page -->
-    @if (ViewBag.OnHome != "Y")
-    {
-
+<body>
     <div class="navbar">
         <div class="container">
             <div class="navbar-header">
@@ -49,8 +46,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    <li>@Html.ActionLink("Chess Across Borders", "CAB", "Gallery")</li>
+                    <li>@Html.ActionLink("Equity", "Equity", "Gallery")</li>
                     <li>@Html.ActionLink("Services", "Index", "Services")</li>
-                    <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
 
@@ -59,14 +58,7 @@
             </div>
         </div>
     </div>
-        @*
-        <div class="DCTechBrandBk"></div>
-        <a class="valign noOutline" href="@Url.Action("Index", "Home")">
-            <div class="DCTechBrand"></div>
-        </a>
-        *@
-    }
-    <!--<div class="DCTechBrand" ></div> - Brand icon goes here-->
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -85,10 +77,7 @@
                     </address>
                 </div>
             </div>
-            @*
-                <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-            *@
+
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
@@ -96,3 +85,5 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
