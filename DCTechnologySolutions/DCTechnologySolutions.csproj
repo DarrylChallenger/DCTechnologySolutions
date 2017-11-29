@@ -232,9 +232,10 @@
     <Content Include="Images\DAMN Map.jpg" />
     <Content Include="Images\DC LOGO B&amp;W2AFloralwhite.png" />
     <Content Include="Images\DC LOGO B&amp;W2ALightBlue.png" />
-    <Content Include="Images\DC LOGO Metal Field.png" />
     <Content Include="Images\DC LOGO Small Grey BG tx.png" />
     <Content Include="Images\DC LOGO Small tx.png" />
+    <Content Include="Images\DCLOGOMetalField.png" />
+    <Content Include="Images\DCLOGOMetalField200.png" />
     <Content Include="Images\EQUITYBlueOnWhiteQ148-168tx.png" />
     <Content Include="Images\EquityQ150_170.png" />
     <Content Include="Images\EquityQ300_170.png" />
