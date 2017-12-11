@@ -331,9 +331,10 @@ textarea {
 
 
 .Gallery {
-    background-color:#EEE0CB;
+    background-color: #19535F;
+    background-color: #EEE0CB;
+    /background-color: #7C7287;
     padding: 2em 0 3em 0;
-
 }
 
 .Gallery h2 {
@@ -355,19 +356,16 @@ textarea {
     }
 }
 
-   .GalleryLink {
-    height:100%;
-    width:100%;
-    position:absolute;
-    background-color:black;
-    border-style:solid;
-    border-color:#19535F;
-    border-color:#E0FBFC;
-    border-color:#9DB4C0;
-    border-color:#7C7287;
-    border-color:#EEE0CB;
-    border-width:6px;
-
+.GalleryLink {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    border-style: solid;
+    border-color: #19535F;
+    border-color: #EEE0CB;
+    /border-color: #7C7287;
+    border-width: 6px;
 }
 .GalleryBox {
     max-width:75%;
