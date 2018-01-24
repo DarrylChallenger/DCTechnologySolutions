@@ -572,184 +572,214 @@ footer a:hover, footer a:focus  {
     color:white;
 }
 
-/* Appdev page */
-.AppDev li {
-    font-size:1em;
-    padding: .25em 0;
-}
+@media only screen and (min-width:768px) { /* Add margin to bottom for low content pages, but not on small devices*/
 
-.AppDev ul {
-    list-style-type:none;
-    padding-left:10px;
-}
-
-.AppDevImage {
-    height:2.5em;
-    background-color:lightgrey;
-    border-style:solid;
-    border-width:2px;
-    border-color:white;
-    border-radius:3px;
-}
-
-.project h2, .project h3 {
-    padding-bottom:1em;
-}
-
-.ProjectBox {
-    background-color:darkred;
-    margin-bottom: 2em;
-    padding:1.5em 1.5em 0 1.5em;
-    border-color:black;
-    border-style:solid;
-}
-
-.project p {
-    font-size: 1.25em;
-    letter-spacing: 1px;
-    line-height: 150%;
-    color:white;
-    padding-bottom:1em;
-    width:90%;
-    text-align:left;
-    text-justify:trim;
-    margin:auto;
-}
-
-.project a:focus, .project a:hover {
-    color:darkred;
-}
-
-.ProjectBox a {
-    color:white;
-}
-
-
-.ProjectBox a:focus, .ProjectBox a:hover {
-    color:lightgrey;
-}
-
-
-/* CAB Page*/
-.CABBox {
-    height:320px;
-    white-space:nowrap;
-    padding-top:initial;
-}
-
-.CABImage {
-    height:90%;
-}
-
-.CABLogoContainer {
-    width:100%;
-    margin:auto;
-}
-.CABLogo {
-    display:block;
-    width:50px;
-    margin:auto;
-
-}
-
-@media only screen and (min-width:768px) {
-
-    .CABHeightBox {
-        height: 100%;
-        display: inline-block;
-        vertical-align: middle;
+    .Consulting {
+        margin-bottom: 12em;
     }
 
-    .CABImage {
-        float:left;
+    .Leadership {
+        margin-bottom: 10em;
     }
 
+    .Kinect {
+        margin-bottom: 20em;
+    }
+
+    .OnlineProfile {
+        margin-bottom: 15em;
+    }
 }
 
-.EquityQFB  {
-    width:180px;
+.ack, .ack a {
+    color:lightgray;
 }
-.EquityFBFB {
-    width:60px;
-}
-
-.ConsultingImageCol {
-    text-wrap:avoid;
-}
-
-.ConsultingLinksCol {
-    float:left;
-}
-
-.ContactPage .ProjectBox {
-    padding-bottom:2em;
-}
-
-.ContactPage a {
-    color:black;
-}
-
-
-@media only screen and (min-width:768px) {
-    .mainLogoImage {
-        width:394px;
-        padding-bottom:7em;
-    }
-    .subTitle {
-        padding-bottom:3em;   
-        font-variant:small-caps;
-        font-size:large;
-    }
-
-    .Services h2, .Gallery h2, .project h2 {
-        text-align:left;
-        font-size:36px;
-        padding-top:1em;
-        padding-left:15%;
-    }
-    .ContactDCTech h2 {
-        font-size:36px;
-
-    }
-    .project h3 {
-        font-size:30px;
-    }
-    .Services li, .project p {
-        font-size:1.6em;
-        letter-spacing:1px;
-    }
-
-    .project a {
-        font-size:24px;
-    }
-    .resources p {
-        font-size:20px;
-    }
-    .ContactDCTech p {
-        font-size:24px;
-    }
-    .ServiceBox {
-        padding-bottom:0;
-    }
-    .ServiceImg {
-        margin-right:2em;
-        float:left;
-    }
-     .AppDev ul {
-        list-style-type:none;
-        padding-left:40px;
-    }
-   .AppDev li {
-        font-size:1.6em;
+    /* Appdev page */
+    .AppDev li {
+        font-size: 1em;
         padding: .25em 0;
     }
 
-
-}
-@media only screen and (min-width:992px) {
-    .Services ul {
-        padding-left: 10em;
-        padding-right: 10em;
+    .AppDev ul {
+        list-style-type: none;
+        padding-left: 10px;
     }
-}
+
+    .AppDevImage {
+        height: 2.5em;
+        background-color: lightgrey;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        border-radius: 3px;
+    }
+
+    .project h2, .project h3 {
+        padding-bottom: 1em;
+    }
+
+    .ProjectBox {
+        background-color: darkred;
+        margin-bottom: 2em;
+        padding: 1.5em 1.5em 0 1.5em;
+        border-color: black;
+        border-style: solid;
+    }
+
+    .project p {
+        font-size: 1.25em;
+        letter-spacing: 1px;
+        line-height: 150%;
+        color: white;
+        padding-bottom: 1em;
+        width: 90%;
+        text-align: left;
+        text-justify: trim;
+        margin: auto;
+    }
+
+    .project a:focus, .project a:hover {
+        color: darkred;
+    }
+
+    .ProjectBox a {
+        color: white;
+    }
+
+
+        .ProjectBox a:focus, .ProjectBox a:hover {
+            color: lightgrey;
+        }
+
+
+    /* CAB Page*/
+    .CABBox {
+        height: 320px;
+        white-space: nowrap;
+        padding-top: initial;
+    }
+
+    .CABImage {
+        height: 90%;
+    }
+
+    .CABLogoContainer {
+        width: 100%;
+        margin: auto;
+    }
+
+    .CABLogo {
+        display: block;
+        width: 50px;
+        margin: auto;
+    }
+
+    @media only screen and (min-width:768px) {
+
+        .CABHeightBox {
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .CABImage {
+            float: left;
+        }
+    }
+
+    .EquityQFB {
+        width: 180px;
+    }
+
+    .EquityFBFB {
+        width: 60px;
+    }
+
+    .ConsultingImageCol {
+        text-wrap: avoid;
+    }
+
+    .ConsultingLinksCol {
+        float: left;
+    }
+
+    .ContactPage .ProjectBox {
+        padding-bottom: 2em;
+    }
+
+    .ContactPage a {
+        color: black;
+    }
+
+
+    @media only screen and (min-width:768px) {
+        .mainLogoImage {
+            width: 394px;
+            padding-bottom: 7em;
+        }
+
+        .subTitle {
+            padding-bottom: 3em;
+            font-variant: small-caps;
+            font-size: large;
+        }
+
+        .Services h2, .Gallery h2, .project h2 {
+            text-align: left;
+            font-size: 36px;
+            padding-top: 1em;
+            padding-left: 15%;
+        }
+
+        .ContactDCTech h2 {
+            font-size: 36px;
+        }
+
+        .project h3 {
+            font-size: 30px;
+        }
+
+        .Services li, .project p {
+            font-size: 1.6em;
+            letter-spacing: 1px;
+        }
+
+        .project a {
+            font-size: 24px;
+        }
+
+        .resources p {
+            font-size: 20px;
+        }
+
+        .ContactDCTech p {
+            font-size: 24px;
+        }
+
+        .ServiceBox {
+            padding-bottom: 0;
+        }
+
+        .ServiceImg {
+            margin-right: 2em;
+            float: left;
+        }
+
+        .AppDev ul {
+            list-style-type: none;
+            padding-left: 40px;
+        }
+
+        .AppDev li {
+            font-size: 1.6em;
+            padding: .25em 0;
+        }
+    }
+
+    @media only screen and (min-width:992px) {
+        .Services ul {
+            padding-left: 10em;
+            padding-right: 10em;
+        }
+    }
 
