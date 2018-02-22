@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/c692f42e-8eda-44c7-82a9-c7c4e94c4ad4/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/DCTechnologySolutions</ApplicationInsightsResourceId>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,7 +81,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -207,6 +211,30 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="OJDBModels\ACL.cs" />
+    <Compile Include="OJDBModels\Buyer.cs" />
+    <Compile Include="OJDBModels\Casting.cs" />
+    <Compile Include="OJDBModels\Client.cs" />
+    <Compile Include="OJDBModels\Collection.cs" />
+    <Compile Include="OJDBModels\Company.cs" />
+    <Compile Include="OJDBModels\Component.cs" />
+    <Compile Include="OJDBModels\ComponentType.cs" />
+    <Compile Include="OJDBModels\C__MigrationHistory.cs" />
+    <Compile Include="OJDBModels\JewelryType.cs" />
+    <Compile Include="OJDBModels\Labor.cs" />
+    <Compile Include="OJDBModels\Memo.cs" />
+    <Compile Include="OJDBModels\MetalCode.cs" />
+    <Compile Include="OJDBModels\MetalWeightUnit.cs" />
+    <Compile Include="OJDBModels\Misc.cs" />
+    <Compile Include="OJDBModels\OJewelryDB.cs" />
+    <Compile Include="OJDBModels\Presenter.cs" />
+    <Compile Include="OJDBModels\SalesLedger.cs" />
+    <Compile Include="OJDBModels\Style.cs" />
+    <Compile Include="OJDBModels\StyleCasting.cs" />
+    <Compile Include="OJDBModels\StyleComponent.cs" />
+    <Compile Include="OJDBModels\StyleLabor.cs" />
+    <Compile Include="OJDBModels\StyleMisc.cs" />
+    <Compile Include="OJDBModels\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -313,6 +341,7 @@
     <Content Include="Views\Services\Kinect.cshtml" />
     <Content Include="Views\Services\_ServicesLayout.cshtml" />
     <Content Include="Views\Gallery\_GalleryLayout.cshtml" />
+    <Content Include="Views\Home\StylesEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -328,6 +357,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

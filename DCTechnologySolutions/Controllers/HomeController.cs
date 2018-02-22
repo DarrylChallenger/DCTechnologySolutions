@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DCTechnologySolutions.OJDBModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -99,5 +100,11 @@ namespace DCTechnologySolutions.Controllers
             return View();
         }
 
+        public ActionResult StylesEdit(int StyleId)
+        {
+            OJewelryDB db = new OJewelryDB();
+            Style style = db.Styles.Find(StyleId);
+            return View(style);
+        }
     }
 }
