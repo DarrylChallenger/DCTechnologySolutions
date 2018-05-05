@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "OJewelry - Jewelry Manufacturing Operations";
+    Layout = "~/Views/Gallery/_GalleryLayout.cshtml";
+}
+
+<div class="project">
+    <h2>OJewelry</h2>
+    <div class="ProjectBox">
+        <p>
+            This client works with jewelers to manage thier inventory and control their costs. She had many manual and paper-based processes,
+            and found that she was not able to handle more clients.
+        </p>
+        <p>
+            The OJewelry application brought the inventory system online and helped solve scaling issues:
+            The application supports bulk-loading of a jewelers pieces, organizing items into assortments, and component cost management.
+            She is able to track the location of pieces when jewelers send them out for display.
+            Inventory, Location, and Vendor reports are available online can can be exported to Excel; manufacturing components can be imported from Excel.
+            Vendor and User Management is supported with built-in administrative functions - different users are authorized to see only their specific data.
+        </p>
+        <div class="LogoContainer"><img class="OJLogo" src="~/Images/OJLogo.png" alt="" title="" /></div>
+        <p>
+            With the Azure hosted-OJewelry application, my client now has the abilty to take on more jewelers and can help them manage thier businesses with less paper and more time.
+        </p>
+        <br /><br />
+
+    </div>
+    @*
+        <div class="CABBox">
+            <img class="CABImage img-responsive" src="~/Images/CAB_V500.png"
+                 title="Chess Across Borders - a chess education and instruction program"
+                 alt="Chess Across Borders - a chess education and instruction program" />
+            <span class="CABAlign">
+                <span class="CABHeightBox"></span>
+                <span>Visit the </span>
+                <span class="projectlink"><a href="//www.chessacrossborders.com" target="_blank">Chess Across Borders</a></span>
+                <span> web site</span>
+            </span>
+        </div>
+    *@
+    <br />
+
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6"></div>
+        <div class="col-xs-6 col-sm-6">
+            <a class="rightArrow" href="@Url.Action("CAB", "Gallery")" title="Chess Across Borders Web Site">Chess Across Borders >>></a>
+        </div>
+    </div>
+</div>
+@*
+                @section SEOMeta {
+                    <meta name="keywords" content="Darryl Challenger, Challenger Technology Solutions, Chess Across Borders Website, Wordpress" />
+                    <meta name="description" content="Challenger Technology Solutions Gallery for Chess Across Borders. Website, site design, Social Media, Requirements, Project Management" />
+                }
+    *@

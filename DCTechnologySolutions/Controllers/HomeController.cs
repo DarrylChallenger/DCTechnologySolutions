@@ -73,7 +73,7 @@ namespace DCTechnologySolutions.Controllers
 
         public ActionResult Consulting()
         {
-            ViewBag.Message = "YConsulting page.";
+            ViewBag.Message = "Consulting page.";
 
             return View();
         }
@@ -94,7 +94,7 @@ namespace DCTechnologySolutions.Controllers
 
         public ActionResult ThankYou()
         {
-            ViewBag.Message = "Your Thank You page.";
+            ViewBag.Message = "Thank You!";
 
             return View();
         }

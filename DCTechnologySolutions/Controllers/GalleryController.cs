@@ -18,6 +18,10 @@ namespace DCTechnologySolutions.Controllers
         {
             return View();
         }
+        public ActionResult OJewelry()
+        {
+            return View();
+        }
 
         public ActionResult Equity()
         {

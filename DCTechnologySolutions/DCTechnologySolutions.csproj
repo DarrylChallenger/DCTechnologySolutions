@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/c692f42e-8eda-44c7-82a9-c7c4e94c4ad4/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/DCTechnologySolutions</ApplicationInsightsResourceId>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -244,6 +245,7 @@
     <Content Include="Images\equity_V3-03blue.png" />
     <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Images\Kinect.png" />
+    <Content Include="Images\OJLogo.png" />
     <Content Include="Images\PaperBG2.png" />
     <Content Include="Images\settings-gears.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -313,6 +315,7 @@
     <Content Include="Views\Services\Kinect.cshtml" />
     <Content Include="Views\Services\_ServicesLayout.cshtml" />
     <Content Include="Views\Gallery\_GalleryLayout.cshtml" />
+    <Content Include="Views\Gallery\OJewelry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
