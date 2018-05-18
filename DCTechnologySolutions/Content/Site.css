@@ -332,10 +332,11 @@ textarea {
 
 
 .Gallery {
-    background-color:#EEE0CB;
-    background-color:lightgray;
+    background-color: #EEE0CB;
+    background-color: lightgray;
+    background-color: #ebd4cb;
+    background-color:#F0F0F0;
     padding: 2em 0 3em 0;
-
 }
 
 .Gallery h2 {
@@ -369,6 +370,9 @@ textarea {
     border-color:#7C7287;
     border-color:#EEE0CB;
     border-color:lightgrey;
+    border-color: #ebd4cb;
+    border-color:#F0F0F0;
+
     border-width:6px;
 
 }
