@@ -170,8 +170,8 @@ textarea {
     margin:auto;
     background-image:url("../Images/PaperBG2.png");
     text-align:center;
-    padding-top:10em;
-    padding-bottom:12em;    
+    padding-top:6em;
+    padding-bottom:6em;    
 }
 
 .mainTitleTop {
@@ -743,11 +743,11 @@ footer a:hover, footer a:focus  {
 @media only screen and (min-width:768px) {
     .mainLogoImage {
         width: 394px;
-        padding-bottom: 7em;
+        padding-bottom: 5em;
     }
 
     .subTitle {
-        padding-bottom: 3em;
+        padding-bottom: 1em;
         font-variant: small-caps;
         font-size: large;
     }
