@@ -31,6 +31,11 @@
 	font-style: normal;
 }
 
+body {
+    padding-bottom: 20px;
+}
+
+
 body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     /*font-family: 'Sans-Copperplate Gothic', sans-serif;*/
     font-family: 'Russo One', sans-serif;
@@ -99,11 +104,6 @@ a:focus, a:hover {
 }
 
 
-body {
-    padding-bottom: 20px;
-}
-
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -120,7 +120,6 @@ textarea {
 
 .mainLogoImage {
     max-width:394px;
-    padding-bottom:3em;
 }
 
 .centered {
@@ -167,10 +166,13 @@ textarea {
 /* min width of 570, title gets normal (small below) */
 .titleContainer {
     min-width:240px;
+    width:100%;
     margin:auto;
     background-image:url("../Images/PaperBG2.png");
+    background-size:cover;
+    background-repeat:repeat;
     text-align:center;
-    padding-top:6em;
+    padding-top:15em;
     padding-bottom:6em;    
 }
 
@@ -180,10 +182,10 @@ textarea {
 }
 .mainTitleBot,
 .appTitle {
-    margin:auto;
-    font-variant:small-caps;
-    color:white;
-    text-align:center;
+    margin: auto;
+    font-variant: small-caps;
+    color: white;
+    text-align: center;
 }
 
 .titlebr { /* Not used */
@@ -232,7 +234,7 @@ textarea {
     font-family:'Russo One', sans-serif;
     padding: 0.2em;
     font-size:1.5em;
-    font-weight:700;
+    font-weight:600;
     border-radius:1em;
     border-width:4px;
     margin-top:1em;
@@ -241,6 +243,7 @@ textarea {
     width:200px;
     display:block;
     text-align:center;
+    z-index:100;
 }
 
 @media only screen and (min-width:768px) {
@@ -335,7 +338,7 @@ textarea {
     background-color: #EEE0CB;
     background-color: lightgray;
     background-color: #ebd4cb;
-    background-color:#F0F0F0;
+    background-color:#ececec;
     padding: 2em 0 3em 0;
 }
 
@@ -371,7 +374,7 @@ textarea {
     border-color:#EEE0CB;
     border-color:lightgrey;
     border-color: #ebd4cb;
-    border-color:#F0F0F0;
+    border-color:#ececec;
 
     border-width:6px;
 
@@ -743,7 +746,7 @@ footer a:hover, footer a:focus  {
 @media only screen and (min-width:768px) {
     .mainLogoImage {
         width: 394px;
-        padding-bottom: 5em;
+        padding-bottom: 2em;
     }
 
     .subTitle {

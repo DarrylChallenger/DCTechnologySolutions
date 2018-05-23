@@ -1,0 +1,88 @@
+﻿
+.HomeWrapper {
+    position: absolute;
+    /z-index: 0;
+    bottom: 1vh;
+    top: auto;
+    width: 100%;
+}
+
+
+.OutsideParallax {
+    transform: translateZ(-1);
+}
+
+.Parallax {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 1px;
+    perspective: 1px;
+    perspective-origin:50% 50%;
+}
+
+.ParallaxGroup {
+	position: relative;
+	height: 100vh;
+	transform-style: preserve-3d;
+    width:100%;
+}
+
+.ParallaxLayer {
+	position: absolute;
+	top: 0;
+	width:100%;
+
+}
+
+.ParallaxBack {
+    /border-style: solid;
+    border-color: green;
+    top: 0;
+    /*
+    -moz-transform: translateZ(-2px) scale(3);
+    -ms-transform: translateZ(-2px) scale(3);
+    -o-transform: translateZ(-2px) scale(3);
+    -webkit-transform: translateZ(-1px) scale(2);
+    */
+    transform: translateZ(-1px) scale(2) translateX(-4px);
+    width: 100%;/*101*/
+    z-index:30;
+}
+
+.ParallaxBase {
+    /border-style: solid;
+    border-color: darkred;
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    bottom: 0;
+    top: 100vh;
+    width: 100%;
+    z-index:20;
+}
+
+.bordered {
+	border-style: solid;
+	border-color: Highlight;
+	border-width: 2px;
+}
+
+/* misc
+  --------------------------------------------- */
+.fullimg {
+	position: relative;
+	padding: 0 0 0 0;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	align-content: center;
+}
+
+.img-responsive {
+	width: 100%;
+}

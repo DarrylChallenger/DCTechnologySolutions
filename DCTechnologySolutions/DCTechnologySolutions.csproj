@@ -255,6 +255,8 @@
     </Content>
     <Content Include="fonts\sans-copperplategothic.ttf" />
     <Content Include="fonts\Sans-Copperplate-Gothic.eot" />
+    <Content Include="Content\parallax.css" />
+    <None Include="Properties\PublishProfiles\DCTechnologySolutions-staging - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\DCTechnologySolutions.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Dimensions.js" />

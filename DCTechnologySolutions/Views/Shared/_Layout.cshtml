@@ -33,64 +33,73 @@
     </script>
 </head>
 <body onresize="ShowScreenDimensions()">
-    <!-- No menu on home page -->
-    @if (ViewBag.OnHome != "Y")
-    {
+    <div class="HomeWrapper">
+        <!-- No menu on home page -->
+        @if (ViewBag.OnHome != "Y")
+        {
 
-    <div class="navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navImg" src="~/Images/DC LOGO Small Grey BG tx.png" /></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Services", "Index", "Services")</li>
-                    <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            <div class="navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img class="navImg" src="~/Images/DC LOGO Small Grey BG tx.png" /></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Services", "Index", "Services")</li>
+                            <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
 
-                <!--@Html.Partial("_LoginPartial")-->
+                        <!--@Html.Partial("_LoginPartial")-->
 
-            </div>
-        </div>
-    </div>
-        @*
-        <div class="DCTechBrandBk"></div>
-        <a class="valign noOutline" href="@Url.Action("Index", "Home")">
-            <div class="DCTechBrand"></div>
-        </a>
-        *@
-    }
-    <!--<div class="DCTechBrand" ></div> - Brand icon goes here-->
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <address>
-                        <a class="leftFoot" href="@Url.Action("Index", "Home")"><span class="copy">&copy;</span> Darryl Challenger Technology Solutions, Inc.</a>
-                    </address>
-                </div>
-                @*<h2>Contact@dctechnologysolutions.com</p>*@
-                <div class="col-xs-12 col-sm-6">
-                    <address>
-                        @*<a class="rightFoot" href="@Url.Action("Contact", "Home")">contact@dctechnologysolutions.com</a>*@
-                        <a class="rightFoot" href="mailto:contact@dctechnologysolutions.com">contact@dctechnologysolutions.com</a>
-                    </address>
+                    </div>
                 </div>
             </div>
-            <p class="ack">Icons by <a href="http://www.freepik.com" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
             @*
-        <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+            <div class="DCTechBrandBk"></div>
+            <a class="valign noOutline" href="@Url.Action("Index", "Home")">
+                <div class="DCTechBrand"></div>
+            </a>
             *@
-        </footer>
+        }
+        else
+        {
+
+        }
+        <!--<div class="DCTechBrand" ></div> - Brand icon goes here-->
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <address>
+                            <a class="leftFoot" href="@Url.Action("Index", "Home")"><span class="copy">&copy;</span> Darryl Challenger Technology Solutions, Inc.</a>
+                        </address>
+                    </div>
+                    @*<h2>Contact@dctechnologysolutions.com</p>*@
+                    <div class="col-xs-12 col-sm-6">
+                        <address>
+                            @*<a class="rightFoot" href="@Url.Action("Contact", "Home")">contact@dctechnologysolutions.com</a>*@
+                            <a class="rightFoot" href="mailto:contact@dctechnologysolutions.com">contact@dctechnologysolutions.com</a>
+                        </address>
+                    </div>
+                </div>
+                <p class="ack">Icons by <a href="http://www.freepik.com" title="Freepik" target="_blank">Freepik</a> and 
+                <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp" target="_blank">Eucalyp</a> from 
+                <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a> is licensed by 
+                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a></p>
+                @*
+                <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                *@
+            </footer>
+        </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
