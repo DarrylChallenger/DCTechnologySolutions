@@ -1,7 +1,6 @@
 ﻿
 .HomeWrapper {
     position: absolute;
-    /z-index: 0;
     bottom: 1vh;
     top: auto;
     width: 100%;
@@ -10,15 +9,18 @@
 
 .OutsideParallax {
     transform: translateZ(-1);
+    z-index: -21;
 }
 
 .Parallax {
     height: 100vh;
+    //ad a min height
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto; /* auto or scroll */
     -webkit-perspective: 1px;
     perspective: 1px;
-    perspective-origin:50% 50%;
+    perspective-origin: 0 0;
+    z-index: -21;
 }
 
 .ParallaxGroup {
@@ -29,9 +31,9 @@
 }
 
 .ParallaxLayer {
-	position: absolute;
-	top: 0;
-	width:100%;
+    position: absolute;
+    top: 0;
+    width:100%;
 
 }
 
@@ -45,6 +47,7 @@
     -o-transform: translateZ(-2px) scale(3);
     -webkit-transform: translateZ(-1px) scale(2);
     */
+    transform-origin: 0 0;
     transform: translateZ(-1px) scale(2) translateX(-4px);
     width: 100%;/*101*/
     z-index:30;
@@ -64,9 +67,9 @@
     z-index:20;
 }
 
-.bordered {
+.PBordered {
 	border-style: solid;
-	border-color: Highlight;
+	border-color: pink;
 	border-width: 2px;
 }
 
@@ -86,3 +89,30 @@
 .img-responsive {
 	width: 100%;
 }
+
+
+.fixeditem {
+    position: fixed;
+    border-style: solid;
+    border-color:white;
+    border-width:3px;
+    z-index: -5000;
+    background-image: url("../Images/006-idea.png");
+    background-color:pink;
+    transform: translateZ(-2) scale(2);
+}
+
+/*
+.fixeditem {
+    overflow:hidden;
+    position:relative;
+}
+
+.fixeditem::before {
+    position: fixed;
+    border-style: solid;
+    z-index: -5;
+    will-change: transform;
+    background-image: url("../Images/006-idea.png");
+}
+*/

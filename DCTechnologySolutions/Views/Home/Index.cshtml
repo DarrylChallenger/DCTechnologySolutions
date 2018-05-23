@@ -8,8 +8,10 @@
         <div class="ParallaxGroup">
             <!--group -->
             <div class="ParallaxLayer ParallaxBack">
+
                 <!-- back -->
                 <div class="titleContainer">
+
                     <div class="mainTitleTop">
                         <img class="mainLogoImage"
                              srcset="~/Images/DCLogoMetalField200.png 200w, ~/Images/DCLogoMetalField.png 394w"
@@ -35,111 +37,113 @@
                             </em>
                         </p>
                     </div>
-                    <p class="subTitle">Taking&nbspthe&nbspchallenge out&nbspof&nbsptechnology</p>
+                    <p class="subTitle">Taking&nbsp;the&nbsp;challenge out&nbsp;of&nbsp;technology</p>
                     <p></p>
-                    <div>
+                    <div class="">
                         @Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "mainContactBtn" })
                     </div>
                     @*<p class="subTitle"><em>Builing software to make us better</em></p>*@
                 </div>
             </div>
+            <div>
 
-            <div class="ParallaxLayer ParallaxBase">
-                <!--base-->
-                <div class="Services">
-                    <h2>Services</h2>
-                    <ul class="">
-                        <li>
-                            <div class="Service">
-                                <img class="ServiceImg" src="~/Images/settings-gears.png" />
-                                <span> @Html.ActionLink("Application Development and Systems Integration", "AppDev", "Services")</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="Service">
-                                <img class="ServiceImg" src="~/Images/003-arrows.png" />
-                                <span> @Html.ActionLink("Consulting", "Consulting", "Services")</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="Service">
-                                <img class="ServiceImg" src="~/Images/business-people-meeting.png" />
-                                <span> @Html.ActionLink("Software Development and Development Team Leadership", "Leadership", "Services")</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="Service">
-                                <img class="ServiceImg" src="~/Images/Kinect.png" />
-                                <span> @Html.ActionLink("Kinect Gesture Detection", "Kinect", "Services")</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="Service">
-                                <img class="ServiceImg" src="~/Images/001-graphic.png" />
-                                <span> @Html.ActionLink("Online Profile creation for your Business or Charity", "OnlineProfile", "Services")</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="Gallery">
-                    <h2>Gallery</h2>
-                    <div class="row GalleryRow">
-                        <div class="col-sm-4 col-xs-12 GalleryBox">
-                            <a class="GalleryLink" href="@Url.Action("OJewelry", "Gallery" , new { title="OJewelry" })">
-                                <img alt="Chess Across Borders Web Site" title="OJewelry - Jewelry Manufacturing Operations" class="GalleryImage"
-                                     src="@Url.Content("~/Images/OJLogo.png")" />
-                            </a>
-                        </div>
-                        <div class="col-sm-4 col-xs-12 GalleryBox">
-                            <a class="GalleryLink" href="@Url.Action("CAB", "Gallery", new { title="Chess Across Borders Web Site" })">
-                                <img alt="Chess Across Borders Web Site" title="Chess Across Borders Web Site" class="GalleryImage"
-                                     src="@Url.Content("~/Images/CAB_V6-WonTx550_425.png")" />
-                            </a>
-                        </div>
-                        <div class="col-sm-4 col-xs-12 GalleryBox">
-                            <a class="GalleryLink" href="@Url.Action("Equity", "Gallery", new { title="Equity Project For All Facebook Page", })">
-                                <img alt="Equity Facebook Page" title="Equity on Facebook" class="GalleryImage"
-                                     src="@Url.Content("~/Images/equityQFB_V3WOnTx.png")" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row GalleryRow">
-                        <div class="col-sm-4 col-xs-12 GalleryBox">
-                            <a class="GalleryLink" href="@Url.Action("Equity", "Gallery", new { title="Equity Project For All Web Site" })">
-                                <img alt="Equity Web Site" title="Equity Web Site" class="GalleryImage"
-                                     src="@Url.Content("~/Images/equity_V3-03blue.png")" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ContactDCTech">
-                    <h2>Our Commitment</h2>
-                    <p>
-                        Our focus is you and your clients. We'll work with you to get you exactly what you need.
-                        If you are new to this, don't worry - you have a partner with us.<br />
-                    </p>
-
-                    @Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "ContactBtn" })
-                </div>
-
-                <div class="future">
-                    <div class="Testimonials">
-                    </div>
-                    <div class="usefulResources">
-                        <hr />
-                        @Html.ActionLink("Developer Resources", "DevResources", "Home", routeValues: null, htmlAttributes: new { @class = "h2" })<span class="usefulResourcesText"> - Tools and Resources I've found helpful in the devleopment process.</span>
+                <div class="ParallaxLayer ParallaxBase">
+                    <!--base-->
+                    <div class="Services">
+                        <h2>Services</h2>
+                        <ul class="">
+                            <li>
+                                <div class="Service">
+                                    <img class="ServiceImg" src="~/Images/settings-gears.png" />
+                                    <span> @Html.ActionLink("Application Development and Systems Integration", "AppDev", "Services")</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Service">
+                                    <img class="ServiceImg" src="~/Images/003-arrows.png" />
+                                    <span> @Html.ActionLink("Consulting", "Consulting", "Services")</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Service">
+                                    <img class="ServiceImg" src="~/Images/business-people-meeting.png" />
+                                    <span> @Html.ActionLink("Software Development and Development Team Leadership", "Leadership", "Services")</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Service">
+                                    <img class="ServiceImg" src="~/Images/Kinect.png" />
+                                    <span> @Html.ActionLink("Kinect Gesture Detection", "Kinect", "Services")</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Service">
+                                    <img class="ServiceImg" src="~/Images/001-graphic.png" />
+                                    <span> @Html.ActionLink("Online Profile creation for your Business or Charity", "OnlineProfile", "Services")</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
 
+                    <div class="Gallery">
+                        <h2>Gallery</h2>
+                        <div class="row GalleryRow">
+                            <div class="col-sm-4 col-xs-12 GalleryBox">
+                                <a class="GalleryLink" href="@Url.Action("OJewelry", "Gallery" , new { title="OJewelry" })">
+                                    <img alt="Chess Across Borders Web Site" title="OJewelry - Jewelry Manufacturing Operations" class="GalleryImage"
+                                         src="@Url.Content("~/Images/OJLogo.png")" />
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-xs-12 GalleryBox">
+                                <a class="GalleryLink" href="@Url.Action("CAB", "Gallery", new { title="Chess Across Borders Web Site" })">
+                                    <img alt="Chess Across Borders Web Site" title="Chess Across Borders Web Site" class="GalleryImage"
+                                         src="@Url.Content("~/Images/CAB_V6-WonTx550_425.png")" />
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-xs-12 GalleryBox">
+                                <a class="GalleryLink" href="@Url.Action("Equity", "Gallery", new { title="Equity Project For All Facebook Page", })">
+                                    <img alt="Equity Facebook Page" title="Equity on Facebook" class="GalleryImage"
+                                         src="@Url.Content("~/Images/equityQFB_V3WOnTx.png")" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row GalleryRow">
+                            <div class="col-sm-4 col-xs-12 GalleryBox">
+                                <a class="GalleryLink" href="@Url.Action("Equity", "Gallery", new { title="Equity Project For All Web Site" })">
+                                    <img alt="Equity Web Site" title="Equity Web Site" class="GalleryImage"
+                                         src="@Url.Content("~/Images/equity_V3-03blue.png")" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                    @section SEOMeta {
-                        <meta name="keywords" content="Darryl Challenger, Challenger Technology Solutions, websites, sites, social media, application development, kinect, migrations, consulting" />
-                        <meta name="description" content="Welcome to Challenger Technology Solutions - Sites, Social Media, Applications, Kinect, Migrations, and Consulting" />
-                    }
+                    <div class="ContactDCTech">
+                        <h2>Our Commitment</h2>
+                        <p>
+                            Our focus is you and your clients. We'll work with you to get you exactly what you need.
+                            If you are new to this, don't worry - you have a partner with us.<br />
+                        </p>
+
+                        @Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "ContactBtn" })
+                    </div>
+
+                    <div class="future">
+                        <div class="Testimonials">
+                        </div>
+                        <div class="usefulResources">
+                            <hr />
+                            @Html.ActionLink("Developer Resources", "DevResources", "Home", routeValues: null, htmlAttributes: new { @class = "h2" })<span class="usefulResourcesText"> - Tools and Resources I've found helpful in the devleopment process.</span>
+                        </div>
+
+
+                        @section SEOMeta {
+                            <meta name="keywords" content="Darryl Challenger, Challenger Technology Solutions, websites, sites, social media, application development, kinect, migrations, consulting" />
+                            <meta name="description" content="Welcome to Challenger Technology Solutions - Sites, Social Media, Applications, Kinect, Migrations, and Consulting" />
+                        }
+                    </div>
                 </div>
+
             </div>
-
         </div>
     </div>
 </div>
