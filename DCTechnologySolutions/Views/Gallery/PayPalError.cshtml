@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "PayPalError";
+}
+
+<div class="PayPal">
+    <h2>PayPal Error</h2>
+    <div class="PayPalBox">
+        <h3>An error occurred processing the payment</h3>
+        <p>@ViewBag.name:@ViewBag.message</p>
+    </div>
+    @Html.ActionLink("Return to Samples", "PayPalSamples")
+</div>

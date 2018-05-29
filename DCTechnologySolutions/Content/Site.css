@@ -22,17 +22,9 @@
     border-width:2px;
 }
 
-@font-face {
-	font-family: 'Sans-Copperplate Gothic';
-	src: url('../fonts/sans-copperplategothic.ttf') format('truetype'),
-     url('../fonts/Sans-Copperplate-Gothic.eot'),
-     url('../fonts/Sans-Copperplate-Gothic.eot?#iefix') format('embedded-opentype'); /*IE8 and lower */
-	font-weight: normal;
-	font-style: normal;
-}
+
 
 body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
-    /*font-family: 'Sans-Copperplate Gothic', sans-serif;*/
     font-family: 'Russo One', sans-serif;
 }
 
@@ -228,7 +220,6 @@ textarea {
     background-position-y:50%;
     color:black;
     background-color:lightgrey;
-    font-family:'Sans-Copperplate Gothic', sans-serif;
     font-family:'Russo One', sans-serif;
     padding: 0.2em;
     font-size:1.5em;
@@ -386,7 +377,7 @@ textarea {
 }
 
 .GalleryLink:hover {
-    opacity:.6;
+    opacity:.8;
     border-color:black;
 }
 
@@ -465,6 +456,7 @@ textarea {
     font-size:1em;
     padding:2em 4em 2em 4em;
 }
+
 .project a {
     color:black;
     text-decoration:underline;

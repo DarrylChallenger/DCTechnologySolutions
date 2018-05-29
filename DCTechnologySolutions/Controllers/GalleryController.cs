@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace DCTechnologySolutions.Controllers
 {
-    public class GalleryController : Controller
+    public partial class GalleryController : Controller
     {
         // GET: Gallery
         public ActionResult Index()

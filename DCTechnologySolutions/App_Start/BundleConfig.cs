@@ -26,8 +26,9 @@ namespace DCTechnologySolutions
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Font/sans-copperplategothic.ttf",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/PayPal.css",
+                      "~/Content.Stripe.css"));
         }
     }
 }

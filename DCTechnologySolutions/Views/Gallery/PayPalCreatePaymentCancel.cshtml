@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "PayPalCreatePaymentCancel";
+}
+
+<div class="PayPal">
+    <h2>PayPal Payment Cancelled</h2>
+    <div class="PayPalBox">
+        <p>@ViewBag.intent</p>
+        <p>PaymentID:@ViewBag.paymentID</p>
+        <p>PayerID:@ViewBag.payerID</p>
+        <p>CancelURL:@ViewBag.cancelURL</p>
+        <p>Token:@ViewBag.token</p>
+    </div>
+    @Html.ActionLink("Return to Samples", "PayPalSamples")
+</div>

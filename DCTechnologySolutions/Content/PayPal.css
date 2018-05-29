@@ -1,0 +1,100 @@
+﻿
+.PayPal {
+    max-width: 75%;
+    margin: auto;
+}
+
+.PayPal h2, .PayPal h4 {
+    padding-bottom: 1em;
+}
+
+.PayPal h3, .PayPal h4 {
+    color:white;
+}
+
+.PayPal a {
+    color: black;
+    text-decoration: underline;
+}
+
+    .PayPal a:focus, .PayPal a:hover {
+        color: darkred;
+    }
+
+.PayPalBox a {
+    color: white;
+}
+
+.PayPal p {
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    line-height: 150%;
+    color: white;
+    padding-bottom: 1em;
+    width: 90%;
+    text-align: left;
+    text-justify: trim;
+    margin: auto;
+}
+
+
+.PayPal .ContactBtn:hover, 
+.PayPal .ContactBtn:focus, 
+.PayPal .ContactBtn2:hover, 
+.PayPal .ContactBtn2:focus {
+    color: black;
+    background-color: lightgrey;
+    opacity: .6;
+}
+
+.PayPallink {
+    font-family: 'Russo One', sans-serif;
+}
+
+@media only screen and (min-width:768px) {
+    .PayPallink {
+        font-size: 18px;
+    }
+
+    .PayPallink a {
+        font-size: 24px;
+    }
+}
+
+
+.PayPalBox {
+    background-color: darkred;
+    opacity: .8;
+    margin-bottom: 2em;
+    padding: 1.5em 1.5em 0 1.5em;
+    border-color: black;
+    border-style: solid;
+}
+
+.PayPalBox a:focus, .PayPalBox a:hover {
+    color: lightgrey;
+}
+
+.PayPalForm{
+    padding:1em;
+}
+
+.PayPalBtn {
+    padding: 1em;
+}
+
+@media only screen and (min-width:768px) {
+    .PayPal h3 {
+        font-size: 30px;
+    }
+
+    .PayPal p {
+        font-size: 1.6em;
+        letter-spacing: 1px;
+    }
+
+    .PayPal a {
+        font-size: 24px;
+    }
+}
+
