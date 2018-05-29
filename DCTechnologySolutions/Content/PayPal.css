@@ -98,3 +98,16 @@
     }
 }
 
+@media only screen and (min-width:768px) {
+    .PayPal-xs-break {
+        display:none;
+    }
+}
+
+.PayPal-xs-break {
+    border-top: black;
+    border-top-width: 2px;
+    border-top-style: solid;
+    width: 90%;
+}
+

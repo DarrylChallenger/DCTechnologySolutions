@@ -15,8 +15,8 @@
             You can have a variety of buttons including "Buy Now", "Add to Cart", and "Donate."
         </h4>
         <div class="row">
-            <div class="col-sm-8"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-8 col-xs-2"></div>
+            <div class="col-sm-4 col-xs-10">
                 <form class="PayPalForm" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="3A67FS8UVXU44">
@@ -49,7 +49,7 @@
                         style: {
                             label: 'buynow',
                             color: 'gold',
-                            size: 'medium',
+                            size: 'responsive',
                             shape: 'pill',
                             tagline: false,
                             fundingicons: true
@@ -98,13 +98,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
-                <h3 class="centered">Stacked buttons</h3>
-            </div>
-            <div class="col-sm-6">
-                <h3 class="centered">Horizontal buttons</h3>
-            </div>
-        </div>
+            <h3 class="centered">Stacked or horizontal buttons</h3>
+       </div>
         <div class="row">
             <div class="col-sm-6">
                 <div class="row">
@@ -125,7 +120,7 @@
 
                                 style: {
                                     layout: 'vertical',  // horizontal | vertical
-                                    size: 'medium',    // medium | large | responsive
+                                    size: 'responsive',    // medium | large | responsive
                                     shape: 'pill',      // pill | rect
                                     color: 'gold'       // gold | blue | silver | black
                                 },
@@ -193,6 +188,7 @@
                     </div>
                 </div>
             </div>
+            <hr class="PayPal-xs-break"/>
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-sm-3"></div>
@@ -208,7 +204,7 @@
                                 style: {
                                     label: 'buynow',
                                     color: 'gold',
-                                    size: 'medium',
+                                    size: 'responsive',
                                     shape: 'pill',
                                     tagline: false,
                                     fundingicons: true,
@@ -327,7 +323,7 @@
             style: {
                 //layout: 'horizontal',  // horizontal | vertical
                 color: 'gold',
-                size: 'medium',
+                size: 'responsive',
                 fundingicons: true,
                 tagline: false
             },
