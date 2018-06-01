@@ -271,6 +271,7 @@
     </Content>
     <Content Include="fonts\sans-copperplategothic.ttf" />
     <Content Include="fonts\Sans-Copperplate-Gothic.eot" />
+    <Content Include="PaymentSecrets.config" />
     <None Include="Properties\PublishProfiles\DCTechnologySolutions-staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\DCTechnologySolutions-staging - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\DCTechnologySolutions.pubxml" />
