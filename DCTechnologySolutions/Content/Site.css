@@ -1,5 +1,6 @@
 ﻿/*
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Courgette|Montserrat:700|Pattaya|Paytone+One|Poppins:700|Russo+One" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Courgette|Montserrat:700|Pattaya|Paytone+One|Poppins:700|Russo+One|Erica+One" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Erica+One" rel="stylesheet"> 
     font-family: 'Baloo', cursive;
     font-family: 'Courgette', cursive;
     font-family: 'Montserrat', sans-serif;
@@ -14,6 +15,10 @@
 }
 .Montserrat {
     font-family: 'Montserrat', sans-serif;
+}
+
+.EricaOne {
+    font-family:'Erica One', sans-serif;
 }
 
 .boxed {

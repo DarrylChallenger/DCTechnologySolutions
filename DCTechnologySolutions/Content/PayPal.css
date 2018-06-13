@@ -2,48 +2,53 @@
 .PayPal {
     max-width: 75%;
     margin: auto;
+    color: black;
 }
 
-.PayPal h2, .PayPal h4 {
-    padding-bottom: 1em;
+.PayPal h2 {
+    color:black;
 }
 
-.PayPal h3, .PayPal h4 {
-    color:white;
+.PayPal small {
+    color:black;
 }
+.PayPal h2, .PayPal h4, .PayPal .h2 {
+    margin-bottom:10px;
+}
+
+    .PayPal h3, .PayPal h4, .PayPal .h3, .PayPal .h4 {
+        color: black;
+        line-height: 110%;
+        letter-spacing: 1.3px;
+    }
 
 .PayPal a {
     color: black;
     text-decoration: underline;
 }
 
-    .PayPal a:focus, .PayPal a:hover {
-        color: darkred;
-    }
-
 .PayPalBox a {
-    color: white;
+    color: black;
 }
 
 .PayPal p {
     font-size: 1.25em;
     letter-spacing: 1px;
     line-height: 150%;
-    color: white;
+    color: black;
     padding-bottom: 1em;
-    width: 90%;
+    /width: 90%;
     text-align: left;
     text-justify: trim;
     margin: auto;
 }
-
 
 .PayPal .ContactBtn:hover, 
 .PayPal .ContactBtn:focus, 
 .PayPal .ContactBtn2:hover, 
 .PayPal .ContactBtn2:focus {
     color: black;
-    background-color: lightgrey;
+    background-color: gold;
     opacity: .6;
 }
 
@@ -63,7 +68,7 @@
 
 
 .PayPalBox {
-    background-color: darkred;
+    background-color: gold;
     opacity: .8;
     margin-bottom: 2em;
     padding: 1.5em 1.5em 0 1.5em;
@@ -72,7 +77,7 @@
 }
 
 .PayPalBox a:focus, .PayPalBox a:hover {
-    color: lightgrey;
+    color: darkred;
 }
 
 .PayPalForm{
@@ -111,3 +116,10 @@
     width: 90%;
 }
 
+.shopcart {
+    border-color:black;
+    border-width:2px;
+    border-style:solid;
+    height:5em;
+    width:5em;
+}

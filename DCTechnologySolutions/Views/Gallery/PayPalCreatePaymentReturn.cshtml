@@ -4,14 +4,13 @@
 }
 
 <div class="PayPal">
-    <h2>The payment was completed successfully</h2>
+    <h2>Successful Payment Page</h2>
+    <p>Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at www.paypal.com to view details of this transaction.</p>
     <div class="PayPalBox">
         <p>@ViewBag.intent</p>
         <p>Payment ID:@ViewBag.paymentID</p>
         <p>PayerID:@ViewBag.payerID</p>
         <p>OrderID:@ViewBag.orderId</p>
-        <p>BillingID:@ViewBag.billingId</p>
-        <p>returnURL:@ViewBag.returnUrl</p>
     </div>
     @Html.ActionLink("Return to Samples", "PayPalSamples")
 </div>

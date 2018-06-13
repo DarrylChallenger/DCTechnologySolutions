@@ -3,6 +3,7 @@ using PayPal;
 using PayPal.Api;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,8 +15,10 @@ namespace DCTechnologySolutions.Controllers
         // https://demo.paypal.com/us/demo/navigation?merchant=beauty&page=merchantHome&device=desktop
         public ActionResult PayPalSamples()
         {
+            ViewBag.AddToCart = PayPalConfig.AddToCart;
             return View();
         }
+
         public string PayPalCreatePayment(string Sku)
         {
             // do a lookup for the sku
@@ -150,5 +153,9 @@ namespace DCTechnologySolutions.Controllers
             // Error
         }
 
+        /*public FileContentResult GetCart()
+        {
+            return FileContentResult f = new ("~/Images/Cart.png", "image/png");
+        }*/
     }
 }

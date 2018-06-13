@@ -13,5 +13,6 @@ namespace DCTechnologySolutions.Models
     {
         public static string secretKey { get; set; }
         public static string clientId { get; set; }
+        public static string AddToCart { get; set; }
     }
 }

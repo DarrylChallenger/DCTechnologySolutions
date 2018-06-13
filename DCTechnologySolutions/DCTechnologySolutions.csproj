@@ -244,6 +244,7 @@
     <Content Include="Images\CAB_Logo100.png" />
     <Content Include="Images\CAB_Logo100W.png" />
     <Content Include="Images\CAB_V500.png" />
+    <Content Include="Images\Cart.png" />
     <Content Include="Images\DAMN Map.jpg" />
     <Content Include="Images\DC LOGO B&amp;W2AFloralwhite.png" />
     <Content Include="Images\DC LOGO B&amp;W2ALightBlue.png" />
@@ -378,7 +379,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55865</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55865/</IISUrl>
+          <IISUrl>https://localhost:44318/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
