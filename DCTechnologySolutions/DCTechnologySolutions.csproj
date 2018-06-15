@@ -239,6 +239,7 @@
     <Content Include="Images\003-good-worker.png" />
     <Content Include="Images\004-two-businessmen-holding-a-flag.png" />
     <Content Include="Images\006-idea.png" />
+    <Content Include="Images\blue-on-light.png" />
     <Content Include="Images\business-people-meeting.png" />
     <Content Include="Images\CABBrand_414_320.png" />
     <Content Include="Images\CAB_Logo100.png" />
@@ -260,6 +261,7 @@
     <Content Include="Images\equity_V3-03blue.png" />
     <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Images\Kinect.png" />
+    <Content Include="Images\light-on-light.png" />
     <Content Include="Images\OJLogo.png" />
     <Content Include="Images\PaperBG2.png" />
     <Content Include="Images\PayPalSampleImage.png" />

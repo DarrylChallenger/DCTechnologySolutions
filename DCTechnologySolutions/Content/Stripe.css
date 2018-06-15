@@ -1,1 +1,137 @@
 ﻿
+.Stripe {
+    max-width: 75%;
+    margin: auto;
+    color: black;
+}
+
+    .Stripe h2 {
+        color: black;
+    }
+
+    .Stripe small {
+        color: black;
+    }
+
+    .Stripe h2, .Stripe h4, .Stripe .h2 {
+        margin-bottom: 10px;
+    }
+
+    .Stripe h3, .Stripe h4, .Stripe .h3, .Stripe .h4 {
+        color: black;
+        line-height: 110%;
+        letter-spacing: 1.3px;
+    }
+
+    .Stripe a {
+        color: black;
+        text-decoration: underline;
+    }
+
+.StripeBox a {
+    color: black;
+}
+
+.Stripe p {
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    line-height: 150%;
+    color: black;
+    padding-bottom: 1em;
+    /* width: 90%; */
+    text-align: left;
+    text-justify: trim;
+    margin: auto;
+}
+
+.Stripe .ContactBtn:hover,
+.Stripe .ContactBtn:focus,
+.Stripe .ContactBtn2:hover,
+.Stripe .ContactBtn2:focus {
+    color: black;
+    background-color: lightblue;
+    opacity: .6;
+}
+
+.Stripelink {
+    font-family: 'Russo One', sans-serif;
+}
+
+@media only screen and (min-width:768px) {
+    .Stripelink {
+        font-size: 18px;
+    }
+
+        .Stripelink a {
+            font-size: 24px;
+        }
+}
+
+
+.StripeBox {
+    background-color: lightblue;
+    opacity: .8;
+    margin-bottom: 2em;
+    padding: 1.5em 1.5em 1.5em 1.5em;
+    border-color: black;
+    border-style: solid;
+}
+
+    .StripeBox a:focus, .StripeBox a:hover {
+        color: darkblue;
+    }
+
+.StripeForm {
+    padding: 1em;
+}
+
+.StripeBtn {
+    padding: 1em;
+}
+
+@media only screen and (min-width:768px) {
+    .Stripe h3 {
+        font-size: 30px;
+    }
+
+    .Stripe p {
+        font-size: 1.6em;
+        letter-spacing: 1px;
+    }
+
+    .Stripe a {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .Stripe-xs-break {
+        display: none;
+    }
+}
+
+.Stripe-xs-break {
+    border-top: black;
+    border-top-width: 2px;
+    border-top-style: solid;
+    width: 90%;
+}
+
+.shopcart {
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    height: 5em;
+    width: 5em;
+}
+
+#StripePaymentRequestButton {
+    max-width:33%;
+}
+
+#card-element {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    max-width: 50%;
+}

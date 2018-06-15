@@ -15,7 +15,7 @@ namespace DCTechnologySolutions.Controllers
         // https://demo.paypal.com/us/demo/navigation?merchant=beauty&page=merchantHome&device=desktop
         public ActionResult PayPalSamples()
         {
-            ViewBag.AddToCart = PayPalConfig.AddToCart;
+            ViewBag.AddToCart = PayPalConfigModel.AddToCart;
             return View();
         }
 
@@ -53,10 +53,10 @@ namespace DCTechnologySolutions.Controllers
                 };
                 // make the call!
                 string accessToken;
-                OAuthTokenCredential oAuth = new OAuthTokenCredential(PayPalConfig.clientId, PayPalConfig.secretKey);
+                OAuthTokenCredential oAuth = new OAuthTokenCredential(PayPalConfigModel.clientId, PayPalConfigModel.secretKey);
                 accessToken = oAuth.GetAccessToken();
-                APIContext aPIContext = new APIContext(accessToken);
-                Payment result = payment.Create(aPIContext);
+                APIContext apiContext = new APIContext(accessToken);
+                Payment result = payment.Create(apiContext);
                 string resultString = result.ConvertToJson();
 
                 return resultString;
@@ -101,14 +101,14 @@ namespace DCTechnologySolutions.Controllers
                 };
 
                 string accessToken;
-                OAuthTokenCredential oAuth = new OAuthTokenCredential(PayPalConfig.clientId, PayPalConfig.secretKey);
+                OAuthTokenCredential oAuth = new OAuthTokenCredential(PayPalConfigModel.clientId, PayPalConfigModel.secretKey);
                 accessToken = oAuth.GetAccessToken();
-                APIContext aPIContext = new APIContext(accessToken);
+                APIContext apiContext = new APIContext(accessToken);
                 PaymentExecution paymentExecution = new PaymentExecution()
                 {
                     payer_id = PayerID
                 };
-                Payment result = payment.Execute(aPIContext, paymentExecution);
+                Payment result = payment.Execute(apiContext, paymentExecution);
                 string resultString = result.ConvertToJson();
 
                 return resultString;
@@ -124,13 +124,26 @@ namespace DCTechnologySolutions.Controllers
             // Success, save info
             //return RedirectToAction("PayPalPaymentSuccess", new { param=param } );
             //return RedirectToAction("Index", "Home");
-            ViewBag.intent = intent;
-            ViewBag.paymentID = paymentID;
-            ViewBag.payerID = payerID;
-            ViewBag.orderId = orderId;
-            ViewBag.returnUrl = returnUrl;
-            ViewBag.billingId = billingId;
-            return View();
+            PayPalReturnModel model = new PayPalReturnModel()
+            {
+                intent = intent,
+                paymentID = paymentID,
+                payerID = payerID,
+                orderId = orderId,
+                returnUrl = returnUrl
+            };
+            if (intent != null)
+            {
+                string accessToken;
+                OAuthTokenCredential oAuth = new OAuthTokenCredential(PayPalConfigModel.clientId, PayPalConfigModel.secretKey);
+                accessToken = oAuth.GetAccessToken();
+                APIContext apiContext = new APIContext(accessToken);
+                // Get the Order info
+                //model.order = Order.Get(apiContext, orderId);
+                // Get the Payer info
+                model.payment = Payment.Get(apiContext, paymentID);
+            }
+            return View(model);
         }
 
         public ActionResult PayPalCreatePaymentCancel(string intent, string paymentID, string payerID, string cancelURL, string token, string param)

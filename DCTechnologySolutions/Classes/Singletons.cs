@@ -12,7 +12,7 @@ namespace DCTechnologySolutions.Classes
         public static StripeConfig StripeConfig = new StripeConfig();
         public static HttpClient httpStripeClient = new HttpClient();
 
-        public static PayPalConfig PayPalConfig = new PayPalConfig();
+        public static PayPalConfigModel PayPalConfig = new PayPalConfigModel();
         public static HttpClient httpPayPalClient = new HttpClient();
     }
 }

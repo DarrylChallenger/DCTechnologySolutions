@@ -28,7 +28,7 @@ namespace DCTechnologySolutions
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/PayPal.css",
-                      "~/Content.Stripe.css"));
+                      "~/Content/Stripe.css"));
         }
     }
 }

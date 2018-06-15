@@ -1,17 +1,38 @@
-﻿
+﻿@model DCTechnologySolutions.Models.PayPalReturnModel
 @{
     ViewBag.Title = "PayPalCreatePaymentReturn";
+    int i = 1;
 }
+@using PayPal.Api;
 
 <div class="PayPal">
-    <h2>Successful Payment Page</h2>
-    <p>Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at www.paypal.com to view details of this transaction.</p>
+    <h2>Successful PayPal Payment Page</h2>
     <div class="PayPalBox">
-        <p>@ViewBag.intent</p>
-        <p>Payment ID:@ViewBag.paymentID</p>
-        <p>PayerID:@ViewBag.payerID</p>
-        <p>OrderID:@ViewBag.orderId</p>
+        <p>Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at www.paypal.com to view details of this transaction.</p>
     </div>
+    @if (Model.intent != null)
+    {
+        <p>The following data can be saved in your database:</p>
+        <a data-toggle="collapse" href="#PaymentID" role="button">PaymentID: @Model.paymentID</a>
+        <ul class="collapse paymentinfo" id="PaymentID">
+            <li>Intent: @Model.intent</li>
+            <li>Create Time: @Model.payment.create_time</li>
+            <li>Status: @Model.payment.state</li>
+            @if (@Model.payment.note_to_payer != null)
+            {
+                <li>Note to Payer:@Model.payment.note_to_payer</li>
+            }
+
+            @foreach (Transaction tx in @Model.payment.transactions)
+            {
+                <li>Transaction #: @i</li>
+                i++;
+                <li class="PayPalReturnTxList">Amount: @tx.amount.total @tx.amount.currency</li>
+            }
+        </ul>
+        <p>PayerID: @Model.payerID</p>
+        @*<p>OrderID: @Model.orderId</p>*@
+
+    }
     @Html.ActionLink("Return to Samples", "PayPalSamples")
 </div>
-

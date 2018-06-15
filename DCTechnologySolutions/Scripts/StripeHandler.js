@@ -10,13 +10,13 @@ var elements = stripe.elements();
 // (Note that this demo uses a wider set of styles than the guide below.)
 var style = {
     base: {
-        color: '#32325d',
+        color: 'black',//#32325d',
         lineHeight: '18px',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
-            color: '#d0d0d0'
+            color: 'black'//#d0d0d0'
         }
     },
     invalid: {
@@ -42,10 +42,12 @@ var prButton = elements.create('paymentRequestButton', {
 
 // Check the availability of the Payment Request API first.
 paymentRequest.canMakePayment().then(function (result) {
-    //console.log("in canMakePayment");
+    console.log("in canMakePayment");
     if (result) {
+        console.log("in canMakePayment mounting");
         prButton.mount('#StripePaymentRequestButton');
     } else {
+        console.log("in canMakePayment disabled");
         document.getElementById('StripePaymentRequestButton').style.display = 'disabled';
     }
 });
@@ -188,13 +190,14 @@ var custHandler = StripeCheckout.configure({
 
 document.getElementById('subCustPayBtn').addEventListener('click', function (e) {
     // Open Checkout with further options:
+    console.log("addEventListener");
     custHandler.open({
         name: 'Challenger Technology Solutions',
         description: '2 widgets',
         amount: 2345,
         zipCode: true,
         email: "test@darryl.com",
-        billingaddress: true
+        billingAddress: true
     });
     e.preventDefault();
 });
@@ -204,3 +207,6 @@ window.addEventListener('popstate', function () {
     handler.close();
 });
 
+$(function () {
+    console.log("Ready #1")
+});
