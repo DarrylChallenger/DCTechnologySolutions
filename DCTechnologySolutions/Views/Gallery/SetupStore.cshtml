@@ -1,0 +1,31 @@
+﻿@model DCTechnologySolutions.Models.StripeModel
+
+@{
+    ViewBag.Title = "SetupStore";
+}
+
+<div class="Stripe">
+    <h2>Setup Your Store</h2>
+    <div class="StripeBox">
+        @using (Html.BeginForm("StripeSamples", "Gallery", FormMethod.Post, new { id = "StripeButtonForm" }))
+        {
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-2">
+                    @Html.LabelFor(model => model.publicKey)
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    @Html.EditorFor(model => model.publicKey)
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-2">
+                    @Html.LabelFor(model => model.stripeKey)
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    @Html.EditorFor(model => model.stripeKey) 
+                </div>
+                <p></p>
+                <button type="submit">Submit Keys</button>
+            </div>
+
+        }
+    </div>
+</div>

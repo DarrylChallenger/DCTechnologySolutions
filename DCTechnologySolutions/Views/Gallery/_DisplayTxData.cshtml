@@ -1,0 +1,71 @@
+﻿@model DCTechnologySolutions.Models.StripeModel
+
+<h4>@Model.stripeCompanyName - result of charge</h4>
+<h5>Current pkey: @Model.publicKey</h5>
+
+@if (Model.customer != null)
+{
+<div class="StripeBox">
+    <h3>Customer</h3>
+    <p>Id: @Model.customer.Id</p>
+    <p>Created on: @Model.customer.Created.ToLocalTime().ToLongTimeString()</p>
+    <p>Email Address: @Model.customer.Email</p>
+    @if (@Model.customer.Shipping != null)
+    {
+    <p>Shipping Address 1: @Model.customer.Shipping.Name</p>
+    <p>Shipping Address 2: @Model.customer.Shipping.Address.Line1</p>
+    <p>Shipping Address 3: @Model.customer.Shipping.Address.City, @Model.customer.Shipping.Address.PostalCode, @Model.customer.Shipping.Address.Country</p>
+    }
+    @*      <p>: @Model.customer.</p>*@
+
+</div>
+}
+
+@if (Model.charge != null)
+{
+<div class="StripeBox">
+    <h3>Charge</h3>
+    <p>Id: @Model.charge.Id</p>
+    <p>Captured: @Model.charge.Captured</p>
+    <p>Paid: @Model.charge.Paid</p>
+    <p>Status: @Model.charge.Status</p>
+    <p>Amount: $@(Model.charge.Amount / 100.0) </p>
+    <p>Created: @Model.charge.Created.ToLocalTime().ToLongTimeString()</p>
+    <p>Description: @Model.charge.Description</p>
+    <p>Receipt Email address: @Model.charge.ReceiptEmail</p>
+    <p>Receipt Number: @Model.charge.ReceiptNumber</p>
+    @*<p>Shipping Options: @Model.charge.Shipping.ToString()</p>*@
+    <p>Statement Descriptor: @Model.charge.StatementDescriptor</p>
+    <p>Type: @Model.charge.Source.Type.ToString()</p>
+    @switch (Model.charge.Source.Type)
+    {
+        case Stripe.SourceType.Card:
+            <p>Brand: @Model.charge.Source.Card.Brand</p>
+            <p>Issuer: @Model.charge.Source.Card.Issuer</p>
+            <p>Last 4: **** @Model.charge.Source.Card.Last4</p>
+            <p>Expires: @Model.charge.Source.Card.ExpirationMonth/@Model.charge.Source.Card.ExpirationYear</p>
+            <p>CVC check: @Model.charge.Source.Card.CvcCheck</p>
+            <p>Billing 1: @Model.charge.Source.Card.Name</p>
+            <p>Billing 2: @Model.charge.Source.Card.AddressLine1</p>
+            <p>Billing 3: @Model.charge.Source.Card.AddressCity, @Model.charge.Source.Card.AddressState, @Model.charge.Source.Card.AddressZip, @Model.charge.Source.Card.Country</p>
+            break;
+    }
+    <p></p>
+    @*      <p>: @Model.charge.</p>*@
+</div>
+}
+
+@if (Model.isError == true && Model.error != null)
+{
+    <div class="StripeBox">
+        <h3>Error</h3>
+        <p>ChargeId: @Model.error.ChargeId</p>
+        <p>Code: @Model.error.Code</p>
+        <p>DeclineCode: @Model.error.DeclineCode</p>
+        <p>Error: @Model.error.Error</p>
+        <p>ErrorDescription: @Model.error.ErrorDescription</p>
+        <p>ErrorType: @Model.error.ErrorType</p>
+        <p>Message: @Model.error.Message</p>
+        <p>Parameter: @Model.error.Parameter</p>
+    </div>
+}

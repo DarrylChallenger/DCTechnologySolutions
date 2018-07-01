@@ -2,41 +2,45 @@
 .Stripe {
     max-width: 75%;
     margin: auto;
-    color: black;
+    color: midnightblue;
 }
 
-    .Stripe h2 {
-        color: black;
-    }
+.Stripe h2, .Stripe h3 {
+    color: midnightblue;
+}
 
-    .Stripe small {
-        color: black;
-    }
+.Stripe small {
+    color: midnightblue;
+}
 
-    .Stripe h2, .Stripe h4, .Stripe .h2 {
-        margin-bottom: 10px;
-    }
+.Stripe h2, .Stripe h4, .Stripe .h2 {
+    margin-bottom: 10px;
+}
 
-    .Stripe h3, .Stripe h4, .Stripe .h3, .Stripe .h4 {
-        color: black;
-        line-height: 110%;
-        letter-spacing: 1.3px;
-    }
+.Stripe h3, .Stripe .h3 {
+    color: midnightblue;
+    line-height: 110%;
+    letter-spacing: 1.3px;
+}
 
-    .Stripe a {
-        color: black;
-        text-decoration: underline;
-    }
+.Stripe h4, .Stripe .h4 {
+    letter-spacing:normal;
+}        
+
+.Stripe a {
+    color: black;
+    text-decoration: underline;
+}
 
 .StripeBox a {
-    color: black;
+    color: midnightblue;
 }
 
 .Stripe p {
     font-size: 1.25em;
     letter-spacing: 1px;
     line-height: 150%;
-    color: black;
+    color: midnightblue;
     padding-bottom: 1em;
     /* width: 90%; */
     text-align: left;
@@ -49,7 +53,7 @@
 .Stripe .ContactBtn2:hover,
 .Stripe .ContactBtn2:focus {
     color: black;
-    background-color: lightblue;
+    background-color: blue;
     opacity: .6;
 }
 
@@ -69,11 +73,20 @@
 
 
 .StripeBox {
-    background-color: lightblue;
+    /*
+    /background-color: blanchedalmond;
+    /background-color: lightcyan;
+    /background-color: lightskyblue;
+    /background-color: lightsteelblue;
+    /background-color: papayawhip;
+    /background-color: powderblue;
+    /background-color: lightskyblue;
+    */
+    background-color: skyblue;
     opacity: .8;
     margin-bottom: 2em;
     padding: 1.5em 1.5em 1.5em 1.5em;
-    border-color: black;
+    border-color: midnightblue;
     border-style: solid;
 }
 
@@ -93,7 +106,7 @@
     .Stripe h3 {
         font-size: 30px;
     }
-
+    
     .Stripe p {
         font-size: 1.6em;
         letter-spacing: 1px;
@@ -102,16 +115,14 @@
     .Stripe a {
         font-size: 24px;
     }
-}
 
-@media only screen and (min-width:768px) {
     .Stripe-xs-break {
         display: none;
     }
 }
 
 .Stripe-xs-break {
-    border-top: black;
+    border-top: midnightblue;
     border-top-width: 2px;
     border-top-style: solid;
     width: 90%;
@@ -129,9 +140,58 @@
     max-width:33%;
 }
 
-#card-element {
+#StripeCCElement {
     background-color: white;
-    border: 1px solid black;
-    border-radius: 4px;
-    max-width: 50%;
+    border-style: inset;
+    border-width: 2px;
+    padding: 1px 0;
+    font-size: 14px;
+    color: midnightblue;
+    border-top-color: lightsteelblue;
+    border-left-color: lightsteelblue;
+    border-bottom-color: white;
+    border-right-color: white;
+    border-color:lightsteelblue;
+}
+
+.StripeBox button
+{
+    color:white;
+    border-color:lightsteelblue;
+    background-color:midnightblue;
+}
+
+.StripeBox input {
+    color: midnightblue;
+    width: 100%;
+    max-width: unset;
+    font-family: 'Russo One', sans-serif;
+    border-width: 2px;
+    border-top-color: lightsteelblue;
+    border-left-color: lightsteelblue;
+    border-bottom-color: white;
+    border-right-color: white;
+    border-color:lightsteelblue;
+}
+
+.Stripe #publicKey
+{
+    overflow-wrap:normal;
+    word-wrap:break-word;
+}
+
+.StripeBox input[disabled] {
+    background-color:lightgrey;
+}
+
+ .Stripe ::-ms-input-placeholder {
+    color:lightsteelblue;
+}
+
+.Stripe ::placeholder {
+    color: lightsteelblue;
+}
+
+    .padright1em {
+    padding-right: 1em;
 }

@@ -1,82 +1,179 @@
-﻿
+﻿@model DCTechnologySolutions.Models.StripeModel
 @{
     ViewBag.Title = "StripeSample";
     Layout = "~/Views/Gallery/_GalleryLayout.cshtml";
+    var Title = "Stripe Samples" + " - " + (Model.stripeCompanyName ?? "");
 }
 
 <div class="Stripe">
-    <h2>Stripe Samples <small>(These are test buttons, so click away!)</small></h2>
+
+    <h2>@Title</h2>
     <div class="StripeBox">
-        @using (Html.BeginForm("StripeButton", "Tests", FormMethod.Post, new { id = "StripeButtonForm" }))
+        @using (Html.BeginForm("SetupStore", "Gallery", FormMethod.Post, new { id = "StripeButtonForm" }))
         {
-            <div id="StripePaymentRequestButton" class="StripePayNowBtn">
-                <p>No Payment methods available on this session.</p>
-                @*<!-- Stripe element will be here -->*@
+            <p>
+                Stripe offers a variety of methods to integrate payment into your application. Here a few samples.
+            </p>
+            <p>
+                If you'd like to see the results in your own test store, select the "Setup Store" button below.
+                You'll see your store name near the top of the page.
+            </p>
+            @Html.HiddenFor(model => model.publicKey)
+            @Html.HiddenFor(model => model.stripeKey)
+            <button type="submit">Setup Store</button>
+            <h5>Current pkey: @Html.EditorFor(model => model.publicKey,  new { htmlAttributes = new { @disabled = "disabled" } })</h5>
+        }
+    </div> <!-- Setup Store -->
+
+    <div class="StripeBox">
+        @using (Html.BeginForm("ProcessPayNow", "StripeController", FormMethod.Post, new { id = "StripeButtonForm" }))
+        {
+            @Html.HiddenFor(model => model.stripeCompanyName)
+            <p>Use this button to intergrate with the device's Payment System (Apple Pay, Google Pay, Microsoft Pay)</p>
+            <div class="row">
+                @* In future versions, add other products with checkboxes and/or quantities *@
+                <div class="col-sm-4">
+                    <p>Blue Circle $19.99</p>
+                    <img />
+                </div>
+                <div id="StripeSamplesPayNowBtn" class="StripePayNowBtn col-sm-4">
+
+                    @*<!-- Stripe element will be here -->*@
+                </div>
             </div>
         }
     </div> <!-- Paw Now Button-->
-    <div class="StripeBox">
-        @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeForm" }))
-        {
-            <div class="form-row">
-                <p>Credit or debit card</p>
-                <div id="card-element">
-                    @*<!-- Stripe element will be here -->*@
-                </div>
 
-                <!-- Used to display form errors. -->
-                <div id="card-errors" role="alert" class="text-danger"></div>
+    <div class="StripeBox">
+        @using (Html.BeginForm("ProcessCardElement", "Gallery", FormMethod.Post, new { id = "StripeCCForm" }))
+        {
+            @Html.HiddenFor(model => model.stripeCompanyName)
+            @Html.HiddenFor(model => model.publicKey)
+            @Html.HiddenFor(model => model.stripeKey)
+        <div class="form-row">
+            <p>Credit or debit card using Stripe Elements. This sample collects the customer's details and stores them in Stripe with the card.</p>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>Yellow Triangle $12.99</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    @Html.LabelFor(model => model.billingAddress.name)
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    @Html.TextBoxFor(model => model.billingAddress.name, new { @class = "", placeholder = "Name" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    @Html.LabelFor(model => model.billingAddress.address)
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    @Html.TextBoxFor(model => model.billingAddress.address, new { @class = "", placeholder = "Billing Address" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    @Html.LabelFor(model => model.billingAddress.city)
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    @Html.TextBoxFor(model => model.billingAddress.city, new { @class = "", placeholder = "City" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    @Html.LabelFor(model => model.billingAddress.state)
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    @Html.TextBoxFor(model => model.billingAddress.state, new { @class = "", placeholder = "State" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    @Html.LabelFor(model => model.billingAddress.postalCode)
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    @Html.TextBoxFor(model => model.billingAddress.postalCode, new { @class = "", placeholder = "ZIP" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    <label for="StripeCCElement">Card</label>
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    <div id="StripeCCElement">
+                        <!-- Stripe element will be here -->
+                    </div>
+                </div>
+            </div>
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert" class="text-danger"></div>
+        </div>
+            <br />
+            <button id="StripeSubCCBtn">Submit Payment</button>
+            }
+        </div> <!-- Elements card payment -->
+
+    <div class="StripeBox">
+        @using (Html.BeginForm("ProcessCheckoutBtn", "Gallery", FormMethod.Post, new { id = "StripeSimpleCheckoutForm" }))
+        {
+            @Html.HiddenFor(model => model.stripeCompanyName)
+            @Html.HiddenFor(model => model.checkoutAmount)
+            @Html.HiddenFor(model => model.stripeKey)
+            <p>Stripe Checkout.js Button - this button can optionally be customized with your own image.</p>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>Red Square $14.99</p>
+                </div>
+                <div class="col-sm-4">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="@Model.publicKey"
+                            data-amount=1499
+                            @*data-email=""*@
+                            data-name="Challenger Technology Solutions Stipe Sample Store"
+                            data-description="Stripe Integration Services"
+                            data-zip-code="true"
+                            data-label="Stripe Card Payment Sample"
+                            data-panel-label="Red Square -"
+                            data-billing-address="true"
+                            data-shipping-address="true"
+                            data-image="/Images/DCLOGO2MetalRnd128.png"
+                            data-locale="auto">
+                                                                                                                                                // Add code to pull the value from the key field
+                    </script>
+                </div>
             </div>
             <br />
-            <button id="subBtn">Submit Payment</button>
+            <!--<button id="subSimplePayBtn">Simple Checkout Payment</button>-->
         }
-    </div> <!-- Card payment -->
+    </div> <!-- Simple Pay Button-->
+    @*<div class="StripeBox">
+            @using (Html.BeginForm("Charge", "StripeController", FormMethod.Post, new { id = "StripeCustomCheckoutForm" }))
+            {
+                @Html.HiddenFor(model => model.stripeCompanyName)
+                <p>Checkout Custom</p>
+                <br />
+                <button id="subCustPayBtn">Custom Payment</button>
+            }
+        </div>*@ <!-- Custom Checkout Payment Button -->
     @*
         <div class="StripeBox">
-            @using (Html.BeginForm("AddStripeCustomer", "Tests", FormMethod.Post, new { id = "StripeSaveCustomerForm" }))
-            {
-                <p>Save card Info in a Stripe customer</p>
-                <br />
-                <button id="subCustBtn">Add Customer(notimpl)</button>
-            }
-        </div> <!-- Save Customer Card-->
+            <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_Bil3yXbf2LC3dxUr0RnuQoytgoq5X16j&scope=read_write"><img class="padright1em" src="~/Images/blue-on-light.png" />Create a Standard Swipe Account</a>
+        </div> <!-- Create standard acct -->
         <div class="StripeBox">
-            @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeSimpleCheckoutForm" }))
-            {
-                @Html.HiddenFor(model => model.StripeData.checkoutAmount)
-                <p>Checkout Simple</p>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_9VBmb0MLFOio86PO162GMNFp"
-                        data-amount="@Model.StripeData.checkoutAmount"
-                        data-name="Challenger Technology Solutions"
-                        data-description="Simple"
-                        data-zip-code="true"
-                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                        data-locale="auto">
-                </script>
-                <br />
-                <!--<button id="subSimplePayBtn">Simple Payment</button>-->
-            }
-        </div>
+            <a href="https://connect.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_Bil3yXbf2LC3dxUr0RnuQoytgoq5X16j&scope=read_write"><img class="padright1em" src="~/Images/light-on-light.png" />Create an Express Swipe Account</a>
+        </div> <!-- Create Express acct -->
     *@
-    <div class="StripeBox">
-        @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeCustomCheckoutForm" }))
-        {
-            <p>Checkout Custom</p>
-            <br />
-            <button id="subCustPayBtn">Custom Payment</button>
-        }
-    </div> <!-- Custom Payment -->
-    <div class="StripeBox">
-        <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_Bil3yXbf2LC3dxUr0RnuQoytgoq5X16j&scope=read_write"><img src="~/Images/blue-on-light.png" /> Create a Standard Swipe Account</a>
-    </div> <!-- Create standard acct -->
-    <div class="StripeBox">
-        <a href="https://connect.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_Bil3yXbf2LC3dxUr0RnuQoytgoq5X16j&scope=read_write"><img src="~/Images/light-on-light.png" /> Create an Express Swipe Account</a>
-    </div> <!-- Create Express acct -->
     @*
         <div class="StripeBox">
             Invoice
         </div> <!-- Send an Invoice -->
+    *@
+    @*
+        <div class="StripeBox">
+            Payout
+        </div> <!-- Execute a payout -->
     *@
 </div>
 
