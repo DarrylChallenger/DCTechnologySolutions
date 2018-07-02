@@ -22,10 +22,42 @@ namespace DCTechnologySolutions.Controllers
 
     public partial class GalleryController : Controller
     {
+        [HttpGet]
+        public ActionResult StripeSamples()
+        {
+            StripeModel sm = new StripeModel();
+            sm.stripeKey = ConfigurationManager.AppSettings["st-secretKey"];
+            sm.publicKey = ConfigurationManager.AppSettings["st-publicKey"];
+            try
+            {
+                StripeAccount account;
+                SetStripeSecret(sm.stripeKey);
+                if (sm.publicKey != null)
+                {
+                    StripeAccountService accountService = new StripeAccountService();
+                    account = accountService.Get();
+                    sm.stripeCompanyName = account.BusinessName ?? account.DisplayName;
+                }
+                GetDisplayData(sm);
+            }
+            catch (StripeException se)
+            {
+                sm.error = se.StripeError;
+                sm.isError = true;
+            }
+            catch (Exception e)
+            {
+                sm.error.Message = e.Message;
+                sm.isError = true;
+            }
+            return View(sm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult StripeSamples(StripeModel model)
         {
-            SetStripeSecret("");
-            StripeModel sm = model ?? new StripeModel();
+            StripeModel sm = model;
             try
             {
                 StripeAccount account;
@@ -60,6 +92,7 @@ namespace DCTechnologySolutions.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public JsonResult ProcessPayNow(StripeSaveTokenRequest tokId)
         {
             SetStripeSecret(tokId.stripeKey);
@@ -129,6 +162,7 @@ namespace DCTechnologySolutions.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ProcessCheckoutBtn(StripeProcessCardModel spcm)
         {
             SetStripeSecret(spcm.stripeKey);
@@ -191,6 +225,7 @@ namespace DCTechnologySolutions.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ProcessCardElement(StripeModel sm)
         {
             // Create the charge 
@@ -209,6 +244,7 @@ namespace DCTechnologySolutions.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SetupStore(StripeModel sm)
         {
             return View(sm);
@@ -221,7 +257,7 @@ namespace DCTechnologySolutions.Controllers
                 StripeConfiguration.SetApiKey(secret);
             } else {
                 // Use my app if user does not supply a key
-                StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["st-secretKey"]);//sk_test_HtUydDU48QTml1I2FGLGPJsT
+                StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["st-secretKey"]);
             }
         }
 

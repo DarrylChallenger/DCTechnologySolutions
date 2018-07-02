@@ -11,6 +11,7 @@
     <div class="StripeBox">
         @using (Html.BeginForm("SetupStore", "Gallery", FormMethod.Post, new { id = "StripeButtonForm" }))
         {
+            @Html.AntiForgeryToken()
             <p>
                 Stripe offers a variety of methods to integrate payment into your application. Here a few samples.
             </p>
@@ -21,13 +22,14 @@
             @Html.HiddenFor(model => model.publicKey)
             @Html.HiddenFor(model => model.stripeKey)
             <button type="submit">Setup Store</button>
-            <h5>Current pkey: @Html.EditorFor(model => model.publicKey,  new { htmlAttributes = new { @disabled = "disabled" } })</h5>
+            <h5>Current pkey: @Html.EditorFor(model => model.publicKey, new { htmlAttributes = new { @disabled = "disabled" } })</h5>
         }
     </div> <!-- Setup Store -->
 
     <div class="StripeBox">
         @using (Html.BeginForm("ProcessPayNow", "StripeController", FormMethod.Post, new { id = "StripeButtonForm" }))
         {
+            @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.stripeCompanyName)
             <p>Use this button to intergrate with the device's Payment System (Apple Pay, Google Pay, Microsoft Pay)</p>
             <div class="row">
@@ -47,77 +49,85 @@
     <div class="StripeBox">
         @using (Html.BeginForm("ProcessCardElement", "Gallery", FormMethod.Post, new { id = "StripeCCForm" }))
         {
+            @Html.AntiForgeryToken()
+
             @Html.HiddenFor(model => model.stripeCompanyName)
             @Html.HiddenFor(model => model.publicKey)
             @Html.HiddenFor(model => model.stripeKey)
-        <div class="form-row">
-            <p>Credit or debit card using Stripe Elements. This sample collects the customer's details and stores them in Stripe with the card.</p>
-            <div class="row">
-                <div class="col-sm-4">
-                    <p>Yellow Triangle $12.99</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-2">
-                    @Html.LabelFor(model => model.billingAddress.name)
-                </div>
-                <div class="col-xs-12 col-sm-10">
-                    @Html.TextBoxFor(model => model.billingAddress.name, new { @class = "", placeholder = "Name" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-2">
-                    @Html.LabelFor(model => model.billingAddress.address)
-                </div>
-                <div class="col-xs-12 col-sm-10">
-                    @Html.TextBoxFor(model => model.billingAddress.address, new { @class = "", placeholder = "Billing Address" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-2">
-                    @Html.LabelFor(model => model.billingAddress.city)
-                </div>
-                <div class="col-xs-12 col-sm-10">
-                    @Html.TextBoxFor(model => model.billingAddress.city, new { @class = "", placeholder = "City" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-2">
-                    @Html.LabelFor(model => model.billingAddress.state)
-                </div>
-                <div class="col-xs-12 col-sm-10">
-                    @Html.TextBoxFor(model => model.billingAddress.state, new { @class = "", placeholder = "State" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-2">
-                    @Html.LabelFor(model => model.billingAddress.postalCode)
-                </div>
-                <div class="col-xs-12 col-sm-10">
-                    @Html.TextBoxFor(model => model.billingAddress.postalCode, new { @class = "", placeholder = "ZIP" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-2">
-                    <label for="StripeCCElement">Card</label>
-                </div>
-                <div class="col-xs-12 col-sm-10">
-                    <div id="StripeCCElement">
-                        <!-- Stripe element will be here -->
+            <div class="form-row">
+                <p>Credit or debit card using Stripe Elements. This sample collects the customer's details and stores them in Stripe with the card.</p>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p>Yellow Triangle $12.99</p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2">
+                        @Html.LabelFor(model => model.billingAddress.name)
+                    </div>
+                    <div class="col-xs-12 col-sm-10">
+                        @Html.TextBoxFor(model => model.billingAddress.name, new { @class = "", placeholder = "Name" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2">
+                        @Html.LabelFor(model => model.billingAddress.address)
+                    </div>
+                    <div class="col-xs-12 col-sm-10">
+                        @Html.TextBoxFor(model => model.billingAddress.address, new { @class = "", placeholder = "Billing Address" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2">
+                        @Html.LabelFor(model => model.billingAddress.city)
+                    </div>
+                    <div class="col-xs-12 col-sm-10">
+                        @Html.TextBoxFor(model => model.billingAddress.city, new { @class = "", placeholder = "City" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2">
+                        @Html.LabelFor(model => model.billingAddress.state)
+                    </div>
+                    <div class="col-xs-12 col-sm-10">
+                        @Html.TextBoxFor(model => model.billingAddress.state, new { @class = "", placeholder = "State" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2">
+                        @Html.LabelFor(model => model.billingAddress.postalCode)
+                    </div>
+                    <div class="col-xs-12 col-sm-10">
+                        @Html.TextBoxFor(model => model.billingAddress.postalCode, new { @class = "", placeholder = "ZIP" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2">
+                        <label for="StripeCCElement">Card</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-10">
+                        <div id="StripeCCElement">
+                            <!-- Stripe element will be here -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Used to display form errors. -->
+                @Html.ValidationMessageFor(model => model.billingAddress.name, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.billingAddress.address, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.billingAddress.city, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.billingAddress.state, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.billingAddress.postalCode, "", new { @class = "text-danger" })
+                <div id="card-errors" role="alert" class="text-danger"></div>
             </div>
-            <!-- Used to display form errors. -->
-            <div id="card-errors" role="alert" class="text-danger"></div>
-        </div>
             <br />
             <button id="StripeSubCCBtn">Submit Payment</button>
-            }
-        </div> <!-- Elements card payment -->
+        }
+    </div> <!-- Elements card payment -->
 
     <div class="StripeBox">
         @using (Html.BeginForm("ProcessCheckoutBtn", "Gallery", FormMethod.Post, new { id = "StripeSimpleCheckoutForm" }))
         {
+            @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.stripeCompanyName)
             @Html.HiddenFor(model => model.checkoutAmount)
             @Html.HiddenFor(model => model.stripeKey)
@@ -140,7 +150,7 @@
                             data-shipping-address="true"
                             data-image="/Images/DCLOGO2MetalRnd128.png"
                             data-locale="auto">
-                                                                                                                                                // Add code to pull the value from the key field
+                                                                                                                                                                        // Add code to pull the value from the key field
                     </script>
                 </div>
             </div>

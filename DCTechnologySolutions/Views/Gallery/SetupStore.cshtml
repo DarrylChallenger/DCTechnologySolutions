@@ -9,6 +9,7 @@
     <div class="StripeBox">
         @using (Html.BeginForm("StripeSamples", "Gallery", FormMethod.Post, new { id = "StripeButtonForm" }))
         {
+            @Html.AntiForgeryToken()
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-2">
                     @Html.LabelFor(model => model.publicKey)
@@ -20,7 +21,7 @@
                     @Html.LabelFor(model => model.stripeKey)
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-4">
-                    @Html.EditorFor(model => model.stripeKey) 
+                    @Html.EditorFor(model => model.stripeKey)
                 </div>
                 <p></p>
                 <button type="submit">Submit Keys</button>
