@@ -73,7 +73,6 @@ paymentRequest.on('token', function (ev) {
             email : $('#mailAddr').val(),
             orderId: 'C4711B90-57E7-4585-84D2-AA269A275DC4',
             shippingAddress: ev.shippingAddress
-
          }),
         headers: { 'content-type': 'application/json' }
     })
@@ -98,6 +97,7 @@ paymentRequest.on('token', function (ev) {
             console.log('jsdata-');
             console.log(jsdata);
             console.log("nav to /Gallery/DisplayStripeResults");
+            // Change to POST
             var s = '/Gallery/DisplayStripeResults?' +
 
                 ((jsdata.charge !== null) ? '&charge.Id=' + jsdata.charge.Id : '') +
@@ -160,7 +160,7 @@ var form = document.getElementById('StripeCCForm');
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     $("#subBtn").addClass("disabled");
-
+    // validate required fields
     var additionalData = {
         name: $('#billingAddress_name') ? $('#billingAddress_name').val() : undefined,
         address_line1: $('#billingAddress_address') ? $('#billingAddress_address').val() : undefined,

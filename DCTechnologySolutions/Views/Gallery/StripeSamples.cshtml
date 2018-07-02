@@ -22,14 +22,13 @@
             @Html.HiddenFor(model => model.publicKey)
             @Html.HiddenFor(model => model.stripeKey)
             <button type="submit">Setup Store</button>
-            <h5>Current pkey: @Html.EditorFor(model => model.publicKey, new { htmlAttributes = new { @disabled = "disabled" } })</h5>
+            @*<h5>Current pkey: @Html.EditorFor(model => model.publicKey, new { htmlAttributes = new { @disabled = "disabled" } })</h5>*@
         }
     </div> <!-- Setup Store -->
 
     <div class="StripeBox">
-        @using (Html.BeginForm("ProcessPayNow", "StripeController", FormMethod.Post, new { id = "StripeButtonForm" }))
+        @using (Html.BeginForm("DisplayStripeResults", "StripeController", FormMethod.Post, new { id = "StripeButtonForm" }))
         {
-            @Html.AntiForgeryToken()
             @Html.HiddenFor(model => model.stripeCompanyName)
             <p>Use this button to intergrate with the device's Payment System (Apple Pay, Google Pay, Microsoft Pay)</p>
             <div class="row">
@@ -43,6 +42,11 @@
                     @*<!-- Stripe element will be here -->*@
                 </div>
             </div>
+            if (Model.stripeCompanyName != null)
+            {
+                <h6>(@Model.stripeCompanyName)</h6>
+            }
+
         }
     </div> <!-- Paw Now Button-->
 
@@ -66,7 +70,7 @@
                         @Html.LabelFor(model => model.billingAddress.name)
                     </div>
                     <div class="col-xs-12 col-sm-10">
-                        @Html.TextBoxFor(model => model.billingAddress.name, new { @class = "", placeholder = "Name" })
+                        @Html.TextBoxFor(model => model.billingAddress.name, new { placeholder = "Name" })
                     </div>
                 </div>
                 <div class="row">
@@ -74,7 +78,7 @@
                         @Html.LabelFor(model => model.billingAddress.address)
                     </div>
                     <div class="col-xs-12 col-sm-10">
-                        @Html.TextBoxFor(model => model.billingAddress.address, new { @class = "", placeholder = "Billing Address" })
+                        @Html.TextBoxFor(model => model.billingAddress.address, new { placeholder = "Address" })
                     </div>
                 </div>
                 <div class="row">
@@ -82,7 +86,7 @@
                         @Html.LabelFor(model => model.billingAddress.city)
                     </div>
                     <div class="col-xs-12 col-sm-10">
-                        @Html.TextBoxFor(model => model.billingAddress.city, new { @class = "", placeholder = "City" })
+                        @Html.TextBoxFor(model => model.billingAddress.city, new { placeholder = "City" })
                     </div>
                 </div>
                 <div class="row">
@@ -90,7 +94,7 @@
                         @Html.LabelFor(model => model.billingAddress.state)
                     </div>
                     <div class="col-xs-12 col-sm-10">
-                        @Html.TextBoxFor(model => model.billingAddress.state, new { @class = "", placeholder = "State" })
+                        @Html.TextBoxFor(model => model.billingAddress.state, new { placeholder = "State" })
                     </div>
                 </div>
                 <div class="row">
@@ -98,7 +102,7 @@
                         @Html.LabelFor(model => model.billingAddress.postalCode)
                     </div>
                     <div class="col-xs-12 col-sm-10">
-                        @Html.TextBoxFor(model => model.billingAddress.postalCode, new { @class = "", placeholder = "ZIP" })
+                        @Html.TextBoxFor(model => model.billingAddress.postalCode, new { placeholder = "ZIP" })
                     </div>
                 </div>
                 <div class="row">
@@ -121,6 +125,11 @@
             </div>
             <br />
             <button id="StripeSubCCBtn">Submit Payment</button>
+            if (Model.stripeCompanyName != null)
+            {
+                <h6>(@Model.stripeCompanyName)</h6>
+            }
+
         }
     </div> <!-- Elements card payment -->
 
@@ -150,12 +159,14 @@
                             data-shipping-address="true"
                             data-image="/Images/DCLOGO2MetalRnd128.png"
                             data-locale="auto">
-                                                                                                                                                                        // Add code to pull the value from the key field
                     </script>
                 </div>
             </div>
-            <br />
-            <!--<button id="subSimplePayBtn">Simple Checkout Payment</button>-->
+            if (Model.stripeCompanyName != null)
+            {
+                <h6>(@Model.stripeCompanyName)</h6>
+            }
+
         }
     </div> <!-- Simple Pay Button-->
     @*<div class="StripeBox">
@@ -191,6 +202,7 @@
 {
     @Scripts.Render("https://js.stripe.com/v3/")
     @Scripts.Render("https://checkout.stripe.com/checkout.js")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/Scripts/StripeHandler.js")
 }
 

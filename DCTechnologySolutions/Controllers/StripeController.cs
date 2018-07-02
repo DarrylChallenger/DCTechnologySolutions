@@ -92,7 +92,7 @@ namespace DCTechnologySolutions.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public JsonResult ProcessPayNow(StripeSaveTokenRequest tokId)
         {
             SetStripeSecret(tokId.stripeKey);

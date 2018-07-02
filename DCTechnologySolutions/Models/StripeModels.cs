@@ -104,6 +104,7 @@ public class StripeSaveTokenResponse
         [Display(Name = "Email Address")] [EmailAddress] public string mailAddr { get; set; }
         public bool isError { get; set; }
         public ShippingAddress shippingAddress { get; set; }
+        [Required]
         public BillingAddress billingAddress { get; set; }
     }
 
