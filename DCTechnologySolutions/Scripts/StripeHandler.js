@@ -138,11 +138,9 @@ var cardStyle = {
     }
 };
 
-var cardOptions = {
-    hidePostalCode:'true'
-}
+
 // Create an instance of the ProcessCardElement Element.
-var card = elements.create('card', { card: cardOptions, style: cardStyle });
+var card = elements.create('card', { hidePostalCode: true, style: cardStyle });
 
 // Add an instance of the card Element into the `StripeSamplesPayNowBtn` <div>.
 card.mount('#StripeCCElement');
