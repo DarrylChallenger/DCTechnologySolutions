@@ -44,7 +44,7 @@
             </div>
             if (Model.stripeCompanyName != null)
             {
-                <h6>(@Model.stripeCompanyName)</h6>
+                <h6>("@Model.stripeCompanyName" Store)</h6>
             }
 
         }
@@ -59,7 +59,7 @@
             @Html.HiddenFor(model => model.publicKey)
             @Html.HiddenFor(model => model.stripeKey)
             <div class="form-row">
-                <p>Credit or debit card using Stripe Elements. This sample collects the customer's details and stores them in Stripe with the card.</p>
+                <p>Credit or debit card using Stripe Elements. This sample collects the customer's billing details and stores them in Stripe with the card.</p>
                 <div class="row">
                     <div class="col-sm-4">
                         <p>Yellow Triangle $12.99</p>
@@ -127,7 +127,7 @@
             <button id="StripeSubCCBtn">Submit Payment</button>
             if (Model.stripeCompanyName != null)
             {
-                <h6>(@Model.stripeCompanyName)</h6>
+                <h6>("@Model.stripeCompanyName" Store)</h6>
             }
 
         }
@@ -164,7 +164,7 @@
             </div>
             if (Model.stripeCompanyName != null)
             {
-                <h6>(@Model.stripeCompanyName)</h6>
+                <h6>("@Model.stripeCompanyName" Store)</h6>
             }
 
         }
