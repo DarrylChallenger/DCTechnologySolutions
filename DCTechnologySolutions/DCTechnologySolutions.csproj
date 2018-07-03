@@ -250,6 +250,7 @@
     <Content Include="Images\003-good-worker.png" />
     <Content Include="Images\004-two-businessmen-holding-a-flag.png" />
     <Content Include="Images\006-idea.png" />
+    <Content Include="Images\ArcCISSamples.png" />
     <Content Include="Images\blue-on-light.png" />
     <Content Include="Images\business-people-meeting.png" />
     <Content Include="Images\CABBrand_414_320.png" />
@@ -365,6 +366,7 @@
     <Content Include="Views\Gallery\ProcessCardElement.cshtml" />
     <Content Include="Views\Gallery\SetupStore.cshtml" />
     <Content Include="Views\Gallery\_DisplayTxData.cshtml" />
+    <Content Include="Views\Gallery\ArcGISSamples.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_LocalResources\App_Data\" />

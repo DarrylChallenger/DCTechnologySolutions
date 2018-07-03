@@ -264,7 +264,6 @@ textarea {
     color:black;
     margin-bottom:1em;
     margin-top:0;
-    padding-left:10%
 }
 
 .Services ul {
@@ -336,7 +335,6 @@ textarea {
 }
 
 .Gallery h2 {
-    padding-left:10%;
     margin-bottom:1em;
     color:black;
 }
@@ -351,6 +349,9 @@ textarea {
     .GalleryRow {
         max-width: 95%;
         margin:auto;
+    }
+    .Services h2, .Gallery h2 {
+        padding-left: 10%;
     }
 }
 
@@ -670,6 +671,11 @@ footer a:hover, footer a:focus  {
     color: lightgrey;
 }
 
+.GalleryPage {
+    max-width: 75%;
+    margin: auto;
+    color: midnightblue;
+}
 
 /* CAB Page*/
 .CABBox {

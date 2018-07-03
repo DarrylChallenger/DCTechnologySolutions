@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "ArcGISSamples";
+}
+
+<div class="GalleryPage">
+
+    <h2>ArcGIS Samples</h2>
+
+    <style>
+        .embed-container {
+            position: relative;
+            padding-bottom: 80%;
+            height: 0;
+            max-width: 100%;
+        }
+
+            .embed-container iframe, .embed-container object, .embed-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        small {
+            position: absolute;
+            z-index: 40;
+            bottom: 0;
+            margin-bottom: -15px;
+        }
+    </style>
+
+    <div class="embed-container">
+        <iframe width="500" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                title="Challenger Technology Solutions Sample ArcGIS Map"
+                src="//www.arcgis.com/apps/Embed/index.html?webmap=d50056f4c43b407ab9be473ebc315dae&extent=-74.4312,40.3093,-72.9769,41.0849&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe>
+    </div>
+</div>
