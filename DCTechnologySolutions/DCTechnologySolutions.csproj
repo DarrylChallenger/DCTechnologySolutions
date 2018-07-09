@@ -226,6 +226,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FitbitModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PayPalModels.cs" />
@@ -273,6 +274,7 @@
     <Content Include="Images\equityQFB_V3WonTx.png" />
     <Content Include="Images\equity_V3-03blue.png" />
     <Content Include="Images\FB-f-Logo__blue_29.png" />
+    <Content Include="Images\FitbitSamples.png" />
     <Content Include="Images\Kinect.png" />
     <Content Include="Images\light-on-light.png" />
     <Content Include="Images\OJLogo.png" />
@@ -290,6 +292,7 @@
     </Content>
     <Content Include="fonts\sans-copperplategothic.ttf" />
     <Content Include="fonts\Sans-Copperplate-Gothic.eot" />
+    <Content Include="PaymentSecrets.config" />
     <None Include="Properties\PublishProfiles\DCTechnologySolutions-staging - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\DCTechnologySolutions-staging - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\DCTechnologySolutions.pubxml" />
@@ -367,6 +370,8 @@
     <Content Include="Views\Gallery\SetupStore.cshtml" />
     <Content Include="Views\Gallery\_DisplayTxData.cshtml" />
     <Content Include="Views\Gallery\ArcGISSamples.cshtml" />
+    <Content Include="Views\Gallery\FitbitSamples.cshtml" />
+    <Content Include="Views\Gallery\ReturnFromFitbit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_LocalResources\App_Data\" />

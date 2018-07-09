@@ -1,0 +1,87 @@
+﻿@model DCTechnologySolutions.Models.FitbitResponseModel
+@using DCTechnologySolutions.Models
+@{
+                ViewBag.Title = "Return From Fitbit";
+}
+
+
+@* dump request params object*@
+
+<div class="Fitbit">
+    <h2>Return From Fitbit</h2>
+    <div class="ProjectBox">
+        @if (Model != null)
+        {
+            if (Model.isSuccessStatsCode)
+            {
+                <h3>Auth Data:</h3>
+                <div class="indent">
+                    @if (Model.successPayload != null)
+                    {
+                    <p>User Id: @Model.successPayload.user_id</p>
+                    <p>Access Token Type: @Model.successPayload.token_type</p>
+                    <p>Access token:<textarea readonly rows="4" class="disabledtext">@Model.successPayload.access_token</textarea></p>
+                    <p>Refresh token:<textarea readonly rows="2" class="disabledtext">@Model.successPayload.refresh_token</textarea></p>
+                    <p>Scope: @Model.successPayload.scope</p>
+                    <p>Expires: @Model.successPayload.expires_in</p>
+                    }
+                </div>
+                if (Model.activityLifetimePayload != null)
+                {
+                    <h3>Lifetime Activity:</h3>
+                    <div class="indent">
+                        <h4>Tracker:</h4>
+                        <div class="indent">
+                            <p>Score: @Model.activityLifetimePayload.lifetime.tracker.activeScore</p>
+                            <p>Calories: @Model.activityLifetimePayload.lifetime.tracker.caloriesOut</p>
+                            <p>Distance: @Model.activityLifetimePayload.lifetime.tracker.distance</p>
+                            <p>Steps: @Model.activityLifetimePayload.lifetime.tracker.steps</p>
+                        </div>
+                    </div>
+                    <div class="indent">
+                        <h4>Total:</h4>
+                        <div class="indent">
+                            <p>Score: @Model.activityLifetimePayload.lifetime.total.activeScore</p>
+                            <p>Calories: @Model.activityLifetimePayload.lifetime.total.caloriesOut</p>
+                            <p>Distance: @Model.activityLifetimePayload.lifetime.total.distance</p>
+                            <p>Steps: @Model.activityLifetimePayload.lifetime.total.steps</p>
+                        </div>
+                    </div>
+                }
+                <h3>Devices:</h3>
+                <div class="indent">
+                    @if (Model.apiError != null)
+                    {
+                    <h3 class="text-danger">Errors</h3>
+                    foreach (var e in Model.apiError.errors)
+                    {
+                    <p>Error Type: @e.errorType</p>
+                    <p>Error Message: @e.message</p>
+                    }
+                    }
+                </div>
+            }
+            else
+            {
+                @* Failed to get a token *@
+                <h3 class="text-danger">Status Code: @Model.statusCode.GetHashCode()</h3>
+                <p>Error message: @Model.errorMessage.GetTypeCode() - @Model.errorMessage</p>
+                if (Model.payloadEerror != null && Model.payloadEerror.errors != null && Model.payloadEerror.errors.Count > 0)
+                {
+                    <h3>Errors:</h3>
+                    foreach (authError err in Model.payloadEerror.errors)
+                    {
+                        <p class="text-danger">Type: @err.errorType</p>
+                        <p class="text-danger">Message: @err.message</p>
+                    }
+                    <h3 class="text-danger">Success state: @Model.payloadEerror.success</h3>
+                }
+            }
+        }
+        else
+        {
+            <h3 class="text-danger">Invalid Invocation</h3>
+        }
+    </div>
+    @Html.ActionLink("Re-run Fitbit Sample", "FitbitSamples")
+</div>

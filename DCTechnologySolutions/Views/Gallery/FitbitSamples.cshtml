@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "FitbitSamples";
+}
+
+<div class="Fitbit">
+    <h2>Fitbit Samples</h2>
+    <div class="ProjectBox">
+        @using (Html.BeginForm("FitbitActivity", "Gallery", FormMethod.Post, new { id = "FitbitActivityBtn" }))
+        {
+        <h3>Get Fitbit Activity</h3>
+        <p>
+            This sample demonstrates accessing your Fitbit data. It demonstates Oauth and data security.
+            It first uses Oauth to connect to Fitbit requesting access to <strong>Activity data only</strong>.
+            It then requests two data points:
+        </p>
+        <ol>
+            <li>Lifetime Activity, and</li>
+            <li>Devices</li>
+        </ol>
+        <p>The activity call succeeds, but the device calls fails as access is properly denied.</p>
+        <button type="submit">Lifetime Activity</button>
+        }
+    </div> <!-- Lifetime Activity-->
+</div>

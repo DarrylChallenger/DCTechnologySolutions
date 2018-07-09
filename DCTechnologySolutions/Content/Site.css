@@ -814,3 +814,52 @@ footer a:hover, footer a:focus  {
     }
 }
 
+.Fitbit {
+    max-width: 75%;
+    margin: auto;
+}
+
+.Fitbit .ProjectBox {
+    border-color: black;
+    background-color: #00b0b9;
+    color: white;
+    padding-bottom:2em;
+    margin-bottom: 2em;
+}
+
+.Fitbit .text-danger, .Fitbit h3.text-danger {
+    color:darkblue;
+}
+
+.Fitbit .disabledtext {
+    width:75%;
+    max-width:100%;
+    margin-left:1em;
+}
+
+.Fitbit .indent {
+    padding-left:2em;
+}
+
+.Fitbit p {
+   word-wrap:break-word;
+}
+
+@media only screen and (min-width:768px) {
+    .Fitbit h3 {
+        font-size: 30px;
+    }
+
+    .Fitbit p {
+        font-size: 1.6em;
+        letter-spacing: 1px;
+    }
+
+    .Fitbit a {
+        font-size: 24px;
+    }
+    .Fitbit li {
+        font-size: 1.4em;
+    }
+
+}
