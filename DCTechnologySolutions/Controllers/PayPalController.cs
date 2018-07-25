@@ -1,16 +1,12 @@
 ﻿using DCTechnologySolutions.Models;
 using PayPal;
 using PayPal.Api;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DCTechnologySolutions.Controllers
 {
-    public partial class GalleryController : Controller
+    public partial class GalleryController
     {
         // https://demo.paypal.com/us/demo/navigation?merchant=beauty&page=merchantHome&device=desktop
         public ActionResult PayPalSamples()
@@ -19,7 +15,7 @@ namespace DCTechnologySolutions.Controllers
             return View();
         }
 
-        public string PayPalCreatePayment(string Sku)
+        public string PayPalCreatePayment(string sku)
         {
             // do a lookup for the sku
             try
@@ -52,9 +48,8 @@ namespace DCTechnologySolutions.Controllers
                     note_to_payer = "Test Payment"
                 };
                 // make the call!
-                string accessToken;
                 OAuthTokenCredential oAuth = new OAuthTokenCredential(PayPalConfigModel.clientId, PayPalConfigModel.secretKey);
-                accessToken = oAuth.GetAccessToken();
+                string accessToken = oAuth.GetAccessToken();
                 APIContext apiContext = new APIContext(accessToken);
                 Payment result = payment.Create(apiContext);
                 string resultString = result.ConvertToJson();
@@ -67,13 +62,13 @@ namespace DCTechnologySolutions.Controllers
             }
         }
 
-        public string PayPalExecutePayment(string PaymentID, string PayerID, string intent, string orderId, string token, string returnURL, string param)
+        public string PayPalExecutePayment(string paymentId, string payerId, string intent, string orderId, string token, string returnURL, string param)
         {
             try
             {
                 Payment payment = new Payment()
                 {
-                    id = PaymentID,
+                    id = paymentId,
                     intent = intent,
                     redirect_urls = new RedirectUrls()
                     {
@@ -100,13 +95,12 @@ namespace DCTechnologySolutions.Controllers
                     note_to_payer = "Test Payment"
                 };
 
-                string accessToken;
                 OAuthTokenCredential oAuth = new OAuthTokenCredential(PayPalConfigModel.clientId, PayPalConfigModel.secretKey);
-                accessToken = oAuth.GetAccessToken();
+                string accessToken = oAuth.GetAccessToken();
                 APIContext apiContext = new APIContext(accessToken);
                 PaymentExecution paymentExecution = new PaymentExecution()
                 {
-                    payer_id = PayerID
+                    payer_id = payerId
                 };
                 Payment result = payment.Execute(apiContext, paymentExecution);
                 string resultString = result.ConvertToJson();
@@ -119,7 +113,7 @@ namespace DCTechnologySolutions.Controllers
             }
         }
 
-        public ActionResult PayPalCreatePaymentReturn(string intent, string orderId, string paymentID, string billingId, string payerID, string returnUrl, string param)
+        public ActionResult PayPalCreatePaymentReturn(string intent, string orderId, string paymentId, string billingId, string payerId, string returnUrl, string param)
         {
             // Success, save info
             //return RedirectToAction("PayPalPaymentSuccess", new { param=param } );
@@ -127,8 +121,8 @@ namespace DCTechnologySolutions.Controllers
             PayPalReturnModel model = new PayPalReturnModel()
             {
                 intent = intent,
-                paymentID = paymentID,
-                payerID = payerID,
+                paymentID = paymentId,
+                payerID = payerId,
                 orderId = orderId,
                 returnUrl = returnUrl
             };
@@ -141,17 +135,17 @@ namespace DCTechnologySolutions.Controllers
                 // Get the Order info
                 //model.order = Order.Get(apiContext, orderId);
                 // Get the Payer info
-                model.payment = Payment.Get(apiContext, paymentID);
+                model.payment = Payment.Get(apiContext, paymentId);
             }
             return View(model);
         }
 
-        public ActionResult PayPalCreatePaymentCancel(string intent, string paymentID, string payerID, string cancelURL, string token, string param)
+        public ActionResult PayPalCreatePaymentCancel(string intent, string paymentId, string payerId, string cancelURL, string token, string param)
         {
             // Cancel
             ViewBag.intent = intent;
-            ViewBag.paymentID = paymentID;
-            ViewBag.payerID = payerID;
+            ViewBag.paymentID = paymentId;
+            ViewBag.payerID = payerId;
             ViewBag.cancelURL = cancelURL;
             ViewBag.token = token;
 

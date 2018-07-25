@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -49,8 +48,8 @@ namespace DCTechnologySolutions.Controllers
         public ActionResult FitbitActivity()
         {
             string fbID = ConfigurationManager.AppSettings["fitbit-clientId"];
-            string EncURL =  HttpUtility.UrlEncode(Url.Action("ReturnFromFitbit", null, null, Request.Url.Scheme));
-            return Redirect("https://www.fitbit.com/oauth2/authorize?client_id=" + fbID + "&response_type=code&scope=activity&redirect_uri=" + EncURL);
+            string encURL =  HttpUtility.UrlEncode(Url.Action("ReturnFromFitbit", null, null, Request.Url.Scheme));
+            return Redirect("https://www.fitbit.com/oauth2/authorize?client_id=" + fbID + "&response_type=code&scope=activity&redirect_uri=" + encURL);
         }
 
         public async Task<ActionResult> ReturnFromFitbit(string code)
