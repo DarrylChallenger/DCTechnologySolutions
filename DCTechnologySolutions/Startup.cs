@@ -14,7 +14,7 @@ namespace DCTechnologySolutions
             ConfigurePayPal();
         }
 
-        private void ConfigurePayPal()
+        private static void ConfigurePayPal()
         {
             PayPalConfigModel.secretKey = ConfigurationManager.AppSettings["pp-SecretKey"];
             PayPalConfigModel.clientId = ConfigurationManager.AppSettings["pp-ClientId"];

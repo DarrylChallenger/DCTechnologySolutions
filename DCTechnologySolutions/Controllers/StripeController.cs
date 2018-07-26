@@ -25,9 +25,11 @@ namespace DCTechnologySolutions.Controllers
         [HttpGet]
         public ActionResult StripeSamples()
         {
-            StripeModel sm = new StripeModel();
-            sm.stripeKey = ConfigurationManager.AppSettings["st-secretKey"];
-            sm.publicKey = ConfigurationManager.AppSettings["st-publicKey"];
+            StripeModel sm = new StripeModel
+            {
+                stripeKey = ConfigurationManager.AppSettings["st-secretKey"],
+                publicKey = ConfigurationManager.AppSettings["st-publicKey"]
+            };
             try
             {
                 StripeAccount account;
@@ -245,7 +247,7 @@ namespace DCTechnologySolutions.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SetupStore(StripeModel sm)
+        public ActionResult SetupStripeStore(StripeModel sm)
         {
             return View(sm);
         }

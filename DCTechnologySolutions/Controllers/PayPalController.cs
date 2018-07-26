@@ -11,8 +11,21 @@ namespace DCTechnologySolutions.Controllers
         // https://demo.paypal.com/us/demo/navigation?merchant=beauty&page=merchantHome&device=desktop
         public ActionResult PayPalSamples()
         {
+            PayPalModel ppm = new PayPalModel()
+            {
+                PayPalCompanyName = "Challenger Technology Soultions Store "
+            };
             ViewBag.AddToCart = PayPalConfigModel.AddToCart;
-            return View();
+            return View(ppm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PayPalSamples(PayPalModel ppm)
+        {
+            ppm.PayPalCompanyName = "Your PayPal Store ";
+            ViewBag.AddToCart = PayPalConfigModel.AddToCart;
+            return View(ppm);
         }
 
         public string PayPalCreatePayment(string sku)
@@ -164,5 +177,14 @@ namespace DCTechnologySolutions.Controllers
         {
             return FileContentResult f = new ("~/Images/Cart.png", "image/png");
         }*/
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SetupPaypalStore(PayPalModel ppm)
+        {
+            return View(ppm);
+        }
+
+
     }
 }

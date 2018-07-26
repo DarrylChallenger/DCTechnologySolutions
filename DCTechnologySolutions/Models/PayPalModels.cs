@@ -1,11 +1,22 @@
-﻿using PayPal.Api;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
+using PayPal.Api;
 
 namespace DCTechnologySolutions.Models
 {
+    public class PayPalModel
+    {
+        public PayPalModel()
+        {
+            SecretKey = PayPalConfigModel.secretKey;
+            ClientId = PayPalConfigModel.clientId;
+        }
+        public string SecretKey { get; set; }
+        public string ClientId { get; set; }
+        public string UserSecrectKey { get; set; }
+        public string UserClientId { get; set; }
+        public string PayPalCompanyName { get; set; }
+    }
+
     public class PayPalConfigModel
     {
         public static string secretKey { get; set; }
