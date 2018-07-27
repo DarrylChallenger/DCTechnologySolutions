@@ -7,38 +7,29 @@
 }
 
 <div class="PayPal">
-<h2 class="ppCompanyName">@Model.PayPalCompanyName</h2>
-<h2>PayPal Samples <small>(These are test buttons, so click away!)</small></h2>
-<div class="PayPalBox">
-    @using (Html.BeginForm("SetupPayPalStore", "Gallery", FormMethod.Post, new { id = "PayPalButtonForm" }))
-    {
-        @Html.AntiForgeryToken()
-        <span>
-            <span class="h3">PayPal</span>
-            <span class="h4">
-                offers a wide variety of methods to make payments simple for your clients with additional support for
-                inventory tracking, profit &amp; loss, custom messages, invoices and other advanced features.
+    <h2 class="ppCompanyName">@Model.PayPalCompanyName</h2>
+    <h2>PayPal Samples <small>(These are test buttons, so click away!)</small></h2>
+    <div class="PayPalBox">
+        @using (Html.BeginForm("SetupPayPalStore", "Gallery", FormMethod.Post, new { id = "PayPalButtonForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <span>
+                <span class="h3">PayPal</span>
+                <span class="h4">
+                    offers a wide variety of methods to make payments simple for your clients with additional support for
+                    inventory tracking, profit &amp; loss, custom messages, invoices and other advanced features.
+                </span>
             </span>
-        </span>
-        <h4>
-            Here are a few examples that show the simplicity and power of PayPal.
-        </h4>
-        <h4>
-            @Html.ActionLink("Contact Us", "Contact", "Home") to discuss using these features in your application.
-        </h4>
-        @Html.HiddenFor(model => model.ClientId)
-        @*
-            <p>
-                If you'd like to see the results in your own test store, select the "Setup Store" button below.
-                You'll see your store name near the top of the page.
-            </p>
-            @Html.HiddenFor(model => model.SecretKey)
-            @Html.HiddenFor(model => model.UserSecrectKey)
-            @Html.HiddenFor(model => model.UserClientId)
-            <button type="submit">Setup Store</button>
-        *@
-    }
-</div> <!-- Explanation of Services -->
+            <h4>
+                Here are a few examples that show the simplicity and power of PayPal.
+            </h4>
+            <h4>
+                @Html.ActionLink("Contact Us", "Contact", "Home") to discuss using these features in your application.
+            </h4>
+            @Html.HiddenFor(model => model.ClientId)
+
+        }
+    </div> <!-- Explanation of Services -->
     <div class="PayPalBox">
         <h3>PayPal Standard Payment Buttons (HTML button)</h3>
         <h4>
@@ -52,7 +43,7 @@
             <div class="col-sm-4 col-xs-10">
                 <form class="PayPalForm" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="3A67FS8UVXU44">
+                    <input type="hidden" name="hosted_button_id" value="@Model.StdBtn">
                     <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                     <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                 </form>
@@ -72,65 +63,65 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <div id="SimplePayPalBtn" class="PayPalBtn"></div>
-@*
-                <script>
-                    var myClientId = "AeXZWqBXt7O1yxFuharPp_NgVbiGWUd2BQgqMiFghdYFGmn_0CZKurlj8_YRFKG-wKwZcNZh0Ah0ZE6s";//GetCurrentClientId();
-                    paypal.Button.render({
-                        env: 'sandbox', // Or 'sandbox',
-                        commit: true, // Show a 'Pay Now' button
-                        client: {
-                            sandbox: myClientId
-                        },
-                        style: {
-                            label: 'buynow',
-                            color: 'gold',
-                            size: 'responsive',
-                            shape: 'pill',
-                            tagline: false,
-                            fundingicons: false
-                        },
-                        payment: function (data, actions) {
-                            return actions.payment.create({
-                                payment: {
-                                    transactions: [
-                                        {
-                                            amount: { total: '1.01', currency: 'USD' }
-                                        }
-                                    ]
-                                }
-                            })
-                        },
-                        onAuthorize: function (data, actions) {
-                            return actions.payment.execute().then(function (payment) {
-                                location.href = '@Url.Action("PayPalCreatePaymentReturn")' +
+                @*
+                    <script>
+                        var myClientId = "AeXZWqBXt7O1yxFuharPp_NgVbiGWUd2BQgqMiFghdYFGmn_0CZKurlj8_YRFKG-wKwZcNZh0Ah0ZE6s";//GetCurrentClientId();
+                        paypal.Button.render({
+                            env: 'sandbox', // Or 'sandbox',
+                            commit: true, // Show a 'Pay Now' button
+                            client: {
+                                sandbox: myClientId
+                            },
+                            style: {
+                                label: 'buynow',
+                                color: 'gold',
+                                size: 'responsive',
+                                shape: 'pill',
+                                tagline: false,
+                                fundingicons: false
+                            },
+                            payment: function (data, actions) {
+                                return actions.payment.create({
+                                    payment: {
+                                        transactions: [
+                                            {
+                                                amount: { total: '1.01', currency: 'USD' }
+                                            }
+                                        ]
+                                    }
+                                })
+                            },
+                            onAuthorize: function (data, actions) {
+                                return actions.payment.execute().then(function (payment) {
+                                    location.href = '@Url.Action("PayPalCreatePaymentReturn")' +
+                                        '?intent=' + data.intent +
+                                        '&orderId=' + data.orderID +
+                                        '&paymentID=' + data.paymentID +
+                                        '&payerID=' + data.payerID +
+                                        '&returnUrl=' + data.returnUrl;
+                                });
+                            },
+                            onCancel: function (data, actions) {
+                                /*
+                                    * Buyer cancelled the payment
+                                    */
+                                location.href = '@Url.Action("PayPalCreatePaymentCancel")' +
                                     '?intent=' + data.intent +
-                                    '&orderId=' + data.orderID +
                                     '&paymentID=' + data.paymentID +
                                     '&payerID=' + data.payerID +
-                                    '&returnUrl=' + data.returnUrl;
-                            });
-                        },
-                        onCancel: function (data, actions) {
-                            /*
-                                * Buyer cancelled the payment
-                                */
-                            location.href = '@Url.Action("PayPalCreatePaymentCancel")' +
-                                '?intent=' + data.intent +
-                                '&paymentID=' + data.paymentID +
-                                '&payerID=' + data.payerID +
-                                '&billingId=' + data.billingId +
-                                '&cancelUrl=' + data.cancelUrl +
-                                '&token=' + data.paymentToken;
+                                    '&billingId=' + data.billingId +
+                                    '&cancelUrl=' + data.cancelUrl +
+                                    '&token=' + data.paymentToken;
 
-                        },
-                        onError: function (err) {
-                            /*
-                                * An error occurred during the transaction
-                                */
-                        }
-                    }, '#SimplePayPalBtn');
-                </script>
-*@
+                            },
+                            onError: function (err) {
+                                /*
+                                    * An error occurred during the transaction
+                                    */
+                            }
+                        }, '#SimplePayPalBtn');
+                    </script>
+                *@
             </div>
         </div> <!-- Smart buy now button -->
         <div class="row">
@@ -162,134 +153,134 @@
     </div> <!-- Express Buy Now buttons -->
 
     <div>
-        @*
-            <div class="PayPalBox">
-                <h3>Server-side PayPal Button</h3>
-                <h4>
-                    Used when you want control the order from <em>your</em> back end system.
-                    You compile and execute the order and receive the results.
-                    This allows you to track the progress of an order.
-                    Completely avoids users manipulating data from the client side.
-                    These buttons may also be stacked or horizontal.
-                </h4>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                        <div id="ServerPayPalBtn" class="PayPalBtn"></div>
-                    </div>
+
+        <div class="PayPalBox">
+            <h3>Server-side PayPal Button</h3>
+            <h4>
+                Used when you want control the order from <em>your</em> back end system.
+                You compile and execute the order and receive the results.
+                This allows you to track the progress of an order.
+                Completely avoids users manipulating data from the client side.
+                These buttons may also be stacked or horizontal.
+            </h4>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div id="ServerPayPalBtn" class="PayPalBtn"></div>
                 </div>
-                <!-- #ServerPayPalBtn -->
+            </div>
+            <!-- #ServerPayPalBtn -->
 
-                <script>
-                paypal.Button.render({
-                    env: 'sandbox', // Or 'sandbox',
-                    commit: true, // Show a 'Pay Now' button
-                    style: {
-                        //layout: 'horizontal',  // horizontal | vertical
-                        color: 'gold',
-                        size: 'responsive',
-                        fundingicons: true,
-                        tagline: false
-                    },
-                    funding: {
-                        allowed: [paypal.FUNDING.CARD, paypal.FUNDING.CREDIT],
-                        disallowed: []
-                    },
-                    payment: function () { // send product ID to server
+            <script>
+            paypal.Button.render({
+                env: 'sandbox', // Or 'sandbox',
+                commit: true, // Show a 'Pay Now' button
+                style: {
+                    //layout: 'horizontal',  // horizontal | vertical
+                    color: 'gold',
+                    size: 'responsive',
+                    fundingicons: true,
+                    tagline: false
+                },
+                funding: {
+                    allowed: [paypal.FUNDING.CARD, paypal.FUNDING.CREDIT],
+                    disallowed: []
+                },
+                payment: function () { // send product ID to server
 
-                        return paypal.request.post('@Url.Action("PayPalCreatePayment")', {
+                    return paypal.request.post('@Url.Action("PayPalCreatePayment")', {
                             Sku: '101' // product ID for this button
                         })
-                            .then(function (data) {
-                                //console.log("after PP payment");
-                                //console.log(data.id);
-                                return data.id;
-                            });
-                    },
-                    onAuthorize: function (data) { //
-                        //console.log("In PP onAuthorize");
-                        //console.log(data);
-                        param = JSON.stringify(data);
-                        //console.log(param);
-                        return paypal.request.post('@Url.Action("PayPalExecutePayment")', {
-                            intent: data.intent,
-                            paymentID: data.paymentID,
-                            payerID: data.payerID,
-                            orderId: data.orderID,
-                            token: data.paymentToken,
-                            returnURL: data.returnUrl,
-                            param: param
-                        }).then(function () {
-                            //console.log("after PP onAuthorize PP payment");
-                            //console.log(data);
-                            param = JSON.stringify(data);
-                            //console.log(param);
-                            // The payment is complete!
-                            // You can now show a confirmation message to the customer
-                            location.href = '@Url.Action("PayPalCreatePaymentReturn")' +
-                                '?intent=' + data.intent +
-                                '&orderId=' + data.orderID +
-                                '&paymentID=' + data.paymentID +
-                                '&payerID=' + data.payerID +
-                                '&returnUrl=' + data.returnUrl;
-                            /*
-                            return paypal.request.post(' Url.Action("PayPalCreatePaymentReturn")', {
-                                intent: data.intent,
-                                orderId: data.orderId,
-                                paymentID: data.paymentID,
-                                payerID: data.payerID,
-                                returnUrl: data.returnUrl,
-                                param: param
-                            });
-                            */
+                        .then(function (data) {
+                            //console.log("after PP payment");
+                            //console.log(data.id);
+                            return data.id;
                         });
-                    },
-                    onCancel: function (data) {
-                        //console.log("in onCancel");
+                },
+                onAuthorize: function (data) { //
+                    //console.log("In PP onAuthorize");
+                    //console.log(data);
+                    param = JSON.stringify(data);
+                    //console.log(param);
+                    return paypal.request.post('@Url.Action("PayPalExecutePayment")', {
+                        intent: data.intent,
+                        paymentID: data.paymentID,
+                        payerID: data.payerID,
+                        orderId: data.orderID,
+                        token: data.paymentToken,
+                        returnURL: data.returnUrl,
+                        param: param
+                    }).then(function () {
+                        //console.log("after PP onAuthorize PP payment");
                         //console.log(data);
                         param = JSON.stringify(data);
                         //console.log(param);
-                        location.href = '@Url.Action("PayPalCreatePaymentCancel")' +
+                        // The payment is complete!
+                        // You can now show a confirmation message to the customer
+                        location.href = '@Url.Action("PayPalCreatePaymentReturn")' +
                             '?intent=' + data.intent +
+                            '&orderId=' + data.orderID +
                             '&paymentID=' + data.paymentID +
                             '&payerID=' + data.payerID +
-                            '&billingId=' + data.billingId +
-                            '&cancelUrl=' + data.cancelUrl +
-                            '&token=' + data.paymentToken;
+                            '&returnUrl=' + data.returnUrl;
                         /*
-                        return paypal.request.post('Url.Action("PayPalCreatePaymentCancel")', {
+                        return paypal.request.post(' Url.Action("PayPalCreatePaymentReturn")', {
                             intent: data.intent,
+                            orderId: data.orderId,
                             paymentID: data.paymentID,
                             payerID: data.payerID,
-                            billingId: data.billingId,
-                            cancelURL: data.cancelUrl,
-                            token: data.paymentToken,
+                            returnUrl: data.returnUrl,
                             param: param
                         });
                         */
-                    },
-                    onError: function (data) {
-                        //console.log("in onError");
-                        //console.log(data.name);
-                        //console.log(data.message);
-                        //console.log(data.information_link);
-                        param = JSON.stringify(data);
-                        location.href = 'Url.Action("PayPalError")' +
-                          '?name=' + data.name +
-                          '&message=' + data.message;
-                        /*
-                        return paypal.request.post('Url.Action("PayPalError")', {
-                            name: data.name,
-                            message: data.message,
-                            param: param
-                        })
-                        */
-                    },
-                }, '#ServerPayPalBtn');
-                </script> <!-- #ServerPayPalBtn -->
+                    });
+                },
+                onCancel: function (data) {
+                    //console.log("in onCancel");
+                    //console.log(data);
+                    param = JSON.stringify(data);
+                    //console.log(param);
+                    location.href = '@Url.Action("PayPalCreatePaymentCancel")' +
+                        '?intent=' + data.intent +
+                        '&paymentID=' + data.paymentID +
+                        '&payerID=' + data.payerID +
+                        '&billingId=' + data.billingId +
+                        '&cancelUrl=' + data.cancelUrl +
+                        '&token=' + data.paymentToken;
+                    /*
+                    return paypal.request.post('Url.Action("PayPalCreatePaymentCancel")', {
+                        intent: data.intent,
+                        paymentID: data.paymentID,
+                        payerID: data.payerID,
+                        billingId: data.billingId,
+                        cancelURL: data.cancelUrl,
+                        token: data.paymentToken,
+                        param: param
+                    });
+                    */
+                },
+                onError: function (data) {
+                    //console.log("in onError");
+                    //console.log(data.name);
+                    //console.log(data.message);
+                    //console.log(data.information_link);
+                    param = JSON.stringify(data);
+                    location.href = 'Url.Action("PayPalError")' +
+                        '?name=' + data.name +
+                        '&message=' + data.message;
+                    /*
+                    return paypal.request.post('Url.Action("PayPalError")', {
+                        name: data.name,
+                        message: data.message,
+                        param: param
+                    })
+                    */
+                },
+            }, '#ServerPayPalBtn');
+            </script> <!-- #ServerPayPalBtn -->
 
-            </div> <!-- Server side buy now button -->
-        *@
+        </div> <!-- Server side buy now button -->
+
     </div>
     <div class="PayPalBox">
         <h3>Add to PayPal Cart Buttons</h3>
@@ -300,7 +291,7 @@
 
         <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="@ViewBag.AddToCart"> @*AddToPPCartOne Get value from config*@
+            <input type="hidden" name="hosted_button_id" value="@Model.AddToCart"> @*AddToPPCartOne Get value from config*@
             <table>
                 <tr><td><input type="hidden" name="on0" value="Colored Item">Your Store Item</td></tr>
                 <tr>
@@ -343,122 +334,133 @@
             </div>
         </div>
     </div> <!-- View Cart-->
+
+    <div>
+        @*
+        <div class="PayPalBox">
+            <h3>Client Side Add to Cart</h3>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div id="SimplePayPalAdd2CartBtn" class="PayPalBtn"></div>
+                    <script>
+                    paypal.Button.render({
+                            env: 'sandbox', // Or 'sandbox',
+                            commit: true, // Show a 'Pay Now' button
+                            client: {
+                                sandbox:
+                                    'AeXZWqBXt7O1yxFuharPp_NgVbiGWUd2BQgqMiFghdYFGmn_0CZKurlj8_YRFKG-wKwZcNZh0Ah0ZE6s'
+                            },
+                            style: {
+                                label: 'buynow',
+                                color: 'gold',
+                                size: 'responsive',
+                                shape: 'pill',
+                                tagline: false,
+                                fundingicons: true
+                            },
+                            payment: function(data, actions) {
+                                return actions.payment.create({
+                                    payment: {
+                                        transactions: [
+                                            {
+                                                amount: { total: '30.01', currency: 'USD' }
+                                            }
+                                        ]
+                                    }
+                                })
+                            },
+                            onAuthorize: function(data, actions) {
+                                return actions.payment.execute().then(function(payment) {
+                                    location.href = '@Url.Action("PayPalCreatePaymentReturn")' +
+                                        '?intent=' +
+                                        data.intent +
+                                        '&orderId=' +
+                                        data.orderID +
+                                        '&paymentID=' +
+                                        data.paymentID +
+                                        '&payerID=' +
+                                        data.payerID +
+                                        '&returnUrl=' +
+                                        data.returnUrl;
+                                });
+                            },
+                            onCancel: function(data, actions) {
+                                /*
+                                 * Buyer cancelled the payment
+                                 */
+                                location.href = '@Url.Action("PayPalCreatePaymentCancel")' +
+                                    '?intent=' +
+                                    data.intent +
+                                    '&paymentID=' +
+                                    data.paymentID +
+                                    '&payerID=' +
+                                    data.payerID +
+                                    '&billingId=' +
+                                    data.billingId +
+                                    '&cancelUrl=' +
+                                    data.cancelUrl +
+                                    '&token=' +
+                                    data.paymentToken;
+
+                            },
+                            onError: function(err) {
+                                /*
+                                 * An error occurred during the transaction
+                                 */
+                            }
+                        },
+                        '#SimplePayPalAdd2CartBtn');
+                    </script>
+                </div>
+            </div>
+        </div> <!-- Smart Client Side Add to Cart-->
+        *@
+    </div>
+
     <div>
         @*
             <div class="PayPalBox">
-                <h3>Client Side Add to Cart</h3>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                        <div id="SimplePayPalAdd2CartBtn" class="PayPalBtn"></div>
-                        <script>
-                            paypal.Button.render({
-                                env: 'sandbox', // Or 'sandbox',
-                                commit: true, // Show a 'Pay Now' button
-                                client: {
-                                    sandbox: 'AeXZWqBXt7O1yxFuharPp_NgVbiGWUd2BQgqMiFghdYFGmn_0CZKurlj8_YRFKG-wKwZcNZh0Ah0ZE6s'
-                                },
-                                style: {
-                                    label: 'buynow',
-                                    color: 'gold',
-                                    size: 'responsive',
-                                    shape: 'pill',
-                                    tagline: false,
-                                    fundingicons: true
-                                },
-                                payment: function (data, actions) {
-                                    return actions.payment.create({
-                                        payment: {
-                                            transactions: [
-                                                {
-                                                    amount: { total: '30.01', currency: 'USD' }
-                                                }
-                                            ]
-                                        }
-                                    })
-                                },
-                                onAuthorize: function (data, actions) {
-                                    return actions.payment.execute().then(function (payment) {
-                                        location.href = '@Url.Action("PayPalCreatePaymentReturn")' +
-                                            '?intent=' + data.intent +
-                                            '&orderId=' + data.orderID +
-                                            '&paymentID=' + data.paymentID +
-                                            '&payerID=' + data.payerID +
-                                            '&returnUrl=' + data.returnUrl;
-                                    });
-                                },
-                                onCancel: function (data, actions) {
-                                    /*
-                                     * Buyer cancelled the payment
-                                     */
-                            location.href = '@Url.Action("PayPalCreatePaymentCancel")' +
-                            '?intent=' + data.intent +
-                            '&paymentID=' + data.paymentID +
-                            '&payerID=' + data.payerID +
-                            '&billingId=' + data.billingId +
-                            '&cancelUrl=' + data.cancelUrl +
-                            '&token=' + data.paymentToken;
+                <h3>Create Invoice</h3>
+                <h4>Use when</h4>
 
-                                },
-                                onError: function (err) {
-                                    /*
-                                     * An error occurred during the transaction
-                                     */
-                                }
-                            }, '#SimplePayPalAdd2CartBtn');
-                        </script>
-                    </div>
-                </div> <!-- Smart buy now button -->
+                <p>
+                    Select Customer: (dropdown)
+                    Select Product: (dropdown)
+                    Discount: ($ edit)
+                    Create and send invoice
+                </p>
+            </div>
 
-            </div> <!-- Smart Client Side Add to Cart-->
-        *@
-    </div>
-    <div>
-        @*
-                    <div class="PayPalBox">
-                        <h3>Create Invoice</h3>
-                        <h4>Use when</h4>
+            <div class="PayPalBox">
+                <h3>Payouts</h3>
+                <h4>Use when</h4>
+            </div>
 
-                        <p>
-                            Select Customer: (dropdown)
-                            Select Product: (dropdown)
-                            Discount: ($ edit)
-                            Create and send invoice
-                        </p>
-                    </div>
+            <div class="PayPalBox">
+                <h3>Experience</h3>
+                <h4>Use when</h4>
+            </div>
 
-                    <div class="PayPalBox">
-                        <h3>Payouts</h3>
-                        <h4>Use when</h4>
-                    </div>
-
-                    <div class="PayPalBox">
-                        <h3>Experience</h3>
-                        <h4>Use when</h4>
-                    </div>
-
-
-                    <div class="PayPalBox">
-                        <h3>Styled Layouts (Circus | Matrix)</h3>
-                        <h4>Use when</h4>
-                    </div>
+            <div class="PayPalBox">
+                <h3>Styled Layouts (Circus | Matrix)</h3>
+                <h4>Use when</h4>
+            </div>
 
             <div class="PayPalBox"></div> <!-- Server Side Add to Cart-->
-
-
+            </div> <!-- Future impl -->
         *@
-    </div> <!-- Future impl -->
-    <div class="PayPalBox">
-        <h3>Coming soon - Braintree Integration</h3>
-        <h4>Demo will support Drop-ins and Hosted fields</h4>
+        <div class="PayPalBox">
+            <h3>Coming soon - Braintree Integration</h3>
+            <h4>Demo will support Drop-ins and Hosted fields</h4>
+        </div>
     </div>
-</div>
 
 
 @section Scripts
 {
-@Scripts.Render("~/bundles/jqueryval")
-@Scripts.Render("~/Scripts/PayPalHandler.js")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/PayPalHandler.js")
 }
 
-
+</div>

@@ -15,7 +15,6 @@ namespace DCTechnologySolutions.Controllers
             {
                 PayPalCompanyName = "Challenger Technology Soultions Store "
             };
-            ViewBag.AddToCart = PayPalConfigModel.AddToCart;
             return View(ppm);
         }
 
@@ -24,7 +23,6 @@ namespace DCTechnologySolutions.Controllers
         public ActionResult PayPalSamples(PayPalModel ppm)
         {
             ppm.PayPalCompanyName = "Your PayPal Store ";
-            ViewBag.AddToCart = PayPalConfigModel.AddToCart;
             return View(ppm);
         }
 

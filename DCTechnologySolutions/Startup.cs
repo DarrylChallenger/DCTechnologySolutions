@@ -19,6 +19,8 @@ namespace DCTechnologySolutions
             PayPalConfigModel.secretKey = ConfigurationManager.AppSettings["pp-SecretKey"];
             PayPalConfigModel.clientId = ConfigurationManager.AppSettings["pp-ClientId"];
             PayPalConfigModel.AddToCart = ConfigurationManager.AppSettings["pp-AddToCart"];
+            PayPalConfigModel.ViewCart = ConfigurationManager.AppSettings["pp-ViewCart"];
+            PayPalConfigModel.StdBtn = ConfigurationManager.AppSettings["pp-StdBtn"];
         }
 
         private void ConfigureStripe()
