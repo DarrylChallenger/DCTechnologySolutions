@@ -1,12 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "ArcGISSamples";
+    ViewBag.Title = "ArcGIS Integration Sample";
+    Layout = "~/Views/Gallery/_GalleryLayout.cshtml";
+
 }
 
-<div class="GalleryPage">
+<div class="GalleryPage project">
 
-    <h2>ArcGIS Samples</h2>
-
+    <h2>ArcGIS Integration Samples</h2>
+    <h3>This sample map has Yankee Stadium Pinned</h3>
     <style>
         .embed-container {
             position: relative;
@@ -36,4 +38,14 @@
                 title="Challenger Technology Solutions Sample ArcGIS Map"
                 src="//www.arcgis.com/apps/Embed/index.html?webmap=d50056f4c43b407ab9be473ebc315dae&extent=-74.4312,40.3093,-72.9769,41.0849&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe>
     </div>
+    
+    <div class="row">
+        <div class="col-xs-6 col-sm-6">
+            <a class="leftArrow" href="@Url.Action("StripeSamples", "Gallery")" title="Stripe Integration Samples"><<< Stripe Integration Samples</a>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+            <a class="rightArrow" href="@Url.Action("FitbitSamples", "Gallery")" title="Fitbit Integration Samples">Fitbit Integration Samples >>></a>
+        </div>
+    </div>
+
 </div>

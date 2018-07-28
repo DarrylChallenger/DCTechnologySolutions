@@ -1,10 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "FitbitSamples";
+    ViewBag.Title = "Fitbit Integration Sample";
+    Layout = "~/Views/Gallery/_GalleryLayout.cshtml";
+
 }
 
 <div class="Fitbit">
-    <h2>Fitbit Samples</h2>
+    <h2>Fitbit Integration Samples</h2>
     <div class="ProjectBox">
         @using (Html.BeginForm("FitbitActivity", "Gallery", FormMethod.Post, new { id = "FitbitActivityBtn" }))
         {
@@ -22,4 +24,11 @@
         <button type="submit">Lifetime Activity</button>
         }
     </div> <!-- Lifetime Activity-->
+    
+    <div class="row">
+        <div class="col-xs-6 col-sm-6">
+            <a class="leftArrow" href="@Url.Action("ArcGISSamples", "Gallery")" title="ArcGIS Integration Samples"><<< ArcGIS Integration Samples</a>
+        </div>
+    </div>
+
 </div>
