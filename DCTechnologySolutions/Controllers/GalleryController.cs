@@ -130,5 +130,11 @@ namespace DCTechnologySolutions.Controllers
             }
             return View(model);
         }
+
+        public ActionResult GoogleMapSamples()
+        {
+            GoogleMapSamplesModel gm = new GoogleMapSamplesModel();
+            return View(gm);
+        }
     }
 }

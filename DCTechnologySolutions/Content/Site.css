@@ -27,6 +27,9 @@
     border-width:2px;
 }
 
+.black {
+    color: black;
+}
 
 
 body, h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -861,4 +864,75 @@ footer a:hover, footer a:focus  {
         font-size: 1.4em;
     }
 
+}
+
+.GoogleMaps {
+    max-width: 75%;
+    margin: auto;
+    --GoogleBlue: #4285F4;
+    --GoogleGreen: #34A853;
+    --GoogleOrange: #FBBC05;
+    --GoogleRed: #EA4335;
+}
+
+.GoogleMaps p {
+    font-size: 1em;
+    letter-spacing: 0px;
+    line-height: 150%;
+    padding-bottom: 1em;
+    color: unset;
+    width: initial;
+}
+
+.GoogleMaps h3 {
+    padding-bottom: 0;
+}
+
+.GoogleMaps h4 {
+    letter-spacing: 0;
+}
+
+.GoogleRed {
+
+    color: var(--GoogleRed);
+}
+
+.GoogleOrange {
+    color: var(--GoogleOrange);
+}
+
+.GMap-break {
+    color: var(--GoogleRed);
+    height: 2px;
+}
+
+.GoogleMaps .ProjectBox {
+    border-color: black;
+    background-color: white;
+    color: var(--GoogleBlue);
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+#GMapSample {
+    height: 40em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--GoogleBlue);
+}
+
+.GMapBtn {
+    padding:8px;
+    border-radius: 8px;
+    background-color: var(--GoogleGreen);
+    font-size: 1.5em;
+}
+a.GMapBtn {
+    text-decoration: none;
+}
+
+a.GMapBtn:hover, a.GMapBtn:focus {
+    color: white;
+    background-color: #128631;
+    text-decoration: none;
 }

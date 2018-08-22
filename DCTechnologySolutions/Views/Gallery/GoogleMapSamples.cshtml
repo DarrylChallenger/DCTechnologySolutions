@@ -1,0 +1,89 @@
+﻿@using DCTechnologySolutions.Models
+@model DCTechnologySolutions.Models.GoogleMapSamplesModel
+
+@{
+    ViewBag.Title = "Google Map Samples";
+    Layout = "~/Views/Gallery/_GalleryLayout.cshtml";
+
+}
+
+<div class="GoogleMaps project">
+    <h2>Google Map Samples</h2>
+    <div class="ProjectBox">
+        <span class="black h3">Each marker represents a baseball stadium, </span>
+        <span class="GoogleRed h4">Click a marker to add it to the list</span>
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <h3>Locations</h3>
+                @for (int i = 0; i < @Model.Locs.Count; i++)
+                {
+                    <p id="Locs_@i" class="hidden">@Model.Locs[i].Name</p>
+                }
+                <div class="GoogleOrange">
+                    <h3>Report Options</h3>
+                    <p><input id="chk1" type="checkbox" /><label for="chk1">Checkbox 1</label></p>
+                    <p><input id="chk2" type="checkbox" checked=""/><label for="chk2">Checkbox 2</label></p>
+                    <p><input id="chk3" type="checkbox" checked=""/><label for="chk3">Checkbox 3</label></p>
+                    <p><input id="chk4" type="checkbox" /><label for="chk4">Checkbox 4</label></p>
+                    <p><input id="chk5" type="checkbox" checked=""/><label for="chk5">Checkbox 5</label></p>
+                    <hr />
+                </div>
+                <hr class="GMap-break" />
+                <a class="GMapBtn" href="#">Create Report</a>
+            </div>
+            <div class="col-sm-9 col-xs-12">
+                <!-- Map col goes here -->
+                <div id="GMapSample">
+                    <p>The map will render here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6">
+            <a class="leftArrow" href="@Url.Action("FitbitSamples", "Gallery")" title="Fitbit Integration Samples"><<< Fitbit Integration Samples</a>
+        </div>
+    </div>
+
+</div>
+<script>
+    function initMap() {
+        var centerOfUS = { lat: 39.8283, lng: -98.5795 };
+        var redMarker = { url: 'https://maps.google.com/mapfiles/kml/paddle/red-circle.png', scaledSize: { width:33, height:33 } };
+        var greenMarker = { url: 'https://maps.google.com/mapfiles/kml/paddle/grn-circle.png', scaledSize: { width: 33, height: 33 } };
+        var map = new google.maps.Map(document.getElementById('GMapSample'),
+            { zoom: 4, center: { lat: 39.8283, lng: -98.5795 } });
+        @{
+            int j = 0;
+            int sz = Model.Locs.Count + 1;
+        }
+        @if (Model.Locs.Count != 0) {
+            <text>var infowindow = new google.maps.InfoWindow();</text>
+
+        }
+        @foreach (GoogleMapLocation s in Model.Locs)
+        {
+            <text>
+        var marker = new google.maps.Marker({ position: { lat:@s.Latitude, lng:@s.Longitude }, map: map, title: '@s.Name', icon: redMarker });
+                marker.addListener('click', function () {
+                    $("#Locs_@j").toggleClass("hidden");
+                    // toggle flag
+                    if ($("#Locs_@j").hasClass("hidden")) {
+                        // use red
+                        infowindow.close();
+                        this.setIcon(redMarker);
+                    } else {
+                        // use green
+                        this.setIcon(greenMarker);
+                        infowindow.setContent('@s.Address');
+                        infowindow.open(map, this);
+                    }
+                });
+            </text>
+            j++;
+
+        }
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjeABpdgYlIJBCCPVTjd74NcNkS29ZlU4&callback=initMap"></script>
+
