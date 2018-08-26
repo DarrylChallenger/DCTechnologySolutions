@@ -10,34 +10,50 @@
 <div class="GoogleMaps project">
     <h2>Google Map Samples</h2>
     <div class="ProjectBox">
-        <span class="black h3">Each marker represents a baseball stadium, </span>
-        <span class="GoogleRed h4">Click a marker to add it to the list</span>
-        <div class="row">
-            <div class="col-sm-3 col-xs-12">
-                <h3>Locations</h3>
-                @for (int i = 0; i < @Model.Locs.Count; i++)
-                {
-                    <p id="Locs_@i" class="hidden">@Model.Locs[i].Name</p>
-                }
-                <div class="GoogleOrange">
-                    <h3>Report Options</h3>
-                    <p><input id="chk1" type="checkbox" /><label for="chk1">Checkbox 1</label></p>
-                    <p><input id="chk2" type="checkbox" checked=""/><label for="chk2">Checkbox 2</label></p>
-                    <p><input id="chk3" type="checkbox" checked=""/><label for="chk3">Checkbox 3</label></p>
-                    <p><input id="chk4" type="checkbox" /><label for="chk4">Checkbox 4</label></p>
-                    <p><input id="chk5" type="checkbox" checked=""/><label for="chk5">Checkbox 5</label></p>
-                    <hr />
+        <div>
+            <span class="black h3">Each marker represents a baseball stadium, </span>
+            <span class="GoogleRed h4">Click a marker to add it to the list</span>
+            <div class="row">
+                <div class="col-sm-3 col-xs-12">
+                    <h3>Locations</h3>
+                    @for (int i = 0; i < @Model.Locs.Count; i++)
+                    {
+                        <p id="Locs_@i" class="hidden">@Model.Locs[i].Name</p>
+                    }
+                    <div class="GoogleOrange">
+                        <h3>Report Options</h3>
+                        <p><input id="chk1" type="checkbox" /><label for="chk1">Checkbox 1</label></p>
+                        <p><input id="chk2" type="checkbox" checked="" /><label for="chk2">Checkbox 2</label></p>
+                        <p><input id="chk3" type="checkbox" checked="" /><label for="chk3">Checkbox 3</label></p>
+                        <p><input id="chk4" type="checkbox" /><label for="chk4">Checkbox 4</label></p>
+                        <p><input id="chk5" type="checkbox" checked="" /><label for="chk5">Checkbox 5</label></p>
+                        <hr />
+                    </div>
+                    <hr class="GMap-break" />
+                    <a class="GMapBtn" href="#">Create Report</a>
                 </div>
-                <hr class="GMap-break" />
-                <a class="GMapBtn" href="#">Create Report</a>
-            </div>
-            <div class="col-sm-9 col-xs-12">
-                <!-- Map col goes here -->
-                <div id="GMapSample">
-                    <p>The map will render here</p>
+                <div class="col-sm-9 col-xs-12">
+                    <!-- Map col goes here -->
+                    <div id="GMapSample" class="GMap-spacer">
+                        <p>The map will render here</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- Sample with pins -->
+        <div>
+            <div class="row">
+                <div class="col-sm-3 col-xs-12">
+                </div>
+                <div class="col-sm-9 col-xs-12">
+                    <div id="GMapDAMN" class="GMap-spacer">
+                        <p>The map will render here</p>
+                    </div>
+                    <div>
+                        <img class="DAMNMap" src="~/Images/DAMN Map.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div> <!-- DAMN Sample -->
     </div>
     <div class="row">
         <div class="col-xs-6 col-sm-6">
@@ -48,6 +64,7 @@
 </div>
 <script>
     function initMap() {
+        // Baseball Stadiums
         var centerOfUS = { lat: 39.8283, lng: -98.5795 };
         var redMarker = { url: 'https://maps.google.com/mapfiles/kml/paddle/red-circle.png', scaledSize: { width:33, height:33 } };
         var greenMarker = { url: 'https://maps.google.com/mapfiles/kml/paddle/grn-circle.png', scaledSize: { width: 33, height: 33 } };
@@ -83,6 +100,8 @@
             j++;
 
         }
+        // DAMN Map - display google map and DAMN Map as overlay. Allow user to select spots on the map and drop pins.
+        var map = new google.maps.Map(document.getElementById('GMapDAMN'), { zoom: 3, center: { lat: 39.8283, lng: -98.5795 } });
     }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjeABpdgYlIJBCCPVTjd74NcNkS29ZlU4&callback=initMap"></script>

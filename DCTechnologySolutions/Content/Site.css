@@ -914,6 +914,9 @@ footer a:hover, footer a:focus  {
     margin-bottom: 2em;
 }
 
+.GMap-spacer {
+    margin-bottom:1em;
+}
 #GMapSample {
     height: 40em;
     border-style: solid;
@@ -935,4 +938,16 @@ a.GMapBtn:hover, a.GMapBtn:focus {
     color: white;
     background-color: #128631;
     text-decoration: none;
+}
+
+#GMapDAMN {
+    height: 40em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--GoogleOrange);
+    opacity:.6;
+}
+
+.DAMNMap {
+    height: 40em;
 }
