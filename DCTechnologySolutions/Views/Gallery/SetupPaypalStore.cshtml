@@ -1,0 +1,32 @@
+﻿@model DCTechnologySolutions.Models.PayPalModel
+
+@{
+    ViewBag.Title = "SetupPaypalStore";
+}
+
+<div class="PayPal">
+    <h2>Setup Your Store</h2>
+    <div class="PayPalBox">
+        @using (Html.BeginForm("PayPalSamples", "Gallery", FormMethod.Post, new { id = "PayPalButtonForm" }))
+        {
+            <h3>Enter you test Client Id and secrect key to test operations against your site.</h3>
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-2">
+                    @Html.LabelFor(model => model.UserClientId)
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    @Html.EditorFor(model => model.UserClientId)
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-2">
+                    @Html.LabelFor(model => model.UserSecrectKey)
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    @Html.EditorFor(model => model.UserSecrectKey)
+                </div>        
+            </div>
+            <p></p>
+            <button type="submit">Submit Keys</button>
+        }
+    </div>
+</div>

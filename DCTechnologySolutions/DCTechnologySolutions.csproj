@@ -227,6 +227,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FitbitModels.cs" />
+    <Compile Include="Models\GoogleMapSamplesModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PayPalModels.cs" />
@@ -260,6 +261,11 @@
     <Content Include="Images\CAB_V500.png" />
     <Content Include="Images\Cart.png" />
     <Content Include="Images\DAMN Map.jpg" />
+    <Content Include="Images\DAMN MapB.png" />
+    <Content Include="Images\DAMN MapC.png" />
+    <Content Include="Images\DAMN MapD.png" />
+    <Content Include="Images\DAMN MapE.png" />
+    <Content Include="Images\DAMN MapF.png" />
     <Content Include="Images\DC LOGO B&amp;W2AFloralwhite.png" />
     <Content Include="Images\DC LOGO B&amp;W2ALightBlue.png" />
     <Content Include="Images\DC LOGO Small Grey BG tx.png" />
@@ -275,6 +281,7 @@
     <Content Include="Images\equity_V3-03blue.png" />
     <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Images\FitbitSamples.png" />
+    <Content Include="Images\GMapSamples.png" />
     <Content Include="Images\Kinect.png" />
     <Content Include="Images\light-on-light.png" />
     <Content Include="Images\OJLogo.png" />
@@ -306,6 +313,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\PayPalHandler.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\StripeHandler.js" />
@@ -367,11 +375,13 @@
     <Content Include="Views\Gallery\DisplayStripeResults.cshtml" />
     <Content Include="Views\Gallery\ProcessCheckoutBtn.cshtml" />
     <Content Include="Views\Gallery\ProcessCardElement.cshtml" />
-    <Content Include="Views\Gallery\SetupStore.cshtml" />
+    <Content Include="Views\Gallery\SetupStripeStore.cshtml" />
     <Content Include="Views\Gallery\_DisplayTxData.cshtml" />
     <Content Include="Views\Gallery\ArcGISSamples.cshtml" />
     <Content Include="Views\Gallery\FitbitSamples.cshtml" />
     <Content Include="Views\Gallery\ReturnFromFitbit.cshtml" />
+    <Content Include="Views\Gallery\SetupPaypalStore.cshtml" />
+    <Content Include="Views\Gallery\GoogleMapSamples.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_LocalResources\App_Data\" />

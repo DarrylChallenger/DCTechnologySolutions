@@ -2,14 +2,14 @@
 @{
     ViewBag.Title = "StripeSample";
     Layout = "~/Views/Gallery/_GalleryLayout.cshtml";
-    var Title = "Stripe Samples" + " - " + (Model.stripeCompanyName ?? "");
+    var title = Model.stripeCompanyName ?? "";
 }
 
 <div class="Stripe">
 
-    <h2>@Title</h2>
+    <h2>Stripe Samples: <i> @title </i> Store</h2>
     <div class="StripeBox">
-        @using (Html.BeginForm("SetupStore", "Gallery", FormMethod.Post, new { id = "StripeButtonForm" }))
+        @using (Html.BeginForm("SetupStripeStore", "Gallery", FormMethod.Post, new { id = "StripeButtonForm" }))
         {
             @Html.AntiForgeryToken()
             <p>
@@ -20,7 +20,7 @@
                 You'll see your store name near the top of the page.
             </p>
             @Html.HiddenFor(model => model.publicKey)
-            @Html.HiddenFor(model => model.stripeKey)
+            @Html.HiddenFor(model => model.clientId)
             <button type="submit">Setup Store</button>
             @*<h5>Current pkey: @Html.EditorFor(model => model.publicKey, new { htmlAttributes = new { @disabled = "disabled" } })</h5>*@
         }
@@ -196,6 +196,15 @@
             Payout
         </div> <!-- Execute a payout -->
     *@
+    <div class="row">
+        <div class="col-xs-6 col-sm-6">
+            <a class="leftArrow" href="@Url.Action("PayPalSamples", "Gallery")" title="PayPal Integration Samples"><<< PayPal Integration Samples</a>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+            <a class="rightArrow" href="@Url.Action("ArcGISSamples", "Gallery")" title="ArcGIS Integration Samples">ArcGIS Integration Samples >>></a>
+        </div>
+    </div>
+
 </div>
 
 @section Scripts
