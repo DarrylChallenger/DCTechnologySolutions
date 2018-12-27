@@ -291,15 +291,22 @@ textarea {
 .Service {
     background-color: darkred;
     opacity: .8;
-    min-height: 10em;
+    min-height: 8em;
     margin-bottom: 1em;
     padding: 1.5em 1.5em 1.5em 1.5em;
     border-color: black;
     border-style: solid;
 }
 
+.ServiceLink {
+}
+
+.ServiceLink:hover {
+    opacity: .8;
+}
+
 .ServiceImg {
-    width:7em;
+    width:5em;
     border-color:black;
     border-color:white;
     border-style:solid;
@@ -358,7 +365,7 @@ textarea {
     }
 }
 
-   .GalleryLink {
+.GalleryLink {
     height:100%;
     width:100%;
     position:absolute;
@@ -374,8 +381,13 @@ textarea {
     border-color:#F0F0F0;
 
     border-width:6px;
-
 }
+
+.GalleryLink:hover {
+    opacity: .8;
+    border-color: black;
+}
+
 .GalleryBox {
     max-width:75%;
     margin:auto;
@@ -385,10 +397,6 @@ textarea {
     height:200px;
 }
 
-.GalleryLink:hover {
-    opacity:.8;
-    border-color:black;
-}
 
 .GalleryImage {
     position:absolute;
@@ -877,7 +885,7 @@ footer a:hover, footer a:focus  {
 
 .GoogleMaps p {
     font-size: 1em;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     line-height: 150%;
     padding-bottom: 1em;
     color: unset;

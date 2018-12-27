@@ -42,34 +42,44 @@
     <h2>Services</h2>
     <ul class="">
         <li>
-            <div class="Service">
-                <img class="ServiceImg" src="~/Images/settings-gears.png" />
-                <span> @Html.ActionLink("Application Development and Systems Integration", "AppDev", "Services")</span>
-            </div>
+            <a href=@Url.Action("AppDev", "Services") class="ServiceLink">
+                <div class="Service">
+                    <img class="ServiceImg" src="~/Images/settings-gears.png" />
+                    <span>Application Development and Systems Integration</span>
+                </div>
+            </a>
         </li>
         <li>
-            <div class="Service">
-                <img class="ServiceImg" src="~/Images/003-arrows.png" />
-                <span> @Html.ActionLink("Consulting", "Consulting", "Services")</span>
-            </div>
+            <a href=@Url.Action("Consulting", "Services") class="ServiceLink">
+                <div class="Service">
+                    <img class="ServiceImg" src="~/Images/003-arrows.png" />
+                    <span>Consulting</span>
+                </div>
+            </a>
         </li>
         <li>
-            <div class="Service">
-                <img class="ServiceImg" src="~/Images/business-people-meeting.png" />
-                <span> @Html.ActionLink("Software Development and Development Team Leadership", "Leadership", "Services")</span>
-            </div>
+            <a href=@Url.Action("Leadership", "Services") class="ServiceLink">
+                <div class="Service">
+                    <img class="ServiceImg" src="~/Images/business-people-meeting.png" />
+                    <span>Software Development and Development Team Leadership</span>
+                </div>
+            </a>
         </li>
         <li>
-            <div class="Service">
-                <img class="ServiceImg" src="~/Images/Kinect.png" />
-                <span> @Html.ActionLink("Kinect Gesture Detection", "Kinect", "Services")</span>
-            </div>
+            <a href=@Url.Action("Kinect", "Services") class="ServiceLink">
+                <div class="Service">
+                    <img class="ServiceImg" src="~/Images/Kinect.png" />
+                    <span>Kinect Gesture Detection</span>
+                </div>
+            </a>
         </li>
         <li>
-            <div class="Service">
-                <img class="ServiceImg" src="~/Images/001-graphic.png" />
-                <span> @Html.ActionLink("Online Profile creation for your Business or Charity", "OnlineProfile", "Services")</span>
-            </div>
+            <a href=@Url.Action("OnlineProfile", "Services") class="ServiceLink">
+                <div class="Service">
+                    <img class="ServiceImg" src="~/Images/001-graphic.png" />
+                    <span>Online Profile creation for your Business or Charity</span>
+                </div>
+            </a>
         </li>
     </ul>
 </div>
