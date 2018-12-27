@@ -7,364 +7,137 @@
 }
 
 <div class="PayPal">
-<h2 class="ppCompanyName">@Model.PayPalCompanyName</h2>
-<h2>PayPal Samples <small>(These are test buttons, so click away!)</small></h2>
-<div class="PayPalBox">
-    @using (Html.BeginForm("SetupPayPalStore", "Gallery", FormMethod.Post, new { id = "PayPalButtonForm" }))
-    {
-        @Html.AntiForgeryToken()
-        <span>
-            <span class="h3">PayPal</span>
-            <span class="h4">
-                offers a wide variety of methods to make payments simple for your clients with additional support for
-                inventory tracking, profit &amp; loss, custom messages, invoices and other advanced features.
-            </span>
-        </span>
-        <h4>
-            Here are a few examples that show the simplicity and power of PayPal.
-        </h4>
-        <h4>
-            @Html.ActionLink("Contact Us", "Contact", "Home") to discuss using these features in your application.
-        </h4>
-        @Html.HiddenFor(model => model.ClientId)
-
-    }
-</div> <!-- Explanation of Services -->
-<div class="PayPalBox">
-    <h3>PayPal Standard Payment Buttons (HTML button)</h3>
-    <h4>
-        Use when you want to be up and running quickly and have the least infrasturcture.
-        PayPal tracks your products and inventory as well as profit and loss.
-        You can have a variety of buttons including "Buy Now", "Add to Cart", and "Donate."
-        With this option, the payment experience is on PayPal pages.
-    </h4>
-    <div class="row">
-        <div class="col-sm-8 col-xs-2"></div>
-        <div class="col-sm-4 col-xs-10">
-            <form class="PayPalForm" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="@Model.StdBtn">
-                <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
-        </div>
-    </div>
-</div> <!-- Standard Buy Now -->
-
-<div class="PayPalBox">
-    <h3>PayPal Express Payment Buttons</h3>
-    <h4>
-        Use when <em>you</em> want to manage your products and inventory.
-        These buttons also offer standard PayPal layouts so that customers recognize they are using PayPal.
-        Users stay on the your page while interacting with an overlaid PayPal window.
-        Order data can be captured after the transaction is complete.
-    </h4>
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <div id="SimplePayPalBtn" class="PayPalBtn"></div>
-            @*
-                    <script>
-                        var myClientId = "AeXZWqBXt7O1yxFuharPp_NgVbiGWUd2BQgqMiFghdYFGmn_0CZKurlj8_YRFKG-wKwZcNZh0Ah0ZE6s";//GetCurrentClientId();
-                        paypal.Button.render({
-                            env: 'sandbox', // Or 'sandbox',
-                            commit: true, // Show a 'Pay Now' button
-                            client: {
-                                sandbox: myClientId
-                            },
-                            style: {
-                                label: 'buynow',
-                                color: 'gold',
-                                size: 'responsive',
-                                shape: 'pill',
-                                tagline: false,
-                                fundingicons: false
-                            },
-                            payment: function (data, actions) {
-                                return actions.payment.create({
-                                    payment: {
-                                        transactions: [
-                                            {
-                                                amount: { total: '1.01', currency: 'USD' }
-                                            }
-                                        ]
-                                    }
-                                })
-                            },
-                            onAuthorize: function (data, actions) {
-                                return actions.payment.execute().then(function (payment) {
-                                    location.href = '@Url.Action("PayPalCreatePaymentReturn")' +
-                                        '?intent=' + data.intent +
-                                        '&orderId=' + data.orderID +
-                                        '&paymentID=' + data.paymentID +
-                                        '&payerID=' + data.payerID +
-                                        '&returnUrl=' + data.returnUrl;
-                                });
-                            },
-                            onCancel: function (data, actions) {
-                                /*
-                                    * Buyer cancelled the payment
-                                    */
-                                location.href = '@Url.Action("PayPalCreatePaymentCancel")' +
-                                    '?intent=' + data.intent +
-                                    '&paymentID=' + data.paymentID +
-                                    '&payerID=' + data.payerID +
-                                    '&billingId=' + data.billingId +
-                                    '&cancelUrl=' + data.cancelUrl +
-                                    '&token=' + data.paymentToken;
-
-                            },
-                            onError: function (err) {
-                                /*
-                                    * An error occurred during the transaction
-                                    */
-                            }
-                        }, '#SimplePayPalBtn');
-                    </script>
-                *@
-        </div>
-    </div> <!-- Smart buy now button -->
-    <div class="row">
-        <h3 class="centered">Stacked or horizontal buttons</h3>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <div id="StackedPayPalBtn" class="PayPalBtn"></div>
-                </div>
-            </div>
-        </div> <!-- stacked buttons -->
-        <hr class="PayPal-xs-break" />
-        <div class="col-sm-6">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <div id="HorizontalPayPalBtn" class="PayPalBtn"></div>
-                    <script>
-
-                    </script>
-
-                </div>
-
-            </div> <!-- horizontal buttons -->
-        </div>
-    </div> <!-- Express Buy Now buttons -->
-
-    <div>
-    @*
-            <div class="PayPalBox">
-                <h3>Server-side PayPal Button</h3>
-                <h4>
-                    Used when you want control the order from <em>your</em> back end system.
-                    You compile and execute the order and receive the results.
-                    This allows you to track the progress of an order.
-                    Completely avoids users manipulating data from the client side.
-                    These buttons may also be stacked or horizontal.
-                </h4>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                        <div id="ServerPayPalBtn" class="PayPalBtn"></div>
-                    </div>
-                </div>
-                <!-- #ServerPayPalBtn -->
-
-                <script>
-                paypal.Button.render({
-                    env: 'sandbox', // Or 'sandbox',
-                    commit: true, // Show a 'Pay Now' button
-                    style: {
-                        //layout: 'horizontal',  // horizontal | vertical
-                        color: 'gold',
-                        size: 'responsive',
-                        fundingicons: true,
-                        tagline: false
-                    },
-                    funding: {
-                        allowed: [paypal.FUNDING.CARD, paypal.FUNDING.CREDIT],
-                        disallowed: []
-                    },
-                    payment: function () { // send product ID to server
-
-
-<div>
-    @*
+    <h2 class="ppCompanyName">@Model.PayPalCompanyName</h2>
+    <h2>PayPal Samples <small>(These are test buttons, so click away!)</small></h2>
     <div class="PayPalBox">
-        <h3>Server-side PayPal Button</h3>
+        @using (Html.BeginForm("SetupPayPalStore", "Gallery", FormMethod.Post, new { id = "PayPalButtonForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <span>
+                <span class="h3">PayPal</span>
+                <span class="h4">
+                    offers a wide variety of methods to make payments simple for your clients with additional support for
+                    inventory tracking, profit &amp; loss, custom messages, invoices and other advanced features.
+                </span>
+            </span>
+            <h4>
+                Here are a few examples that show the simplicity and power of PayPal.
+            </h4>
+            <h4>
+                @Html.ActionLink("Contact Us", "Contact", "Home") to discuss using these features in your application.
+            </h4>
+            @Html.HiddenFor(model => model.ClientId)
+
+        }
+    </div> <!-- Explanation of Services -->
+    <div class="PayPalBox">
+        <h3>PayPal Standard Payment Buttons (HTML button)</h3>
         <h4>
-            Used when you want control the order from <em>your</em> back end system.
-            You compile and execute the order and receive the results.
-            This allows you to track the progress of an order.
-            Completely avoids users manipulating data from the client side.
-            These buttons may also be stacked or horizontal.
+            Use when you want to be up and running quickly and have the least infrasturcture.
+            PayPal tracks your products and inventory as well as profit and loss.
+            You can have a variety of buttons including "Buy Now", "Add to Cart", and "Donate."
+            With this option, the payment experience is on PayPal pages.
+        </h4>
+        <div class="row">
+            <div class="col-sm-8 col-xs-2"></div>
+            <div class="col-sm-4 col-xs-10">
+                <form class="PayPalForm" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="@Model.StdBtn">
+                    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+        </div>
+    </div> <!-- Standard Buy Now -->
+
+    <div class="PayPalBox">
+        <h3>PayPal Express Payment Buttons</h3>
+        <h4>
+            Use when <em>you</em> want to manage your products and inventory.
+            These buttons also offer standard PayPal layouts so that customers recognize they are using PayPal.
+            Users stay on the your page while interacting with an overlaid PayPal window.
+            Order data can be captured after the transaction is complete.
         </h4>
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <div id="ServerPayPalBtn" class="PayPalBtn"></div>
+                <div id="SimplePayPalBtn" class="PayPalBtn"></div>
             </div>
+        </div> <!-- Smart buy now button -->
+        <div class="row">
+            <h3 class="centered">Stacked or horizontal buttons</h3>
         </div>
-        <!-- #ServerPayPalBtn -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <div id="StackedPayPalBtn" class="PayPalBtn"></div>
+                    </div>
+                </div>
+            </div> <!-- stacked buttons -->
+            <hr class="PayPal-xs-break" />
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <div id="HorizontalPayPalBtn" class="PayPalBtn"></div>
+                        <script>
 
-        <script>
-            paypal.Button.render({
-                env: 'sandbox', // Or 'sandbox',
-                commit: true, // Show a 'Pay Now' button
-                style: {
-                    //layout: 'horizontal',  // horizontal | vertical
-                    color: 'gold',
-                    size: 'responsive',
-                    fundingicons: true,
-                    tagline: false
-                },
-                funding: {
-                    allowed: [paypal.FUNDING.CARD, paypal.FUNDING.CREDIT],
-                    disallowed: []
-                },
-                payment: function () { // send product ID to server
+                        </script>
 
-                    return paypal.request.post('@Url.Action("PayPalCreatePayment")', {
-                            Sku: '101' // product ID for this button
-                        })
-                        .then(function (data) {
-                            //console.log("after PP payment");
-                            //console.log(data.id);
-                            return data.id;
-                        });
-                },
-                onAuthorize: function (data) { //
-                    //console.log("In PP onAuthorize");
-                    //console.log(data);
-                    param = JSON.stringify(data);
-                    //console.log(param);
-                    return paypal.request.post('@Url.Action("PayPalExecutePayment")', {
-                        intent: data.intent,
-                        paymentID: data.paymentID,
-                        payerID: data.payerID,
-                        orderId: data.orderID,
-                        token: data.paymentToken,
-                        returnURL: data.returnUrl,
-                        param: param
-                    }).then(function () {
-                        //console.log("after PP onAuthorize PP payment");
-                        //console.log(data);
-                        param = JSON.stringify(data);
-                        //console.log(param);
-                        // The payment is complete!
-                        // You can now show a confirmation message to the customer
-                        location.href = '@Url.Action("PayPalCreatePaymentReturn")' +
-                            '?intent=' + data.intent +
-                            '&orderId=' + data.orderID +
-                            '&paymentID=' + data.paymentID +
-                            '&payerID=' + data.payerID +
-                            '&returnUrl=' + data.returnUrl;
-                        /*
-                        return paypal.request.post(' Url.Action("PayPalCreatePaymentReturn")', {
-                            intent: data.intent,
-                            orderId: data.orderId,
-                            paymentID: data.paymentID,
-                            payerID: data.payerID,
-                            returnUrl: data.returnUrl,
-                            param: param
-                        });
-                        */
-                    });
-                },
-                onCancel: function (data) {
-                    //console.log("in onCancel");
-                    //console.log(data);
-                    param = JSON.stringify(data);
-                    //console.log(param);
-                    location.href = '@Url.Action("PayPalCreatePaymentCancel")' +
-                        '?intent=' + data.intent +
-                        '&paymentID=' + data.paymentID +
-                        '&payerID=' + data.payerID +
-                        '&billingId=' + data.billingId +
-                        '&cancelUrl=' + data.cancelUrl +
-                        '&token=' + data.paymentToken;
-                    /*
-                    return paypal.request.post('Url.Action("PayPalCreatePaymentCancel")', {
-                        intent: data.intent,
-                        paymentID: data.paymentID,
-                        payerID: data.payerID,
-                        billingId: data.billingId,
-                        cancelURL: data.cancelUrl,
-                        token: data.paymentToken,
-                        param: param
-                    });
-                    */
-                },
-                onError: function (data) {
-                    //console.log("in onError");
-                    //console.log(data.name);
-                    //console.log(data.message);
-                    //console.log(data.information_link);
-                    param = JSON.stringify(data);
-                    location.href = 'Url.Action("PayPalError")' +
-                        '?name=' + data.name +
-                        '&message=' + data.message;
-                    /*
-                    return paypal.request.post('Url.Action("PayPalError")', {
-                        name: data.name,
-                        message: data.message,
-                        param: param
-                    })
-                    */
-                },
-            }, '#ServerPayPalBtn');
-        </script> <!-- #ServerPayPalBtn -->
+                    </div>
 
-    </div> <!-- Server side buy now button -->
-    *@
-</div>
-<div class="PayPalBox">
-    <h3>Add to PayPal Cart Buttons</h3>
-    <h4>
-        These buttons add items to the PayPal Shopping cart. Examples of items might be a shirt available in many colors, or a book in hardcover, paperback, or electronic form.
-        Buyers have the option to add special notes to the seller.
-    </h4>
-
-    <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="@Model.AddToCart"> @*AddToPPCartOne Get value from config*@
-        <table>
-            <tr><td><input type="hidden" name="on0" value="Colored Item">Your Store Item</td></tr>
-            <tr>
-                <td>
-                    <select name="os0">
-                        <option value="Plain Red">Plain Red $20.01 USD</option>
-                        <option value="Special Green">Special Green $20.02 USD</option>
-                        <option value="Extraordinary Orange">Extraordinary Orange $20.03 USD</option>
-                    </select>
-                </td>
-            </tr>
-            <tr><td><input type="hidden" name="on1" value="Special instructions here:">Special instructions here:</td></tr>
-            <tr><td><input type="text" name="os1" maxlength="200"></td></tr>
-        </table>
-        <input type="hidden" name="currency_code" value="USD">
-        <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-</div> <!-- Standard Add To Cart -->
-<div class="PayPalBox">
-    <h3>View PayPal Cart</h3>
-    <h4>You can use the standard PayPal button or a custom image to view the cart on PayPal.</h4>
-    <div class="row">
-        <div class="col-sm-6">
-            <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
-                <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
+                </div> <!-- horizontal buttons -->
+            </div>
+        </div> <!-- Express Buy Now buttons -->
 
 
-            </div> <!-- Server side buy now button -->
-        *@
-</div>
-@*
+    </div>
+    <div class="PayPalBox">
+        <h3>Add to PayPal Cart Buttons</h3>
+        <h4>
+            These buttons add items to the PayPal Shopping cart. Examples of items might be a shirt available in many colors, or a book in hardcover, paperback, or electronic form.
+            Buyers have the option to add special notes to the seller.
+        </h4>
+
+        <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="@Model.AddToCart"> @*AddToPPCartOne Get value from config*@
+            <table>
+                <tr><td><input type="hidden" name="on0" value="Colored Item">Your Store Item</td></tr>
+                <tr>
+                    <td>
+                        <select name="os0">
+                            <option value="Plain Red">Plain Red $20.01 USD</option>
+                            <option value="Special Green">Special Green $20.02 USD</option>
+                            <option value="Extraordinary Orange">Extraordinary Orange $20.03 USD</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td><input type="hidden" name="on1" value="Special instructions here:">Special instructions here:</td></tr>
+                <tr><td><input type="text" name="os1" maxlength="200"></td></tr>
+            </table>
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div> <!-- Standard Add To Cart -->
+    <div class="PayPalBox">
+        <h3>View PayPal Cart</h3>
+        <h4>You can use the standard PayPal button or a custom image to view the cart on PayPal.</h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div> <!-- Server side buy now button -->    
+        </div>
+    </div>
     <div class="PayPalBox">
         <h3>Add to PayPal Cart Buttons</h3>
         <h4>
@@ -373,7 +146,7 @@
         </h4>
         <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="@ViewBag.AddToCart"> @*AddToPPCartOne Get value from config* @
+            <input type="hidden" name="hosted_button_id" value="@ViewBag.AddToCart"> @*AddToPPCartOne Get value from config*@
             <table>
                 <tr><td><input type="hidden" name="on0" value="Colored Item">Your Store Item</td></tr>
                 <tr>
@@ -416,7 +189,6 @@
             </div>
         </div>
     </div> <!-- View Cart-->
-    *@
     <div>
         @*
             <div class="PayPalBox">
@@ -498,54 +270,54 @@
                 </div>
             </div> <!-- Smart Client Side Add to Cart-->
         *@
-</div>
+    </div>
 
-<div>
-    @*
-            <div class="PayPalBox">
-                <h3>Create Invoice</h3>
-                <h4>Use when</h4>
+    <div>
+        @*
+        <div class="PayPalBox">
+            <h3>Create Invoice</h3>
+            <h4>Use when</h4>
 
-                <p>
-                    Select Customer: (dropdown)
-                    Select Product: (dropdown)
-                    Discount: ($ edit)
-                    Create and send invoice
-                </p>
-            </div>
+            <p>
+                Select Customer: (dropdown)
+                Select Product: (dropdown)
+                Discount: ($ edit)
+                Create and send invoice
+            </p>
+        </div>
 
-            <div class="PayPalBox">
-                <h3>Payouts</h3>
-                <h4>Use when</h4>
-            </div>
+        <div class="PayPalBox">
+            <h3>Payouts</h3>
+            <h4>Use when</h4>
+        </div>
 
-            <div class="PayPalBox">
-                <h3>Experience</h3>
-                <h4>Use when</h4>
-            </div>
+        <div class="PayPalBox">
+            <h3>Experience</h3>
+            <h4>Use when</h4>
+        </div>
 
-            <div class="PayPalBox">
-                <h3>Styled Layouts (Circus | Matrix)</h3>
-                <h4>Use when</h4>
-            </div>
+        <div class="PayPalBox">
+            <h3>Styled Layouts (Circus | Matrix)</h3>
+            <h4>Use when</h4>
+        </div>
 
-            <div class="PayPalBox"></div> <!-- Server Side Add to Cart-->
-            </div> <!-- Future impl -->
+        <div class="PayPalBox"></div> <!-- Server Side Add to Cart-->
+        </div> <!-- Future impl -->
         *@
-    <div class="PayPalBox">
-        <h3>Coming soon - Braintree Integration</h3>
-        <h4>Demo will support Drop-ins and Hosted fields</h4>
+        <div class="PayPalBox">
+            <h3>Coming soon - Braintree Integration</h3>
+            <h4>Demo will support Drop-ins and Hosted fields</h4>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-xs-6 col-sm-6">
-        <a class="leftArrow" href="@Url.Action("Equity", "Gallery")" title="Equity Project for All - Facebook and Web Site"><<< Equity Project for All - Facebook and Web Site</a>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6">
+            <a class="leftArrow" href="@Url.Action("Equity", "Gallery")" title="Equity Project for All - Facebook and Web Site"><<< Equity Project for All - Facebook and Web Site</a>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+            <a class="rightArrow" href="@Url.Action("StripeSamples", "Gallery")" title="Stripe Integration Samples">Stripe Integration Samples >>></a>
+        </div>
     </div>
-    <div class="col-xs-6 col-sm-6">
-        <a class="rightArrow" href="@Url.Action("StripeSamples", "Gallery")" title="Stripe Integration Samples">Stripe Integration Samples >>></a>
-    </div>
-</div>
 </div>
 
 @section Scripts
