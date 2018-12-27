@@ -261,6 +261,11 @@
     <Content Include="Images\CAB_V500.png" />
     <Content Include="Images\Cart.png" />
     <Content Include="Images\DAMN Map.jpg" />
+    <Content Include="Images\DAMN MapB.png" />
+    <Content Include="Images\DAMN MapC.png" />
+    <Content Include="Images\DAMN MapD.png" />
+    <Content Include="Images\DAMN MapE.png" />
+    <Content Include="Images\DAMN MapF.png" />
     <Content Include="Images\DC LOGO B&amp;W2AFloralwhite.png" />
     <Content Include="Images\DC LOGO B&amp;W2ALightBlue.png" />
     <Content Include="Images\DC LOGO Small Grey BG tx.png" />

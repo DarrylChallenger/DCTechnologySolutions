@@ -10,7 +10,7 @@
 <div class="GoogleMaps project">
     <h2>Google Map Samples</h2>
     <div class="ProjectBox">
-        <div>
+        <div class="hidden">
             <span class="black h3">Each marker represents a baseball stadium, </span>
             <span class="GoogleRed h4">Click a marker to add it to the list</span>
             <div class="row">
@@ -35,7 +35,7 @@
                 <div class="col-sm-9 col-xs-12">
                     <!-- Map col goes here -->
                     <div id="GMapSample" class="GMap-spacer">
-                        <p>The map will render here</p>
+                        <p class="DAMNMap">The map will render here</p>
                     </div>
                 </div>
             </div>
@@ -48,9 +48,7 @@
                     <div id="GMapDAMN" class="GMap-spacer">
                         <p>The map will render here</p>
                     </div>
-                    <div>
-                        <img class="DAMNMap" src="~/Images/DAMN Map.jpg" />
-                    </div>
+                    <div><img src="/Images/DAMN Map.jpg" /></div>
                 </div>
             </div>
         </div> <!-- DAMN Sample -->
@@ -101,7 +99,21 @@
 
         }
         // DAMN Map - display google map and DAMN Map as overlay. Allow user to select spots on the map and drop pins.
-        var map = new google.maps.Map(document.getElementById('GMapDAMN'), { zoom: 3, center: { lat: 39.8283, lng: -98.5795 } });
+        // (https://developers.google.com/maps/documentation/javascript/maptypes#ImageMapTypes)
+        var DAMNMap = new google.maps.Map(document.getElementById('GMapDAMN'), { zoom: 2, center: { lat: 0, lng: 0 }, disableDefaultUI: true } //{ zoom: 13, center: { lat: 41, lng: -74 } } //
+            );
+        /*var imageBounds = {
+            north: 40, south: -90, east: -90, west: 90
+        };*/
+        var imageBounds = {
+            north: 85,
+            south: -85,
+            east: 180,
+            west: -180
+        };
+        //var DAMNOverOptions = new google.maps.GroundOverlayOptions(clickable=true, map=DAMNMap, opacity=.3)
+        var DAMNOver = new google.maps.GroundOverlay("/Images/DAMN MapF.png", imageBounds, { clickable:true, map:DAMNMap, opacity:.775});
+        DAMNOver.setMap(DAMNMap);
     }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjeABpdgYlIJBCCPVTjd74NcNkS29ZlU4&callback=initMap"></script>
