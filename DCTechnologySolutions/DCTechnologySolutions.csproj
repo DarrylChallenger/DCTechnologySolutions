@@ -382,6 +382,7 @@
     <Content Include="Views\Gallery\ReturnFromFitbit.cshtml" />
     <Content Include="Views\Gallery\SetupPaypalStore.cshtml" />
     <Content Include="Views\Gallery\GoogleMapSamples.cshtml" />
+    <Content Include="Views\Gallery\TalkingBaseball.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_LocalResources\App_Data\" />

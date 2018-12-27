@@ -136,5 +136,10 @@ namespace DCTechnologySolutions.Controllers
             GoogleMapSamplesModel gm = new GoogleMapSamplesModel();
             return View(gm);
         }
+
+        public ActionResult TalkingBaseball()
+        {
+            return View();
+        }
     }
 }
