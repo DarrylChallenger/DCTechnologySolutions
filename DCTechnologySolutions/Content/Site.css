@@ -672,12 +672,16 @@ footer a:hover, footer a:focus  {
     color: darkred;
 }
 
-.ProjectBox a {
+.ProjectBox a, .ServiceBox a {
     color: white;
 }
 
 
 .ProjectBox a:focus, .ProjectBox a:hover {
+    color: lightgrey;
+}
+
+.ServiceBox a:focus, .ServiceBox a:hover {
     color: lightgrey;
 }
 
