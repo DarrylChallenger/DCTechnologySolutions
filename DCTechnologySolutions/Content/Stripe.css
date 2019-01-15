@@ -65,9 +65,13 @@
         font-size: 18px;
     }
 
-        .Stripelink a {
-            font-size: 24px;
-        }
+    .Stripelink a {
+        font-size: 24px;
+    }
+    
+    .Stripe .leftArrow, .Stripe .rightArrow {
+        font-size: 18px;
+    }
 }
 
 

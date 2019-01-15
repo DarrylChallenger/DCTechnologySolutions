@@ -543,7 +543,14 @@ h4 {
 }
 
 .rightArrow {
-    float:right;
+    float: right;
+}
+
+@media only screen and (min-width:768px) 
+{
+    .project a.leftArrow, .project a.rightArrow, .Fitbit a.leftArrow, .Fitbit a.rightArrow {
+        font-size: 18px;
+    }
 }
 .copy { /* Copyright in footer */
     font-family:sans-serif;
@@ -579,6 +586,9 @@ footer a:hover, footer a:focus  {
     footer {
         margin:auto;
     }    
+    a.rightArrow {
+        font-size: 20px;
+    }
 }
 /* Pages */
 .project {
@@ -647,11 +657,16 @@ footer a:hover, footer a:focus  {
 
 .ProjectBox {
     background-color: darkred;
+    color: white;
     opacity: .8;
     margin-bottom: 2em;
     padding: 1.5em 1.5em 0 1.5em;
     border-color: black;
     border-style: solid;
+}
+
+.ProjectBox h3 {
+    letter-spacing: 1px;
 }
 
 .project p {

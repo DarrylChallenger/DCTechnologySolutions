@@ -1,15 +1,58 @@
-﻿
-@{
-
+﻿@{
     ViewBag.Title = "Google Map Samples";
     Layout = "~/Views/Gallery/_GalleryLayout.cshtml";
-
 }
 
 <div class="TalkingBaseball project">
     <h2>Talking Baseball for <span>Alexa</span></h2>
     <div class="ProjectBox">
+        <h3>
+            Talking Baseball is an Alexa Skill that tells a user various statistics about baseball players.
+            The current version has information about any player's career or single-season stats through 2017.
+        </h3>
+        <p>
+            <a href="https://www.amazon.com/Challenger-Technology-Solutions-talkingbaseball/dp/B07KMZJNRC/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1547588662&sr=1-1&keywords=talking+baseball" target="_blank">Find Talking Baseball in the Alexa Skills Store</a>
+        </p>
     </div>
+    <div class="ProjectBox">
+        <h3>
+            Talking Baseball knows about the following statistics:
+        </h3>
+        <p>
+            Demographics: Birthdate, Height, Weight, Given Name
+        </p>
+        <p>
+            Batting: Batting Average, On Base Percentage, OPS (On base Plus Slugging), Slugging Percentage, Total Bases, Plate Appearances, At Bats,
+            Games, Runs, Hits, Doubles, Triples, Home Runs, Singles, Runs Batted In, Stolen Bases, Caught Stealing, Strikeouts, Walks, Intentional Walks,
+            Sacrifice Hits, Sacrifice Flies, Sacrifices, Hit By Pitch
+        </p>
+        <p>
+            Pitching: Earned Run Average, WHIP (Walks + hits per Inning), BAA (Batting Average Against, Opponent Batting Average), GIDP, Wins, Losses,
+            Games, IP, Starts, Complete Games, Saves, Shutouts, Strikeouts, Walks, Intentional Walks, Hits, HR, Runs, Earned Runs, Wild Pitches, Balks,
+            Sacrifice Flies, Sacrifice Hits, Sacrifices, Win Percentage
+        </p>
+        <p>
+            Fielding: Fielding Percentage, Total Chances, Put Outs, Assists, Errors, Double Plays Turned, Passed Balls
+        </p>
     </div>
+    <div class="ProjectBox">
+        <p>
+            Upcoming Features: Disambiguation of players with the same name (did you know there were three players named Randy Johnson?),
+            Player Summaries, Sorted Ranked Stats - (best, highest, third best, etc.), Team Stats, Post-season Stats, All-Star Stats, Awards
+        </p>
+        <p>
+            <a href="https://www.amazon.com/Challenger-Technology-Solutions-talkingbaseball/dp/B07KMZJNRC/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1547588662&sr=1-1&keywords=talking+baseball">Talking Baseball is avalible in the Alexa Skills Store</a>
+        </p>
+
+
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6">
+        </div>
+        <div class="col-xs-6 col-sm-6">
+            <a class="rightArrow" href="@Url.Action("Ojewelry", "Gallery" )" title="OJewelry - Jewelry Manufacturing Operations">OJewelry - Jewelry Manufacturing Operations >>></a>
+        </div>
+    </div>
+</div>
 
 

@@ -46,6 +46,9 @@
     color: darkred;
 }
 
+@media only screen and (min-width:768px) {
+}
+
 PayPal p {
     font-size: 1.25em;
     letter-spacing: 1px;
@@ -115,6 +118,11 @@ PayPal p {
     .PayPal a {
         font-size: 24px;
     }
+    
+    .PayPal a.leftArrow, .PayPal a.rightArrow {
+        font-size: 18px;
+    }
+
 }
 
 @media only screen and (min-width:768px) {
