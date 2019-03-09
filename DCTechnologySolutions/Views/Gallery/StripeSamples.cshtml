@@ -13,7 +13,7 @@
         {
             @Html.AntiForgeryToken()
             <p>
-                Stripe offers a variety of methods to integrate payment into your application. Here a few samples.
+                Stripe offers a variety of methods to integrate payment into your application. Here are a few samples.
             </p>
             <p>
                 If you'd like to see the results in your own test store, select the "Setup Store" button below.
@@ -169,6 +169,13 @@
 
         }
     </div> <!-- Simple Pay Button-->
+    
+    <div> @* class="StripeBox">
+    
+        <text>https://stripe.com/docs/connect/charges-transfers</text>
+    *@
+    </div>
+        
     @*<div class="StripeBox">
             @using (Html.BeginForm("Charge", "StripeController", FormMethod.Post, new { id = "StripeCustomCheckoutForm" }))
             {

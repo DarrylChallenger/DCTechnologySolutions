@@ -47,6 +47,10 @@
     margin: auto;
 }
 
+.StripeBox label, .StripeBox h6 {
+    letter-spacing: .5px;
+}
+
 .Stripe .ContactBtn:hover,
 .Stripe .ContactBtn:focus,
 .Stripe .ContactBtn2:hover,
@@ -112,7 +116,7 @@
     
     .Stripe p {
         font-size: 1.6em;
-        letter-spacing: 1px;
+        letter-spacing: 0;
     }
 
     .Stripe a {
@@ -122,6 +126,9 @@
     .Stripe-xs-break {
         display: none;
     }
+}
+.StripeStoreSetup {
+    padding-top: 1em;
 }
 
 .Stripe-xs-break {
@@ -162,6 +169,10 @@
     color:white;
     border-color:lightsteelblue;
     background-color:midnightblue;
+}
+
+.StripeStoreSetup button {
+    margin-right: 3em;
 }
 
 .StripeBox input {

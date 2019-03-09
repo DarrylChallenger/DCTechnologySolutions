@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "SetupStore";
+    Layout = "~/Views/Gallery/_GalleryLayout.cshtml";
 }
 
 <div class="Stripe">
@@ -11,22 +12,23 @@
         {
             @Html.AntiForgeryToken()
             <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-2">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     @Html.LabelFor(model => model.publicKey)
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-4">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     @Html.EditorFor(model => model.publicKey)
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-2">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     @Html.LabelFor(model => model.stripeKey)
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-4">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     @Html.EditorFor(model => model.stripeKey)
                 </div>
-                <p></p>
-                <button type="submit">Submit Keys</button>
             </div>
-
+            <div class="row StripeStoreSetup">
+                <button type="submit">Submit Keys</button>
+                <button type="submit" formaction="./StripeSamples">Cancel</button>
+            </div>
         }
     </div>
 </div>
